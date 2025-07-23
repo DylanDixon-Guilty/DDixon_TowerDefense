@@ -35,6 +35,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When the Enemy reach the end of the path, take away one health from the player and despawn
+    /// </summary>
     private void ReachEnd()
     {
         animator.SetBool(animatorParamIsWalking, false);

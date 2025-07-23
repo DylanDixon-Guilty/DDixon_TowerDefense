@@ -15,18 +15,24 @@ public class Health : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Function to state that the player has died.
+    /// </summary>
     public bool IsDead()
     {
         return currentHealth > 0;
     }
 
+    /// <summary>
+    /// Function for the Enemy to call upon to deal damage to the player.
+    /// </summary>
     public void TakeDamage(int damageAmount)
     {
         if(currentHealth > 0)
         {
             currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
             OnHealthChange?.Invoke(currentHealth, maxHealth);
-            Debug.Log($"Current Healht: {currentHealth}");
+            Debug.Log($"Current Health: {currentHealth}");
         }
     }
 }

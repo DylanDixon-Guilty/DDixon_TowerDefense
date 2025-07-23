@@ -15,6 +15,9 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reduce the Health bar when player is damaged
+    /// </summary>
     void UpdateHealthBar(int currentHealth, int maxHealth)
     {
         healthBar.fillAmount = (float)currentHealth / maxHealth;
