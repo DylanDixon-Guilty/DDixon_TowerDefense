@@ -76,6 +76,4 @@ public class LevelGenerator : EditorWindow
              }
          }
     }
-
-    //TODO: Make a Function that randomly generate an array that 
 }
