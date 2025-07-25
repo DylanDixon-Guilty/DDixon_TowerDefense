@@ -5,14 +5,15 @@ public class CannonProjectile : Projectile
 {
    
 
-    private void Start()
-    {
-        
-    }
-
     protected override void Update()
     {
         base.Update();
+
+        lifeTime -= Time.deltaTime;
+        if(lifeTime == 0) 
+        {  
+            Destroy(gameObject);
+        }
     }
 
     public override void SetTarget(Transform inputTarget)
