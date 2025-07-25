@@ -3,12 +3,6 @@ using UnityEngine;
 public class CannonTower : Tower
 {
     [SerializeField] private GameObject projectilePrefab;
-    private Rigidbody cannonRB;
-
-    private void Awake()
-    {
-        cannonRB = GetComponent<Rigidbody>();
-    }
 
     protected override void FireAt(Enemy target)
     {
