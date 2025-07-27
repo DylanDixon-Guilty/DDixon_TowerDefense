@@ -9,11 +9,6 @@ public class CannonProjectile : Projectile
     {
         base.Update();
 
-        lifeTime -= Time.deltaTime;
-        if(lifeTime == 0) 
-        {  
-            Destroy(gameObject);
-        }
     }
 
     public override void SetTarget(Transform inputTarget)

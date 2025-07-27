@@ -1147,6 +1147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8811057983150128818, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7745,10 +7749,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5790615941215427165, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
-      propertyPath: m_Radius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3588940058885055676, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1314023
@@ -7792,10 +7792,6 @@ PrefabInstance:
     - target: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
       propertyPath: m_Name
       value: Tower_Balista
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4415678505776199080}
   - component: {fileID: 786018468419942925}
   - component: {fileID: 3246119961558634183}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tower_Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 2355896537638637548}
   - component: {fileID: 6999036922228978225}
   - component: {fileID: 183662490619679494}
-  - component: {fileID: 952045488816447449}
-  - component: {fileID: 8236133683323841711}
-  m_Layer: 0
+  - component: {fileID: 4965030928995237366}
+  - component: {fileID: 993198426804385494}
+  m_Layer: 7
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &952045488816447449
+--- !u!135 &4965030928995237366
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +188,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -196,7 +196,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: -0.00000047832725, y: 0.00000008642674, z: 0.049999926}
---- !u!114 &8236133683323841711
+--- !u!114 &993198426804385494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,4 +209,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireCooldown: 1
+  LaunchVelocityY: 750
   projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}
