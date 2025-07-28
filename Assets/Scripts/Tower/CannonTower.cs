@@ -69,6 +69,9 @@ public class CannonTower : Tower
         }
     }
 
+    /// <summary>
+    /// Disables the gunlight and gunline
+    /// </summary>
     public void DisableEffects()
     {
         gunLine.enabled = false;
