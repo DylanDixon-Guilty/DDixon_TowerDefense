@@ -19,7 +19,6 @@ public abstract class Tower : MonoBehaviour
             FireAt(closestEnemy);
             currentFireCooldown = FireCooldown;
         }
-
     }
 
     protected abstract void FireAt(Enemy target);
