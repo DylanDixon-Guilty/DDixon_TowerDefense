@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public float MaxHealth;
+    public static float CurrentHealth;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -12,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        CurrentHealth = MaxHealth;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }

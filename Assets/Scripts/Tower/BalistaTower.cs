@@ -9,6 +9,9 @@ public class BalistaTower : Tower
         base.Update();
     }
 
+    /// <summary>
+    /// When an enemy is in range, the tower will fire a arrow and destroy the enemy closest to the Tower
+    /// </summary>
     protected override void FireAt(Enemy target)
     {
         if (projectilePrefab != null)
