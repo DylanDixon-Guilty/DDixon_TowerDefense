@@ -23,6 +23,7 @@ public class CannonTower : Tower
         if (projectilePrefab != null)
         {
             GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
             projectileInstance.GetComponent<Projectile>().SetTarget(target.transform);
         }
     }
@@ -39,7 +40,7 @@ public class CannonTower : Tower
         foreach (Enemy enemy in enemiesInRange)
         {
             float leastHealthEnemy = Enemy.CurrentHealth;
-            if (leastHealthEnemy < mostHealthEnemy)
+            if (leastHealthEnemy <= mostHealthEnemy)
             {
                 mostHealthEnemy = leastHealthEnemy;
                 enemyHealth = enemy;
