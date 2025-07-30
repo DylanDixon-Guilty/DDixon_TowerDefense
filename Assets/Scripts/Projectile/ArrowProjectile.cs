@@ -10,6 +10,9 @@ public class ArrowProjectile : Projectile
 
     }
 
+    /// <summary>
+    /// Set to find the Transform of the Enemy's position
+    /// </summary>
     public override void SetTarget(Transform inputTarget)
     {
         target = inputTarget;

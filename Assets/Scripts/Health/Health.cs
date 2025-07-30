@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     }
 
     /// <summary>
-    /// Function to state that the player has died.
+    /// Function to state that the player has died
     /// </summary>
     public bool IsDead()
     {
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
     }
 
     /// <summary>
-    /// Function for the Enemy to call upon to deal damage to the player.
+    /// Function for the Enemy to call upon to deal damage to the player
     /// </summary>
     public void TakeDamage(int damageAmount)
     {

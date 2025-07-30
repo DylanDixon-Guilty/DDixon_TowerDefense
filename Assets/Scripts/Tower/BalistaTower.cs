@@ -10,7 +10,7 @@ public class BalistaTower : Tower
     }
 
     /// <summary>
-    /// When an enemy is in range, the tower will fire a arrow and destroy the enemy closest to the Tower
+    /// Fires a projectile and sends it to the enemy
     /// </summary>
     protected override void FireAt(Enemy target)
     {
@@ -21,6 +21,9 @@ public class BalistaTower : Tower
         }
     }
 
+    /// <summary>
+    /// When there are multiple enemies, it will fire at the one closest to the Tower
+    /// </summary>
     protected override Enemy GetClosestEnemy()
     {
         DeleteEnemyInList();
@@ -36,8 +39,6 @@ public class BalistaTower : Tower
                 closestEnemy = enemy;
             }
         }
-
         return closestEnemy;
-
     }
 }

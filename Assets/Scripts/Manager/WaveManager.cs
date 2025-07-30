@@ -22,7 +22,6 @@ public struct WaveData
 }
 
 
-
 public class WaveManager : MonoBehaviour
 {
     public List<WaveData> LevelWaveData;
@@ -32,17 +31,17 @@ public class WaveManager : MonoBehaviour
         StartLevel();
     }
 
-
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Time before the Wave starts
+    /// </summary>
     public void StartLevel()
     {
         StartCoroutine(StartWave());
     }
 
+    /// <summary>
+    /// Spawn a certain amount of enemies at specific times
+    /// </summary>
     IEnumerator StartWave()
     {
         foreach (WaveData currentWave in LevelWaveData)
@@ -55,6 +54,9 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles spawning the enemy into the world and assigning its endPoint
+    /// </summary>
     public void SpawnEnemy(GameObject enemyPrefab, Transform spawnPoint, Transform endPoint)
     {
         GameObject enemyInstance = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);

@@ -13,12 +13,6 @@ public class TowerPlaceManager : MonoBehaviour
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
     private Vector3 towerPlacementPosition;
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
@@ -52,6 +46,9 @@ public class TowerPlaceManager : MonoBehaviour
         PlaceTowerAction.Disable();
     }
 
+    /// <summary>
+    /// When the player has clicked on a Tower button, have a Preview of the Tower appear when the player hovers the mouse over a grid
+    /// </summary>
     public void StartPlacingTower(GameObject towerPrefab)
     {
         if(currentTowerPrefabToSpawn != towerPrefab)
@@ -66,6 +63,10 @@ public class TowerPlaceManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When the player presses the Left Mouse button and isPlacingTower is true, place a Tower on the current Grid the mouse is on.
+    /// Do not place Tower if the player's mouse is either off the platform or on the Path
+    /// </summary>
     private void OnPlaceTower(InputAction.CallbackContext context)
     {
         if(isPlacingTower && isTileSelected)

@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9f4e213c502d24c9923bf33e78418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 10
+  IsWalkingTrue: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
   damage: 1

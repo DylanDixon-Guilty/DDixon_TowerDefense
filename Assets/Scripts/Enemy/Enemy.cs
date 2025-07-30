@@ -4,7 +4,8 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public float MaxHealth;
-    public static float CurrentHealth;
+    public float CurrentHealth;
+    public bool IsWalkingTrue;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -25,6 +26,9 @@ public class Enemy : MonoBehaviour
         animator.SetBool(animatorParamIsWalking, true);
     }
 
+    /// <summary>
+    /// This allows to Initialize the endPoint for the Enemy
+    /// </summary>
     public void Initialized(Transform inputEndPoint)
     {
         endPoint = inputEndPoint;

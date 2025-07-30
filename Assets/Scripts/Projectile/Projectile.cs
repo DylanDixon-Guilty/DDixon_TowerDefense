@@ -22,6 +22,9 @@ public abstract class Projectile : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Set to find the Enemy Transform in Cannon and Arrow Projectile Scripts
+    /// </summary>
     public abstract void SetTarget(Transform inputTarget);
 
     private void OnTriggerEnter(Collider other)
