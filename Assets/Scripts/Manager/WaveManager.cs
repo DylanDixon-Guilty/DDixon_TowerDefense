@@ -16,7 +16,6 @@ public struct SpawnData
 [System.Serializable]
 public struct WaveData
 {
-    
     public float TimeBeforeWave;
     public List<SpawnData> EnemyData;
 }
@@ -25,6 +24,8 @@ public struct WaveData
 public class WaveManager : MonoBehaviour
 {
     public List<WaveData> LevelWaveData;
+
+    private bool HasWaveStarted = false;
 
     void Start()
     {
@@ -36,20 +37,24 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     public void StartLevel()
     {
-        StartCoroutine(StartWave());
+        
+        StartCoroutine(WaveStarted());
     }
 
     /// <summary>
     /// Spawn a certain amount of enemies at specific times
     /// </summary>
-    IEnumerator StartWave()
+    IEnumerator WaveStarted()
     {
-        foreach (WaveData currentWave in LevelWaveData)
+        if(HasWaveStarted)
         {
-            foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
+            foreach (WaveData currentWave in LevelWaveData)
             {
-                yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
-                SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
+                foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
+                {
+                    yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
+                    SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
+                }
             }
         }
     }
@@ -62,5 +67,10 @@ public class WaveManager : MonoBehaviour
         GameObject enemyInstance = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         Enemy enemy = enemyInstance.GetComponent<Enemy>();
         enemy.Initialized(endPoint);
+    }
+
+    public void BeginWave()
+    {
+        HasWaveStarted = true;
     }
 }
