@@ -24,12 +24,17 @@ public struct WaveData
 public class WaveManager : MonoBehaviour
 {
     public List<WaveData> LevelWaveData;
+    public bool HasWaveStarted;
 
-    private bool HasWaveStarted = false;
+    [SerializeField] private GameObject waveStarterButton;
 
-    void Start()
+    void Update()
     {
-        StartLevel();
+        if(HasWaveStarted)
+        {
+            StartLevel();
+            HasWaveStarted = false;
+        }
     }
 
     /// <summary>
@@ -37,7 +42,6 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     public void StartLevel()
     {
-        
         StartCoroutine(WaveStarted());
     }
 
@@ -46,15 +50,12 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     IEnumerator WaveStarted()
     {
-        if(HasWaveStarted)
+        foreach (WaveData currentWave in LevelWaveData)
         {
-            foreach (WaveData currentWave in LevelWaveData)
+            foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
             {
-                foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
-                {
-                    yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
-                    SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
-                }
+                yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
+                SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
             }
         }
     }
@@ -71,6 +72,7 @@ public class WaveManager : MonoBehaviour
 
     public void BeginWave()
     {
+        waveStarterButton.SetActive(false);
         HasWaveStarted = true;
     }
 }
