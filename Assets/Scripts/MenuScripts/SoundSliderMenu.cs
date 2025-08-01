@@ -16,29 +16,59 @@ public class SoundSliderMenu : MonoBehaviour
     private string masterVolume = "MasterVolume";
     private string musicVolume = "MusicVolume";
     private string soundEffectVolume = "SoundEffectVolume";
+    private float volumeMultiplier = 20f; // This goes in the ChangeMaster/Music/Sound Functions
 
-    /// <summary>
-    /// When the Slider for Master Volume is moved, change both the volume and the Number "100" to the according value of the Slider
-    /// </summary>
-    public void ChangeMaster(float volume)
+    private void Awake()
     {
-        audioMixer.SetFloat(masterVolume, Mathf.Log10(volume) * 20f);
+        if(PlayerPrefs.HasKey("musicVolume"))
+        {
+            LoadMasterVolume();
+        }
+        else
+        {
+            ChangeMaster();
+        }
     }
 
     /// <summary>
-    /// When the Slider for Music Volume is moved, change both the volume and the Number "100" to the according value of the Slider
+    /// When the Slider for Master Volume is moved, change the volume to the according value of the Slider
     /// </summary>
-    public void ChangeMusic(float volume)
+    public void ChangeMaster()
     {
-        audioMixer.SetFloat(musicVolume, Mathf.Log10(volume) * 20f);
+        float volume = master.value;
+        audioMixer.SetFloat(masterVolume, Mathf.Log10(volume) * volumeMultiplier);
+        PlayerPrefs.SetFloat("musicVolume", volume);
+    }
+
+    private void LoadMasterVolume()
+    {
+        master.value = PlayerPrefs.GetFloat("musicVolume");
+        ChangeMaster();
     }
 
     /// <summary>
-    /// When the Slider for SoundEffects Volume is moved, change both the volume and the Number "100" to the according value of the Slider
+    /// When the Slider for Music Volume is moved, change the volume to the according value of the Slider
     /// </summary>
-    public void ChangeSoundEffect(float volume)
+    public void ChangeMusic()
     {
-        audioMixer.SetFloat(soundEffectVolume, Mathf.Log10(volume) * 20f);
+        float volume = master.value;
+        audioMixer.SetFloat(musicVolume, Mathf.Log10(volume) * volumeMultiplier);
+        PlayerPrefs.SetFloat(musicVolume, volume);
+    }
+
+    private void LoadMusicVolume()
+    {
+        music.value = PlayerPrefs.GetFloat(musicVolume);
+        ChangeMusic();
+    }
+
+    /// <summary>
+    /// When the Slider for SoundEffects Volume is moved, change the volume to the according value of the Slider
+    /// </summary>
+    public void ChangeSoundEffect()
+    {
+        float volume = master.value;
+        audioMixer.SetFloat(soundEffectVolume, Mathf.Log10(volume) * volumeMultiplier);
     }
 
     /// <summary>
