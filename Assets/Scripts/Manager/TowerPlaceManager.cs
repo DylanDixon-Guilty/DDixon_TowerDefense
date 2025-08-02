@@ -50,17 +50,17 @@ public class TowerPlaceManager : MonoBehaviour
     /// <summary>
     /// When the player has clicked on a Tower button, have a Preview of the Tower appear when the player hovers the mouse over a grid
     /// </summary>
-    public void StartPlacingTower(GameObject towerPrefab)
+    public void StartPlacingTower(GameObject towerPreview)
     {
-        if(currentTowerPrefabToSpawn != towerPrefab)
+        if(currentTowerPrefabToSpawn != towerPreview)
         {
             isPlacingTower = true;
-            currentTowerPrefabToSpawn = towerPrefab;
-            if(towerPreview != null)
+            currentTowerPrefabToSpawn = towerPreview;
+            if(this.towerPreview != null)
             {
-                Destroy(towerPreview);
+                Destroy(this.towerPreview);
             }
-            towerPreview = Instantiate(towerPrefab);
+            this.towerPreview = Instantiate(towerPreview);
         }
     }
 
@@ -72,11 +72,18 @@ public class TowerPlaceManager : MonoBehaviour
     {
         if(isPlacingTower && isTileSelected)
         {
-            Instantiate(currentTowerPrefabToSpawn, towerPlacementPosition, Quaternion.identity);
+            IsTowerPlaced = true;
+            GameObject towerInstance = Instantiate(currentTowerPrefabToSpawn, towerPlacementPosition, Quaternion.identity);
             Destroy(towerPreview);
             currentTowerPrefabToSpawn = null;
             isPlacingTower = false;
-            IsTowerPlaced = true;
+            Tower tower = towerInstance.GetComponent<Tower>();
+            TowerPurchased(tower.TowerCost);
         }
+    }
+
+    private void TowerPurchased(int cost)
+    {
+        CurrencyManager.Currency -= cost;
     }
 }

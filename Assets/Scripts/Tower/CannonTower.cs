@@ -3,7 +3,6 @@ using UnityEngine;
 public class CannonTower : Tower
 {
 
-
     [SerializeField] private GameObject projectilePrefab;
 
     protected override void Update()

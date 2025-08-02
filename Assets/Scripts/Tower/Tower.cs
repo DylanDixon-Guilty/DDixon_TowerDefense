@@ -7,12 +7,14 @@ using System.Collections;
 public abstract class Tower : MonoBehaviour
 {
     public float FireCooldown = 1.0f;
+    public int TowerCost; //The cost of Tower
     public Transform TowerBase;
     public Transform FiringPoint;
 
     protected float currentFireCooldown = 1.0f;
     protected List<Enemy> enemiesInRange = new List<Enemy>();
 
+    
 
     protected virtual void Update()
     {
@@ -36,6 +38,7 @@ public abstract class Tower : MonoBehaviour
     /// Cannon Tower Script instead finds the Enemy with the least amount of Health
     /// </summary>
     protected abstract Enemy GetClosestEnemy();
+    
 
     /// <summary>
     /// When an Enemy is Destroyed, remove it from the list of Enemies currently in the TowerScript
