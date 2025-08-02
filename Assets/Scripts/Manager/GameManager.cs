@@ -54,4 +54,6 @@ public class GameManager : MonoBehaviour
             OptionsMenuScreenInGame.SetActive(false);
         }
     }
+
+    //TODO: Add a way to go to MainMenu.
 }

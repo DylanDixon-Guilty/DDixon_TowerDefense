@@ -7,6 +7,7 @@ using System.Collections;
 public abstract class Tower : MonoBehaviour
 {
     public float FireCooldown = 1.0f;
+    public Transform TowerBase;
 
     protected float currentFireCooldown = 1.0f;
     protected List<Enemy> enemiesInRange = new List<Enemy>();
@@ -18,7 +19,6 @@ public abstract class Tower : MonoBehaviour
         Enemy closestEnemy = GetClosestEnemy();
         if (closestEnemy != null && currentFireCooldown <= 0.0f)
         {
-            
             FireAt(closestEnemy);
             currentFireCooldown = FireCooldown;
         }

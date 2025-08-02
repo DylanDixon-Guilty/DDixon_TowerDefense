@@ -20,13 +20,22 @@ public class SoundSliderMenu : MonoBehaviour
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey("musicVolume"))
+        if(PlayerPrefs.HasKey("masterVolume"))
         {
             LoadMasterVolume();
         }
         else
         {
             ChangeMaster();
+        }
+
+        if(PlayerPrefs.HasKey("musicVolume"))
+        {
+            LoadMusicVolume();
+        }
+        else
+        {
+            ChangeMusic();
         }
     }
 
@@ -37,12 +46,12 @@ public class SoundSliderMenu : MonoBehaviour
     {
         float volume = master.value;
         audioMixer.SetFloat(masterVolume, Mathf.Log10(volume) * volumeMultiplier);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        PlayerPrefs.SetFloat("masterVolume", volume);
     }
 
     private void LoadMasterVolume()
     {
-        master.value = PlayerPrefs.GetFloat("musicVolume");
+        master.value = PlayerPrefs.GetFloat("masterVolume");
         ChangeMaster();
     }
 
@@ -51,14 +60,14 @@ public class SoundSliderMenu : MonoBehaviour
     /// </summary>
     public void ChangeMusic()
     {
-        float volume = master.value;
+        float volume = music.value;
         audioMixer.SetFloat(musicVolume, Mathf.Log10(volume) * volumeMultiplier);
-        PlayerPrefs.SetFloat(musicVolume, volume);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
     private void LoadMusicVolume()
     {
-        music.value = PlayerPrefs.GetFloat(musicVolume);
+        music.value = PlayerPrefs.GetFloat("musicVolume");
         ChangeMusic();
     }
 

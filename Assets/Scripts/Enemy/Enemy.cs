@@ -1,17 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public float MaxHealth;
-    public float CurrentHealth;
+    public int MaxHealth;
+    public int CurrentHealth;
+    public int CurrencyValue;
     public bool IsWalkingTrue;
+    public event Action<int, int> OnEnemyHealthChange;
 
     private NavMeshAgent agent;
     private Animator animator;
     [SerializeField] private Transform endPoint;
     [SerializeField] private string animatorParamIsWalking;
     [SerializeField] private int damage;
+    [SerializeField] private GameObject blueGoldCurrecy;
+    
 
     private void Awake()
     {
@@ -35,15 +40,41 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(endPoint.position);
     }
 
-
     void Update()
     {
-        if(!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             if(!agent.hasPath || agent.pathStatus == NavMeshPathStatus.PathComplete)
             {
                 ReachEnd();
             }
+        }
+        HasDied();
+    }
+
+    /// <summary>
+    /// When the enemy is hit with a projectile, the enemy will take damage
+    /// </summary>
+    public void EnemyTakeDamage(int damageAmount)
+    {
+        if (CurrentHealth > 0)
+        {
+            CurrentHealth = Mathf.Max(CurrentHealth - damageAmount, 0);
+            OnEnemyHealthChange?.Invoke(CurrentHealth, MaxHealth);
+            Debug.Log($"Current Enemy Health: {CurrentHealth}");
+        }
+    }
+
+    /// <summary>
+    /// When Enemy dies from a Tower, Destroy gameObject and gives points to player
+    /// </summary>
+    private void HasDied()
+    {
+        if(CurrentHealth <= 0)
+        {
+            Instantiate(blueGoldCurrecy, transform.position, transform.rotation);
+            CurrencyManager.Currency += CurrencyValue;
+            Destroy(gameObject);
         }
     }
 

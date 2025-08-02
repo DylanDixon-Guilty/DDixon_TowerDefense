@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BalistaTower : Tower
 {
+    public Transform FiringPoint;
+
     [SerializeField] private GameObject projectilePrefab;
 
     protected override void Update()
@@ -16,7 +18,7 @@ public class BalistaTower : Tower
     {
         if (projectilePrefab != null)
         {
-            GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            GameObject projectileInstance = Instantiate(projectilePrefab, FiringPoint.position, Quaternion.identity);
             projectileInstance.GetComponent<Projectile>().SetTarget(target.transform);
         }
     }

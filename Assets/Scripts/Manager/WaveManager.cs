@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -33,6 +34,7 @@ public class WaveManager : MonoBehaviour
         if(HasWaveStarted)
         {
             StartLevel();
+            waveStarterButton.SetActive(false);
             HasWaveStarted = false;
         }
     }
@@ -70,9 +72,11 @@ public class WaveManager : MonoBehaviour
         enemy.Initialized(endPoint);
     }
 
+    /// <summary>
+    /// On Pressing "Press Here To Start Wave" button, Begin Wave
+    /// </summary>
     public void BeginWave()
     {
-        waveStarterButton.SetActive(false);
         HasWaveStarted = true;
     }
 }

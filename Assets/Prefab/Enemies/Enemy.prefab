@@ -170,10 +170,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 10
+  CurrentHealth: 0
+  CurrencyValue: 10
   IsWalkingTrue: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
   damage: 1
+  blueGoldCurrecy: {fileID: 1479293236634644144, guid: 4b0a614b169d2a04e8c0bf4f455e32f2, type: 3}
 --- !u!136 &7610835936060711012
 CapsuleCollider:
   m_ObjectHideFlags: 0
