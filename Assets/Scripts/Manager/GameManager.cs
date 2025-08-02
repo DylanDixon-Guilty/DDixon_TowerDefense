@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject OptionsMenuScreenInGame;
     public GameObject MainHUDScreen;
     public GameObject ConfirmExitScreenInGame;
-    public string BackToMainMenu;
+    public string BackToTitleScreen;
 
     void Start()
     {
@@ -78,10 +78,10 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// On Pressing "Yes" button, 
+    /// On Pressing "Yes" button, go to TitleScreen Scene
     /// </summary>
-    public void GoToMainMenu()
+    public void GoToTitleScreen()
     {
-        SceneManager.LoadScene(BackToMainMenu);
+        SceneManager.LoadScene(BackToTitleScreen);
     }
 }

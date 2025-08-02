@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int MaxHealth;
     public int CurrentHealth;
-    public int CurrencyValue;
+    public int CurrencyValue; //The currency given to player when Enemy is defeated
     public bool IsWalkingTrue;
     public event Action<int, int> OnEnemyHealthChange;
 

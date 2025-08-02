@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BalistaTower : Tower
 {
-    public Transform FiringPoint;
+    
 
     [SerializeField] private GameObject projectilePrefab;
 
@@ -16,7 +16,7 @@ public class BalistaTower : Tower
     /// </summary>
     protected override void FireAt(Enemy target)
     {
-        if (projectilePrefab != null)
+        if (projectilePrefab != null && TowerPlaceManager.IsTowerPlaced)
         {
             GameObject projectileInstance = Instantiate(projectilePrefab, FiringPoint.position, Quaternion.identity);
             projectileInstance.GetComponent<Projectile>().SetTarget(target.transform);

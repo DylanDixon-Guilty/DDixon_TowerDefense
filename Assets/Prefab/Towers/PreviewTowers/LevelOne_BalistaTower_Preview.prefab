@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8695964451533298274
+--- !u!1 &2544030943905908382
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,30 +8,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 179134621805390319}
-  m_Layer: 7
+  - component: {fileID: 2839517408261480039}
+  m_Layer: 0
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &179134621805390319
+--- !u!4 &2839517408261480039
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695964451533298274}
+  m_GameObject: {fileID: 2544030943905908382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000000007450581, y: 0.433, z: 0.25000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8532529173216809423}
+  m_Father: {fileID: 132187996065018237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8206433105721144868
+--- !u!1001 &459113403709642390
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -79,80 +79,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3868710468543803471, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_Name
       value: LevelOne_BalistaTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6635428092505703782, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 179134621805390319}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6962759770917786813}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4346956588427563410}
+      addedObject: {fileID: 2839517408261480039}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8747081244be5594591729a6332c9fe2, type: 3}
---- !u!4 &8532529173216809423 stripped
+--- !u!4 &132187996065018237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-  m_PrefabInstance: {fileID: 8206433105721144868}
+  m_PrefabInstance: {fileID: 459113403709642390}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9016895572901006197 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8747081244be5594591729a6332c9fe2, type: 3}
-  m_PrefabInstance: {fileID: 8206433105721144868}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &6962759770917786813
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9016895572901006197}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 192
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4346956588427563410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9016895572901006197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520ffacc828c775418d683f718bba1ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireCooldown: 1.5
-  TowerBase: {fileID: 8532529173216809423}
-  FiringPoint: {fileID: 179134621805390319}
-  projectilePrefab: {fileID: 2812957519697981869, guid: 62283e2ede6294448aaed40371b97cea, type: 3}

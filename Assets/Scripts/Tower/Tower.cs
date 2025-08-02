@@ -8,6 +8,7 @@ public abstract class Tower : MonoBehaviour
 {
     public float FireCooldown = 1.0f;
     public Transform TowerBase;
+    public Transform FiringPoint;
 
     protected float currentFireCooldown = 1.0f;
     protected List<Enemy> enemiesInRange = new List<Enemy>();

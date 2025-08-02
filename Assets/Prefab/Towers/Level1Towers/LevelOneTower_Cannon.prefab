@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 4415678505776199080}
   - component: {fileID: 786018468419942925}
   - component: {fileID: 3246119961558634183}
+  - component: {fileID: 2895668361929032664}
+  - component: {fileID: -8326194795797435486}
   m_Layer: 7
-  m_Name: Tower_Cannon
+  m_Name: LevelOneTower_Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,6 +89,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &2895668361929032664
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894615974786002706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 960
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0.21988885, z: 0}
+--- !u!114 &-8326194795797435486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894615974786002706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7186dd94a1a872745972af5eb6dbf320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireCooldown: 3
+  TowerBase: {fileID: 4415678505776199080}
+  FiringPoint: {fileID: 4419743991360618787}
+  projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}
 --- !u!1 &6034294689849516747
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,8 +222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419743991360618787}
-  - component: {fileID: 2549567160030030247}
-  - component: {fileID: 7305237641319469560}
   m_Layer: 7
   m_Name: FiringPoint
   m_TagString: Untagged
@@ -207,38 +244,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2355896537638637548}
   m_LocalEulerAnglesHint: {x: -1.5, y: 0.837, z: -5.639}
---- !u!135 &2549567160030030247
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674230248471327144}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7305237641319469560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674230248471327144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7186dd94a1a872745972af5eb6dbf320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireCooldown: 1
-  projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class TowerPlaceManager : MonoBehaviour
 {
+    public static bool IsTowerPlaced;
     public Camera MainCamera;
     public LayerMask TileLayer;
     public InputAction PlaceTowerAction;
@@ -75,6 +76,7 @@ public class TowerPlaceManager : MonoBehaviour
             Destroy(towerPreview);
             currentTowerPrefabToSpawn = null;
             isPlacingTower = false;
+            IsTowerPlaced = true;
         }
     }
 }

@@ -378,7 +378,6 @@ GameObject:
   - component: {fileID: 145766036}
   - component: {fileID: 145766035}
   - component: {fileID: 145766034}
-  - component: {fileID: 145766033}
   m_Layer: 0
   m_Name: WaveStarterSymbol
   m_TagString: Untagged
@@ -386,27 +385,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &145766033
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145766032}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &145766034
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3710,7 +3688,7 @@ GameObject:
   - component: {fileID: 564129275}
   - component: {fileID: 564129274}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUDCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5478,8 +5456,8 @@ RectTransform:
   - {fileID: 526690754}
   m_Father: {fileID: 1123507320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.35, y: 0}
+  m_AnchorMax: {x: 0.65, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.1715393}
   m_SizeDelta: {x: 0, y: -0.343}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5532,7 +5510,7 @@ MonoBehaviour:
         m_MethodName: StartPlacingTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
+          m_ObjectArgument: {fileID: 9016895572901006197, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -5755,9 +5733,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonMenuManager, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 1221462764}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GoToTitleScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5817,7 +5795,7 @@ GameObject:
   - component: {fileID: 977195456}
   - component: {fileID: 977195455}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StartWaveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6856,9 +6834,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonMenuManager, Assembly-CSharp
-        m_MethodName: BackToMainMenuFromConfirmExit
+      - m_Target: {fileID: 1221462764}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GoBackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7234,7 +7212,7 @@ MonoBehaviour:
   OptionsMenuScreenInGame: {fileID: 1867000602}
   MainHUDScreen: {fileID: 1488254474}
   ConfirmExitScreenInGame: {fileID: 753516155}
-  BackToMainMenu: TitleScreen
+  BackToTitleScreen: TitleScreen
 --- !u!114 &1221462765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7251,7 +7229,15 @@ MonoBehaviour:
   - TimeBeforeWave: 0
     EnemyData:
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 5
+      TimeBeforeSpawn: 3
+      SpawnPoint: {fileID: 948636753}
+      EndPoint: {fileID: 1477012064}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 3
+      SpawnPoint: {fileID: 948636753}
+      EndPoint: {fileID: 1477012064}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 3
       SpawnPoint: {fileID: 948636753}
       EndPoint: {fileID: 1477012064}
   HasWaveStarted: 0
@@ -9537,6 +9523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level01Scene: Level 01
 --- !u!1001 &1600164528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10555,7 +10542,7 @@ GameObject:
   - component: {fileID: 1762656647}
   - component: {fileID: 1762656646}
   m_Layer: 5
-  m_Name: BackToMainMenu_Button
+  m_Name: BackToTitleScreen_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10627,7 +10614,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221462764}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: BackToGame
+        m_MethodName: GoToConfirmExitInGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12315,80 +12302,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 775282166952ace40bac18da4dc99cbd, type: 3}
---- !u!1001 &8732447311353943289
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4346956588427563410, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: TowerBase
-      value: 
-      objectReference: {fileID: 8732447311353943293}
-    - target: {fileID: 4346956588427563410, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: FireCooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6962759770917786813, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.924
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.047
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.047
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8660259
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.49999917
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016895572901006197, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-      propertyPath: m_Name
-      value: LevelOne_BalistaTower
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
---- !u!4 &8732447311353943293 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8532529173216809423, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
-  m_PrefabInstance: {fileID: 8732447311353943289}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -12400,6 +12313,5 @@ SceneRoots:
   - {fileID: 1221462763}
   - {fileID: 564129277}
   - {fileID: 525136690}
-  - {fileID: 8732447311353943289}
   - {fileID: 1050737137}
   - {fileID: 909477818}

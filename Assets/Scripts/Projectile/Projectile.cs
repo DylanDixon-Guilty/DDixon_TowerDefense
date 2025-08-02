@@ -23,7 +23,7 @@ public abstract class Projectile : MonoBehaviour
     }
 
     /// <summary>
-    /// Set to find the Enemy Transform in Cannon and Arrow Projectile Scripts
+    /// Set to find the Enemy Transform in Cannon, Arrow, and Boulder Projectile Scripts
     /// </summary>
     public abstract void SetTarget(Transform inputTarget);
 
