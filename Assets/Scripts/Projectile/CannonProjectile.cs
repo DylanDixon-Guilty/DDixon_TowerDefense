@@ -7,6 +7,7 @@ public class CannonProjectile : Projectile
     public GameObject ExplosionEffect;
 
     private Rigidbody cannonRb;
+    [SerializeField] private int cannonBallDamage = 10;
 
     private void Awake()
     {
@@ -26,14 +27,14 @@ public class CannonProjectile : Projectile
         target = inputTarget;
     }
 
-    private void OnTriggerEnter()
+    protected override void OnTriggerEnter(Collider other)
     {
         Explode();
     }
 
     /// <summary>
     /// When the cannon ball hits an Enemy, it will find any colliders within a 2f(BlastRadius) radius.
-    /// Then Destroy all Enemies in that radius
+    /// Then damage all Enemies in that radius
     /// </summary>
     protected void Explode()
     {
@@ -44,7 +45,7 @@ public class CannonProjectile : Projectile
             Enemy enemy = nearbyEnemies.GetComponent<Enemy>();
             if(enemy != null)
             {
-                Destroy(enemy.gameObject);
+                enemy.EnemyTakeDamage(cannonBallDamage);
             }
         }
         Destroy(gameObject);

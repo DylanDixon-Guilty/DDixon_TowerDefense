@@ -27,16 +27,5 @@ public abstract class Projectile : MonoBehaviour
     /// </summary>
     public abstract void SetTarget(Transform inputTarget);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.transform == target)
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if(enemy != null)
-            {
-                Destroy(enemy.gameObject);
-            }
-        }
-        Destroy(gameObject);
-    }
+    protected abstract void OnTriggerEnter(Collider other);
 }

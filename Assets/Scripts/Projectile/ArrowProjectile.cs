@@ -3,7 +3,8 @@ using UnityEngine;
 public class ArrowProjectile : Projectile
 {
 
-    
+    [SerializeField] private int arrowDamage = 5;
+
     protected override void Update()
     {
         base.Update();
@@ -16,5 +17,18 @@ public class ArrowProjectile : Projectile
     public override void SetTarget(Transform inputTarget)
     {
         target = inputTarget;
+    }
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.transform == target)
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.EnemyTakeDamage(arrowDamage);
+            }
+        }
+        Destroy(gameObject);
     }
 }
