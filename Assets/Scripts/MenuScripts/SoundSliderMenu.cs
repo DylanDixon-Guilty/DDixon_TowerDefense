@@ -16,7 +16,7 @@ public class SoundSliderMenu : MonoBehaviour
     private string masterVolume = "MasterVolume";
     private string musicVolume = "MusicVolume";
     private string soundEffectVolume = "SoundEffectVolume";
-    private const string masterVolumeKey = "MasterVolumeKey"; //Key-word to save PlayerPrefs
+    private const string masterVolumeKey = "MasterVolumeKey"; //Key-word to save to PlayerPrefs
     private const string musicVolumeKey = "MusicVolumeKey";
     private const string soundEffectVolumeKey = "SoundEffectVolumeKey";
     private float volumeMultiplier = 20f; // This goes in the ChangeMaster/Music/Sound Functions
