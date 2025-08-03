@@ -359,8 +359,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8092354602058252404, guid: 95b544d8f889d1a46b8a6d26a9151f71, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
-  m_Resource: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -676,9 +676,9 @@ MonoBehaviour:
   audioPlayer: {fileID: 182221450}
   soundEffectClip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
   audioMixer: {fileID: 24100000, guid: 95b544d8f889d1a46b8a6d26a9151f71, type: 2}
-  master: {fileID: 435093541}
-  soundEffect: {fileID: 1691777009}
-  music: {fileID: 1595862953}
+  masterSlider: {fileID: 435093541}
+  soundEffectSlider: {fileID: 1691777009}
+  musicSlider: {fileID: 1595862953}
 --- !u!1 &310649084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4305,7 +4305,7 @@ MonoBehaviour:
       - m_Target: {fileID: 231943997}
         m_TargetAssemblyTypeName: SoundSliderMenu, Assembly-CSharp
         m_MethodName: ChangeSoundEffect
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
