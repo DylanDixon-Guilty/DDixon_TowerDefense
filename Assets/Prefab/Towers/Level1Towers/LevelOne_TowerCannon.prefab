@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2895668361929032664}
   - component: {fileID: -8326194795797435486}
   m_Layer: 7
-  m_Name: LevelOneTower_Cannon
+  m_Name: LevelOne_TowerCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireCooldown: 3
-  towerCost: 90
+  TowerCost: 100
   TowerBase: {fileID: 4415678505776199080}
   FiringPoint: {fileID: 4419743991360618787}
   projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}
