@@ -12,7 +12,6 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
-        
     }
 
     /// <summary>
@@ -20,7 +19,7 @@ public class Health : MonoBehaviour
     /// </summary>
     public bool IsDead()
     {
-        return currentHealth > 0;
+        return currentHealth <= 0;
     }
 
     /// <summary>

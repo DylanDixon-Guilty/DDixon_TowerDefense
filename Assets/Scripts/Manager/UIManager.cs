@@ -8,10 +8,13 @@ public class UIManager : MonoBehaviour
     public GameObject OptionsMenuScreenInGame;
     public GameObject MainHUDScreen;
     public GameObject ConfirmExitScreenInGame;
+    public GameObject DeathScreen;
     public string BackToTitleScreen;
 
     private void Update()
     {
+        PlayerDied();
+
         if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused)
         {
             IsGamePaused = true;
@@ -66,5 +69,19 @@ public class UIManager : MonoBehaviour
     public void GoToTitleScreen()
     {
         SceneManager.LoadScene(BackToTitleScreen);
+    }
+
+    /// <summary>
+    /// When the player's health has reached Zero, go to the DeathScreen
+    /// </summary>
+    private void PlayerDied()
+    {
+        Health playerHealth = GetComponent<Health>();
+        if (playerHealth.IsDead())
+        {
+            MainHUDScreen.SetActive(false);
+            OptionsMenuScreenInGame.SetActive(false);
+            DeathScreen.SetActive(true);
+        }
     }
 }
