@@ -4,14 +4,13 @@ using System;
 public class Health : MonoBehaviour
 {
     public event Action<int, int> OnHealthChange;
-
-    [SerializeField] private int maxHealth = 20;
-    [SerializeField] private int currentHealth;
+    public int MaxHealth = 20;
+    public int CurrentHealth;
     
 
     private void Awake()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
     }
 
     /// <summary>
@@ -19,7 +18,7 @@ public class Health : MonoBehaviour
     /// </summary>
     public bool IsDead()
     {
-        return currentHealth <= 0;
+        return CurrentHealth <= 0;
     }
 
     /// <summary>
@@ -27,11 +26,11 @@ public class Health : MonoBehaviour
     /// </summary>
     public void TakeDamage(int damageAmount)
     {
-        if(currentHealth > 0)
+        if(CurrentHealth > 0)
         {
-            currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
-            OnHealthChange?.Invoke(currentHealth, maxHealth);
-            Debug.Log($"Current Health: {currentHealth}");
+            CurrentHealth = Mathf.Max(CurrentHealth - damageAmount, 0);
+            OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
+            Debug.Log($"Current Health: {CurrentHealth}");
         }
     }
 }

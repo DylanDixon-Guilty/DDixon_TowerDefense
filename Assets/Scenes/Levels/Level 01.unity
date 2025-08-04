@@ -1291,7 +1291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1bce7a24a8a4584cb55632f295e7031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfHealth: 20
   health: {fileID: 1221462762}
   healthText: {fileID: 213631176}
 --- !u!1001 &225468102
@@ -7698,6 +7697,7 @@ GameObject:
   - component: {fileID: 1221462766}
   - component: {fileID: 1221462765}
   - component: {fileID: 1221462768}
+  - component: {fileID: 1221462769}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7717,8 +7717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc05a3e04913e748b7e593e2966aa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
+  MaxHealth: 20
+  CurrentHealth: 0
 --- !u!4 &1221462763
 Transform:
   m_ObjectHideFlags: 0
@@ -7855,6 +7855,22 @@ MonoBehaviour:
   ConfirmExitScreenInGame: {fileID: 753516155}
   DeathScreen: {fileID: 2029165880}
   BackToTitleScreen: TitleScreen
+--- !u!114 &1221462769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221462761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59ebf72f6cbf8e48b491eb6f52d1c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1221462762}
+  threeStars: 18
+  twoStars: 10
+  oneStar: 9
 --- !u!1 &1241743517
 GameObject:
   m_ObjectHideFlags: 0

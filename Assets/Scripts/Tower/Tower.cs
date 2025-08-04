@@ -8,9 +8,10 @@ public abstract class Tower : MonoBehaviour
 {
     public float FireCooldown = 1.0f;
     public int TowerCost; //The cost of Tower
-    public Transform TowerBase;
-    public Transform FiringPoint;
+    public Transform TowerBase; // Where the base of the Tower rotate
+    public Transform FiringPoint; // Where the projectile will fire
 
+    protected Enemy currentEnemy;
     protected float currentFireCooldown = 1.0f;
     protected List<Enemy> enemiesInRange = new List<Enemy>();
 
@@ -20,10 +21,15 @@ public abstract class Tower : MonoBehaviour
     {
         currentFireCooldown -= Time.deltaTime;
         Enemy closestEnemy = GetClosestEnemy();
+        currentEnemy = closestEnemy;
         if (closestEnemy != null && currentFireCooldown <= 0.0f)
         {
             FireAt(closestEnemy);
             currentFireCooldown = FireCooldown;
+        }
+        else if(closestEnemy != null)
+        {
+            LookAtTarget();
         }
     }
 
@@ -38,6 +44,14 @@ public abstract class Tower : MonoBehaviour
     /// Cannon Tower Script instead finds the Enemy with the least amount of Health
     /// </summary>
     protected abstract Enemy GetClosestEnemy();
+
+    private void LookAtTarget()
+    {
+        Vector3 lookDirection = currentEnemy.transform.position - TowerBase.position;
+        Vector3 horizontalDirection = new Vector3(lookDirection.x, 0, lookDirection.z); // This is to only rotate Horizontally, ignoring the Y-axis
+        Quaternion lookRotation = Quaternion.LookRotation(horizontalDirection);
+        TowerBase.rotation = Quaternion.Slerp(TowerBase.rotation, lookRotation, Time.deltaTime * 5f); // To Rotate the TowerBase smoothly.
+    }
     
 
     /// <summary>
