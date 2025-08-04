@@ -6,7 +6,8 @@ public class Health : MonoBehaviour
     public event Action<int, int> OnHealthChange;
     public int MaxHealth = 20;
     public int CurrentHealth;
-    
+
+    [SerializeField] private HighScoreManager highScoreManager;
 
     private void Awake()
     {

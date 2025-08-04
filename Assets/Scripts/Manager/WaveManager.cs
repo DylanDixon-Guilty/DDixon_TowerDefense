@@ -24,18 +24,20 @@ public struct WaveData
 
 public class WaveManager : MonoBehaviour
 {
+    public static int EnemiesAlive = 0;
     public List<WaveData> LevelWaveData;
-    public bool HasWaveStarted;
 
     [SerializeField] private GameObject waveStarterButton;
+    [SerializeField] private HighScoreManager highScoreManager;
+    [SerializeField] private Health playerHealth;
+    private bool hasWavesFinished = false;
 
     void Update()
     {
-        if(HasWaveStarted)
+        if(hasWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
-            StartLevel();
-            waveStarterButton.SetActive(false);
-            HasWaveStarted = false;
+            highScoreManager.LevelCompleted();
+            hasWavesFinished = false;
         }
     }
 
@@ -60,6 +62,7 @@ public class WaveManager : MonoBehaviour
                 SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
             }
         }
+        hasWavesFinished = true;
     }
 
     /// <summary>
@@ -70,6 +73,7 @@ public class WaveManager : MonoBehaviour
         GameObject enemyInstance = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         Enemy enemy = enemyInstance.GetComponent<Enemy>();
         enemy.Initialized(endPoint);
+        EnemiesAlive++; // To keep track how many enemies spawn in
     }
 
     /// <summary>
@@ -77,6 +81,7 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     public void BeginWave()
     {
-        HasWaveStarted = true;
+        StartLevel();
+        waveStarterButton.SetActive(false);
     }
 }

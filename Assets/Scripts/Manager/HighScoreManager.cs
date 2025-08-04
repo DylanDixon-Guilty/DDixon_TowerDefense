@@ -1,52 +1,92 @@
+using TMPro;
 using UnityEngine;
 
 public class HighScoreManager : MonoBehaviour
 {
     /*
-       The HighScore is represented by 3 Stars. Your remaining health when you win a Level determines how many stars you get.
-       For example, if you have 19 Health remaining and win, you get 3 stars
+       The HighScore is represented by 3 Stars. The player's remaining health when they win a Level determines how many stars they get.
+       For example, if they have 19 Health remaining and win, they get 3 stars
     */
 
-    [SerializeField] private Health playerHealth;
+    public static bool hasLevelCompleted = false;
 
-    [Header("Star Threshold")]
+    [SerializeField] TextMeshProUGUI gameOverTextMessage;
+    [SerializeField] private Health playerHealth;
+    [SerializeField] private GameObject collectedStar01;
+    [SerializeField] private GameObject collectedStar02;
+    [SerializeField] private GameObject collectedStar03;
+    [SerializeField] private GameObject uncollectedStar01;
+    [SerializeField] private GameObject uncollectedStar02;
+    [SerializeField] private GameObject uncollectedStar03;
+    [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private int threeStars = 18;
     [SerializeField] private int twoStars = 10;
-    [SerializeField] private int oneStar = 9;
+    [SerializeField] private int oneStar = 9; 
 
-    private bool hasWon = false;
-    
-    
-    public void WonLevel()
+    private void Start()
     {
-        hasWon = true;
-        CheckHighScore();
+        collectedStar01.SetActive(false);
+        collectedStar02.SetActive(false);
+        collectedStar03.SetActive(false);
+        uncollectedStar01.SetActive(false);
+        uncollectedStar02.SetActive(false);
+        uncollectedStar03.SetActive(false);
     }
 
-    private void CheckHighScore()
+    /// <summary>
+    /// When the player has completed a level, as in, either won or lost, Check the amount of Health they have 
+    /// </summary>
+    public void LevelCompleted()
     {
-        if (hasWon || playerHealth.IsDead())
+        hasLevelCompleted = true;
+        CheckPlayerHealth();
+        GameOverText();
+    }
+    
+    private void GameOverText()
+    {
+        if(playerHealth.CurrentHealth > 0)
         {
-            int currentHealth = playerHealth.CurrentHealth;
-            int starsAwarded;
-
-            if (currentHealth >= threeStars)
-            {
-                starsAwarded = 3;
-            }
-            else if (currentHealth >= twoStars && currentHealth < threeStars)
-            {
-                starsAwarded = 2;
-            }
-            else if (currentHealth >= oneStar && currentHealth < twoStars)
-            {
-                starsAwarded = 1;
-            }
-            else
-            {
-                starsAwarded = 0;
-            }
-            Debug.Log("Stars Awarded: " + starsAwarded);
+            gameOverTextMessage.text = "You Won!!";
         }
+        else
+        {
+            gameOverTextMessage.text = "You Lost!!";
+        }
+    }
+
+    /// <summary>
+    /// Based on the amount of Health the player has, show Stars accordingly, give no stars if player loses.
+    /// Also, show the GameOverScreen
+    /// </summary>
+    private void CheckPlayerHealth()
+    {
+        int currentHealth = playerHealth.CurrentHealth;
+
+        if (currentHealth >= threeStars)
+        {
+            collectedStar01.SetActive(true);
+            collectedStar02.SetActive(true);
+            collectedStar03.SetActive(true);
+        }
+        else if (currentHealth >= twoStars && currentHealth < threeStars)
+        {
+            collectedStar01.SetActive(true);
+            collectedStar02.SetActive(true);
+            uncollectedStar03.SetActive(true);
+        }
+        else if (currentHealth >= oneStar && currentHealth < twoStars)
+        {
+            collectedStar01.SetActive(true);
+            uncollectedStar02.SetActive(true);
+            uncollectedStar03.SetActive(true);
+        }
+        else
+        {
+            uncollectedStar01.SetActive(true);
+            uncollectedStar02.SetActive(true);
+            uncollectedStar03.SetActive(true);
+        }
+        GameOverScreen.SetActive(true);
     }
 }

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int CurrentHealth;
     public int CurrencyValue; //The currency given to player when Enemy is defeated
     public bool IsWalkingTrue;
-    public event Action<int, int> OnEnemyHealthChange;
+    public event Action<int, int> OnEnemyHealthChange; // Will be added to a EnemyHealthBar script to visualize the enemies current Health
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -74,6 +74,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(blueGoldCurrecy, transform.position, transform.rotation);
             CurrencyManager.Currency += CurrencyValue;
+            WaveManager.EnemiesAlive--; //When an enemy dies, subtract this int by 1
             Destroy(gameObject);
         }
     }

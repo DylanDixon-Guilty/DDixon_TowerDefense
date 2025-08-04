@@ -8,14 +8,12 @@ public class UIManager : MonoBehaviour
     public GameObject OptionsMenuScreenInGame;
     public GameObject MainHUDScreen;
     public GameObject ConfirmExitScreenInGame;
-    public GameObject DeathScreen;
     public string BackToTitleScreen;
 
     private void Update()
     {
-        PlayerDied();
-
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused)
+        PlayerCompletedLevel();
+        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !HighScoreManager.hasLevelCompleted)
         {
             IsGamePaused = true;
             Time.timeScale = 0f;
@@ -72,16 +70,15 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// When the player's health has reached Zero, go to the DeathScreen
+    /// When the player completes the level, as in, they won or lost, hide the MainHud and Options
     /// </summary>
-    private void PlayerDied()
+    private void PlayerCompletedLevel()
     {
         Health playerHealth = GetComponent<Health>();
-        if (playerHealth.IsDead())
+        if (playerHealth.IsDead() || HighScoreManager.hasLevelCompleted)
         {
             MainHUDScreen.SetActive(false);
             OptionsMenuScreenInGame.SetActive(false);
-            DeathScreen.SetActive(true);
         }
     }
 }
