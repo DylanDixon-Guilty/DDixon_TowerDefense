@@ -21,10 +21,10 @@ public class HealthText : MonoBehaviour
     }
 
     /// <summary>
-    /// Reduce the number on the healthText by 1
+    /// Reduce the number on the healthText by the damage the Enemy does
     /// </summary>
     void UpdateHealthText(int currentHealth, int maxHealth)
     {
-        healthText.text = "Health: " + currentHealth / maxHealth; ;
+        healthText.text = "Health: " + currentHealth.ToString();
     }
 }
