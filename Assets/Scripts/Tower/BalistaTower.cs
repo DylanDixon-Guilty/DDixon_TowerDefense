@@ -26,7 +26,7 @@ public class BalistaTower : Tower
     /// <summary>
     /// When there are multiple enemies, it will fire at the one closest to the Tower
     /// </summary>
-    protected override Enemy GetClosestEnemy()
+    protected override Enemy GetTargetEnemy()
     {
         DeleteEnemyInList();
 

@@ -20,7 +20,7 @@ public abstract class Tower : MonoBehaviour
     protected virtual void Update()
     {
         currentFireCooldown -= Time.deltaTime;
-        Enemy closestEnemy = GetClosestEnemy();
+        Enemy closestEnemy = GetTargetEnemy();
         currentEnemy = closestEnemy;
         if (closestEnemy != null && currentFireCooldown <= 0.0f)
         {
@@ -43,7 +43,7 @@ public abstract class Tower : MonoBehaviour
     /// When there are multiple Enemies within range of a Tower, target the closest enemy to the Tower.
     /// Cannon Tower Script instead finds the Enemy with the least amount of Health
     /// </summary>
-    protected abstract Enemy GetClosestEnemy();
+    protected abstract Enemy GetTargetEnemy();
 
     private void LookAtTarget()
     {

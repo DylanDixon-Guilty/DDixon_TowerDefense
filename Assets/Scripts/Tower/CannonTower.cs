@@ -25,7 +25,7 @@ public class CannonTower : Tower
     /// <summary>
     /// When there are multiple enemies, it will fire at the one with the least amount of Health
     /// </summary>
-    protected override Enemy GetClosestEnemy()
+    protected override Enemy GetTargetEnemy()
     {
         DeleteEnemyInList();
 
