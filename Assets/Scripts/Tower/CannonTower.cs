@@ -15,7 +15,7 @@ public class CannonTower : Tower
     /// </summary>
     protected override void FireAt(Enemy target)
     {
-        if (projectilePrefab != null && TowerPlaceManager.IsTowerPlaced)
+        if (projectilePrefab != null && IsTowerPlaced)
         {
             GameObject projectileInstance = Instantiate(projectilePrefab, FiringPoint.position, Quaternion.identity);
             projectileInstance.GetComponent<Projectile>().SetTarget(target.transform);

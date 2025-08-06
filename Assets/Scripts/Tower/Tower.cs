@@ -6,6 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(SphereCollider))]
 public abstract class Tower : MonoBehaviour
 {
+    public bool IsTowerPlaced;
     public float FireCooldown = 1.0f;
     public int TowerCost; //The cost of Tower
     public Transform TowerBase; // Where the base of the Tower rotate
@@ -47,10 +48,13 @@ public abstract class Tower : MonoBehaviour
 
     private void LookAtTarget()
     {
-        Vector3 lookDirection = currentEnemy.transform.position - TowerBase.position;
-        Vector3 horizontalDirection = new Vector3(lookDirection.x, 0, lookDirection.z); // This is to only rotate Horizontally, ignoring the Y-axis
-        Quaternion lookRotation = Quaternion.LookRotation(horizontalDirection);
-        TowerBase.rotation = Quaternion.Slerp(TowerBase.rotation, lookRotation, Time.deltaTime * 5f); // To Rotate the TowerBase smoothly.
+        if(IsTowerPlaced)
+        {
+            Vector3 lookDirection = currentEnemy.transform.position - TowerBase.position;
+            Vector3 horizontalDirection = new Vector3(lookDirection.x, 0, lookDirection.z); // This is to only rotate Horizontally, ignoring the Y-axis
+            Quaternion lookRotation = Quaternion.LookRotation(horizontalDirection);
+            TowerBase.rotation = Quaternion.Slerp(TowerBase.rotation, lookRotation, Time.deltaTime * 5f); // To Rotate the TowerBase smoothly.
+        }
     }
     
 
