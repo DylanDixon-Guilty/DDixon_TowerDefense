@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2895668361929032664}
   - component: {fileID: -8326194795797435486}
   m_Layer: 7
-  m_Name: LevelOne_TowerCannon
+  m_Name: LevelOne_CannonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -123,7 +123,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.125
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -172,11 +172,12 @@ MonoBehaviour:
   MaxHealth: 10
   CurrentHealth: 0
   CurrencyValue: 10
+  ResetSpeed: 4
   IsWalkingTrue: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
   damage: 1
-  blueGoldCurrecy: {fileID: 1479293236634644144, guid: 4b0a614b169d2a04e8c0bf4f455e32f2, type: 3}
+  blueGoldCurrecy: {fileID: 1253193567005483939, guid: 2c7cd0d2b55caf44285d790db8577e7f, type: 3}
 --- !u!136 &7610835936060711012
 CapsuleCollider:
   m_ObjectHideFlags: 0

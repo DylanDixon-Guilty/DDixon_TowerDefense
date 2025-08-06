@@ -34,13 +34,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI currentWaveText;
     private bool hasWaveFinished = false;
+    private bool hasAllWavesFinished = false;
     private int currentWaveCount = 0;
 
     void Update()
     {
         currentWaveText.text = "Current Wave: " + currentWaveCount + "/" + MaxWaveCount;
 
-        if (hasWaveFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
+        if (hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
             highScoreManager.LevelCompleted();
             hasWaveFinished = false;
@@ -82,6 +83,7 @@ public class WaveManager : MonoBehaviour
                 hasWaveFinished = true;
                 currentWaveCount++;
             }
+            hasAllWavesFinished = true;
         }
     }
 

@@ -16,8 +16,6 @@ public abstract class Tower : MonoBehaviour
     protected float currentFireCooldown = 1.0f;
     protected List<Enemy> enemiesInRange = new List<Enemy>();
 
-    
-
     protected virtual void Update()
     {
         currentFireCooldown -= Time.deltaTime;

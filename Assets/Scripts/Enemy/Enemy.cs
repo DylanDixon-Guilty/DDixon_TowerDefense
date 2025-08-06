@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
     public int CurrencyValue; //The currency given to player when Enemy is defeated
+    public float ResetSpeed; // Used to reset the speed of an enemy
     public bool IsWalkingTrue;
 
     private NavMeshAgent agent;

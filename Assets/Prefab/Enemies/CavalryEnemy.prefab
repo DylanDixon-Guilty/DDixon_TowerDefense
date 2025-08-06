@@ -329,11 +329,12 @@ MonoBehaviour:
   MaxHealth: 15
   CurrentHealth: 0
   CurrencyValue: 30
+  ResetSpeed: 6
   IsWalkingTrue: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
   damage: 5
-  blueGoldCurrecy: {fileID: 1479293236634644144, guid: 4b0a614b169d2a04e8c0bf4f455e32f2, type: 3}
+  blueGoldCurrecy: {fileID: 1253193567005483939, guid: 2c7cd0d2b55caf44285d790db8577e7f, type: 3}
 --- !u!195 &5494985486123242777
 NavMeshAgent:
   m_ObjectHideFlags: 0
