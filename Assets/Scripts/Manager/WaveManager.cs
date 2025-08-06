@@ -34,11 +34,11 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI currentWaveText;
     private bool hasWaveFinished = false;
-    private int waveCount = 0;
+    private int currentWaveCount = 0;
 
     void Update()
     {
-        UpdateCurrentWaveText();
+        currentWaveText.text = "Current Wave: " + currentWaveCount + "/" + MaxWaveCount;
 
         if (hasWaveFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
@@ -80,7 +80,7 @@ public class WaveManager : MonoBehaviour
                     SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
                 }
                 hasWaveFinished = true;
-                waveCount++;
+                currentWaveCount++;
             }
         }
     }
@@ -94,10 +94,5 @@ public class WaveManager : MonoBehaviour
         Enemy enemy = enemyInstance.GetComponent<Enemy>();
         enemy.Initialized(endPoint);
         EnemiesAlive++; // To keep track how many enemies spawn in
-    }
-
-    private void UpdateCurrentWaveText()
-    {
-        currentWaveText.text = "Current Wave: " + waveCount + "/" + MaxWaveCount;
     }
 }
