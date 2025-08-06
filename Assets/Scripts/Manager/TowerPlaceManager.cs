@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class TowerPlaceManager : MonoBehaviour
 {
-    public static bool IsTowerPlaced;
     public Camera MainCamera;
     public LayerMask TileLayer;
     public InputAction PlaceTowerAction;
@@ -72,12 +71,12 @@ public class TowerPlaceManager : MonoBehaviour
     {
         if(isPlacingTower && isTileSelected)
         {
-            IsTowerPlaced = true;
             GameObject towerInstance = Instantiate(currentTowerPrefabToSpawn, towerPlacementPosition, Quaternion.identity);
             Destroy(towerPreview);
             currentTowerPrefabToSpawn = null;
             isPlacingTower = false;
             Tower tower = towerInstance.GetComponent<Tower>();
+            tower.IsTowerPlaced = true;
             TowerPurchased(tower.TowerCost);
         }
     }

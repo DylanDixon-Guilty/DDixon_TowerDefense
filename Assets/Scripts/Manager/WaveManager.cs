@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -25,20 +26,34 @@ public struct WaveData
 public class WaveManager : MonoBehaviour
 {
     public static int EnemiesAlive = 0;
+    public int MaxWaveCount; // Set in Unity for each Level
     public List<WaveData> LevelWaveData;
 
     [SerializeField] private GameObject waveStarterButton;
     [SerializeField] private HighScoreManager highScoreManager;
     [SerializeField] private Health playerHealth;
-    private bool hasWavesFinished = false;
+    [SerializeField] private TextMeshProUGUI currentWaveText;
+    private bool hasWaveFinished = false;
+    private int waveCount = 0;
 
     void Update()
     {
-        if(hasWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
+        UpdateCurrentWaveText();
+
+        if (hasWaveFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
             highScoreManager.LevelCompleted();
-            hasWavesFinished = false;
+            hasWaveFinished = false;
         }
+    }
+
+    /// <summary>
+    /// On Pressing "Press Here To Start Wave" button, Begin Wave
+    /// </summary>
+    public void BeginWave()
+    {
+        StartLevel();
+        waveStarterButton.SetActive(false);
     }
 
     /// <summary>
@@ -54,15 +69,20 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     IEnumerator WaveStarted()
     {
-        foreach (WaveData currentWave in LevelWaveData)
+        if(!hasWaveFinished)
         {
-            foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
+            foreach (WaveData currentWave in LevelWaveData)
             {
-                yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
-                SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
+                yield return new WaitForSeconds(currentWave.TimeBeforeWave);
+                foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
+                {
+                    yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
+                    SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
+                }
+                hasWaveFinished = true;
+                waveCount++;
             }
         }
-        hasWavesFinished = true;
     }
 
     /// <summary>
@@ -76,12 +96,8 @@ public class WaveManager : MonoBehaviour
         EnemiesAlive++; // To keep track how many enemies spawn in
     }
 
-    /// <summary>
-    /// On Pressing "Press Here To Start Wave" button, Begin Wave
-    /// </summary>
-    public void BeginWave()
+    private void UpdateCurrentWaveText()
     {
-        StartLevel();
-        waveStarterButton.SetActive(false);
+        currentWaveText.text = "Current Wave: " + waveCount + "/" + MaxWaveCount;
     }
 }

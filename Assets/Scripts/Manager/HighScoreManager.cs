@@ -38,6 +38,7 @@ public class HighScoreManager : MonoBehaviour
     /// </summary>
     public void LevelCompleted()
     {
+        Time.timeScale = 0f;
         hasLevelCompleted = true;
         CheckPlayerHealth();
         GameOverText();
