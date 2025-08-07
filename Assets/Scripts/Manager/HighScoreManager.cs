@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HighScoreManager : MonoBehaviour
 {
@@ -8,9 +9,8 @@ public class HighScoreManager : MonoBehaviour
        For example, if they have 19 Health remaining and win, they get 3 stars
     */
 
-    public static bool hasLevelCompleted = false;
+    public bool hasLevelCompleted = false;
 
-    [SerializeField] TextMeshProUGUI gameOverTextMessage;
     [SerializeField] private Health playerHealth;
     [SerializeField] private GameObject collectedStar01;
     [SerializeField] private GameObject collectedStar02;
@@ -18,7 +18,6 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField] private GameObject uncollectedStar01;
     [SerializeField] private GameObject uncollectedStar02;
     [SerializeField] private GameObject uncollectedStar03;
-    [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private int threeStars = 18;
     [SerializeField] private int twoStars = 10;
     [SerializeField] private int oneStar = 9; 
@@ -41,19 +40,6 @@ public class HighScoreManager : MonoBehaviour
         Time.timeScale = 0f;
         hasLevelCompleted = true;
         CheckPlayerHealth();
-        GameOverText();
-    }
-    
-    private void GameOverText()
-    {
-        if(playerHealth.CurrentHealth > 0)
-        {
-            gameOverTextMessage.text = "You Won!!";
-        }
-        else
-        {
-            gameOverTextMessage.text = "You Lost!!";
-        }
     }
 
     /// <summary>
@@ -88,6 +74,5 @@ public class HighScoreManager : MonoBehaviour
             uncollectedStar02.SetActive(true);
             uncollectedStar03.SetActive(true);
         }
-        GameOverScreen.SetActive(true);
     }
 }

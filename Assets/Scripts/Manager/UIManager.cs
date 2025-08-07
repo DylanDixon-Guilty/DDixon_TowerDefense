@@ -4,16 +4,31 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static bool IsGamePaused = false;
+    public bool IsGamePaused = false;
     public GameObject OptionsMenuScreenInGame;
     public GameObject MainHUDScreen;
     public GameObject ConfirmExitScreenInGame;
     public string BackToTitleScreen;
 
+    [SerializeField] private HighScoreManager highScoreManager;
+    [SerializeField] private Health playerHealth;
+    [SerializeField] private TextMeshProUGUI gameOverTextMessage;
+    [SerializeField] private TextMeshProUGUI retryOrNextLevelText;
+    [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private string goToNextLevel;
+
+    private void Start()
+    {
+        MainHUDScreen.SetActive(true);
+        OptionsMenuScreenInGame.SetActive(false);
+        ConfirmExitScreenInGame.SetActive(false);
+        GameOverScreen.SetActive(false);
+    }
+
     private void Update()
     {
         PlayerCompletedLevel();
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !HighScoreManager.hasLevelCompleted)
+        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !highScoreManager.hasLevelCompleted)
         {
             IsGamePaused = true;
             Time.timeScale = 0f;
@@ -26,6 +41,24 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             MainHUDScreen.SetActive(true);
             OptionsMenuScreenInGame.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// If the Player won, show the "You Won" Text and the "Next Level" Button-Text.
+    /// If the Player lost, show the "You Lost" Text and the "Retry Level" Button-Text
+    /// </summary>
+    private void GameOverText()
+    {
+        if (!playerHealth.IsDead())
+        {
+            gameOverTextMessage.text = "You Won!!";
+            retryOrNextLevelText.text = "Next Level";
+        }
+        else
+        {
+            gameOverTextMessage.text = "You Lost!!";
+            retryOrNextLevelText.text = "Retry Level";
         }
     }
 
@@ -70,13 +103,30 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
+    /// This checks to see if the player won the level, then go to the Next Level.
+    /// If the player lost, Restart the current Level (On pressing the Retry/Next Level button)
+    /// </summary>
+    public void LevelButtonFunction()
+    {
+        if (!playerHealth.IsDead())
+        {
+            SceneManager.LoadScene(goToNextLevel);
+        }
+        else if (playerHealth.IsDead())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    /// <summary>
     /// When the player completes the level, as in, they won or lost, hide the MainHud and Options
     /// </summary>
     private void PlayerCompletedLevel()
     {
-        Health playerHealth = GetComponent<Health>();
-        if (playerHealth.IsDead() || HighScoreManager.hasLevelCompleted)
+        if (playerHealth.IsDead() || highScoreManager.hasLevelCompleted)
         {
+            GameOverText();
+            GameOverScreen.SetActive(true);
             MainHUDScreen.SetActive(false);
             OptionsMenuScreenInGame.SetActive(false);
         }
