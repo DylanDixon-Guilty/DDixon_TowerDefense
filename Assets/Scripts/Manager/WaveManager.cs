@@ -37,6 +37,12 @@ public class WaveManager : MonoBehaviour
     private bool hasAllWavesFinished = false;
     private int currentWaveCount = 0;
 
+    private void Awake()
+    {
+        waveStarterButton.SetActive(true);
+        EnemiesAlive = 0;
+    }
+
     void Update()
     {
         currentWaveText.text = "Current Wave: " + currentWaveCount + "/" + MaxWaveCount;

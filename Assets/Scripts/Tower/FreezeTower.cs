@@ -23,7 +23,7 @@ public class FreezeTower : Tower
         if (freezeParticlePrefab != null && IsTowerPlaced)
         {
             GameObject particleInstance = Instantiate(freezeParticlePrefab, FiringPoint.position, Quaternion.identity);
-            Collider[] enemyColliders = Physics.OverlapSphere(transform.position, BlastRadius);
+            Collider[] enemyColliders = Physics.OverlapSphere(FiringPoint.position, BlastRadius);
             foreach (Collider nearbyEnemies in enemyColliders)
             {
                 Enemy enemy = nearbyEnemies.GetComponent<Enemy>();
@@ -57,6 +57,9 @@ public class FreezeTower : Tower
         return closestEnemy;
     }
 
+    /// <summary>
+    /// After effectLifeTime, reset the enemy's speed and turn the particlePrefab off
+    /// </summary>
     IEnumerator DespawnProjectile(GameObject particlePrefab)
     {
         yield return new WaitForSeconds(effectLifeTime);
