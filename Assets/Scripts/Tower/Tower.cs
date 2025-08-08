@@ -6,7 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(SphereCollider))]
 public abstract class Tower : MonoBehaviour
 {
-    public bool IsTowerPlaced;
+    public bool IsTowerPlaced = false;
     public float FireCooldown = 1.0f;
     public int TowerCost; //The cost of Tower
     public Transform TowerBase; // Where the base of the Tower rotate

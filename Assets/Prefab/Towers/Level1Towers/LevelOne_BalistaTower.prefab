@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520ffacc828c775418d683f718bba1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsTowerPlaced: 1
+  IsTowerPlaced: 0
   FireCooldown: 1.5
   TowerCost: 70
   TowerBase: {fileID: 8532529173216809423}
