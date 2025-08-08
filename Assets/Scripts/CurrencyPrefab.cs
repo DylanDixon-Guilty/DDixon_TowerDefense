@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Currency : MonoBehaviour
+public class CurrencyPrefab : MonoBehaviour
 {
     public float Force = 100f;
     public float LifeTime = 1f;
