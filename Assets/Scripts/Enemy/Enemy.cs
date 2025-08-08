@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
         if(CurrentHealth <= 0)
         {
             Instantiate(blueGoldCurrecy, transform.position, transform.rotation);
-            CurrencyManager.Currency += CurrencyValue;
+            CurrencyManager.CurrentCurrency += CurrencyValue;
             WaveManager.EnemiesAlive--; //When an enemy dies, subtract this int by 1
             Destroy(gameObject);
         }

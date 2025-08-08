@@ -10214,7 +10214,7 @@ MonoBehaviour:
         m_MethodName: StartPlacingTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 9016895572901006197, guid: 640932db0352dc44a83f57eb4d12ff2e, type: 3}
+          m_ObjectArgument: {fileID: 3894615974786002706, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

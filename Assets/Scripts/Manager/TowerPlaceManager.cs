@@ -10,6 +10,7 @@ public class TowerPlaceManager : MonoBehaviour
     [SerializeField] private bool isTileSelected;
     [SerializeField] private float towerPlacementHeightOffset = 0.2f;
     [SerializeField] private bool isPlacingTower = false;
+    private Tower tower;
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
     private Vector3 towerPlacementPosition;
@@ -55,7 +56,13 @@ public class TowerPlaceManager : MonoBehaviour
         {
             isPlacingTower = true;
             currentTowerPrefabToSpawn = towerPreview;
-            if(this.towerPreview != null)
+            tower = towerPreview.GetComponent<Tower>();
+            tower.IsTowerPlaced = true;
+            if(tower.TowerCost <= CurrencyManager.CurrentCurrency)
+            {
+                TowerPurchased(tower.TowerCost);
+            }
+            if (this.towerPreview == null)
             {
                 Destroy(this.towerPreview);
             }
@@ -75,14 +82,11 @@ public class TowerPlaceManager : MonoBehaviour
             Destroy(towerPreview);
             currentTowerPrefabToSpawn = null;
             isPlacingTower = false;
-            Tower tower = towerInstance.GetComponent<Tower>();
-            tower.IsTowerPlaced = true;
-            TowerPurchased(tower.TowerCost);
         }
     }
 
     private void TowerPurchased(int cost)
     {
-        CurrencyManager.Currency -= cost;
+        CurrencyManager.CurrentCurrency -= cost;
     }
 }
