@@ -5,9 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set;}
     public bool hasLevelCompleted = false;
-    HighScoreManager highScoreManager;
-
     public Health playerHealth;
+
+    private HighScoreManager highScoreManager;
 
     void Start()
     {
