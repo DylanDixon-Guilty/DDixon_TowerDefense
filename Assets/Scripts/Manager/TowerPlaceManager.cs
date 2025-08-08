@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,8 +10,10 @@ public class TowerPlaceManager : MonoBehaviour
     public InputAction PlaceTowerAction;
 
     [SerializeField] private bool isTileSelected;
-    [SerializeField] private float towerPlacementHeightOffset = 0.2f;
     [SerializeField] private bool isPlacingTower = false;
+    [SerializeField] private GameObject NotEnoughCurrencyText;
+    [SerializeField] private float towerPlacementHeightOffset = 0.2f;
+    private float lifeTime = 1.5f;
     private Tower tower;
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
@@ -72,6 +76,8 @@ public class TowerPlaceManager : MonoBehaviour
         else
         {
             isPlacingTower = false;
+            NotEnoughCurrencyText.SetActive(true);
+            StartCoroutine(HideNotEnoughCurrencyText());
         }
     }
 
@@ -93,5 +99,11 @@ public class TowerPlaceManager : MonoBehaviour
     private void TowerPurchased(int cost)
     {
         CurrencyManager.CurrentCurrency -= cost;
+    }
+
+    IEnumerator HideNotEnoughCurrencyText()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        NotEnoughCurrencyText.SetActive(false);
     }
 }
