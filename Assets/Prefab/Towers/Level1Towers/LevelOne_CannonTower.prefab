@@ -509,6 +509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeButton: {fileID: 881829297194402251}
+  upgradeButtonText: {fileID: 5040496937272583136}
+  costToUpgrade: 120
 --- !u!1 &7674230248471327144
 GameObject:
   m_ObjectHideFlags: 0

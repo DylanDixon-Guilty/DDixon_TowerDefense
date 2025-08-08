@@ -413,7 +413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6744056
+      value: 0.47580814
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.y
@@ -421,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.528776
+      value: 7.1043115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalRotation.w
@@ -525,6 +525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradeButton: {fileID: 3961311742373772216}
+  upgradeButtonText: {fileID: 4764511934461526083}
+  costToUpgrade: 140
 --- !u!1 &7370626008147720549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
