@@ -60,6 +60,7 @@ public class WaveManager : MonoBehaviour
     public void BeginWave()
     {
         StartLevel();
+        Time.timeScale = 1f;
         waveStarterButton.SetActive(false);
     }
 

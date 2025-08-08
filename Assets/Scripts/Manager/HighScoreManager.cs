@@ -9,8 +9,6 @@ public class HighScoreManager : MonoBehaviour
        For example, if they have 19 Health remaining and win, they get 3 stars
     */
 
-    public bool hasLevelCompleted = false;
-
     [SerializeField] private Health playerHealth;
     [SerializeField] private GameObject collectedStar01;
     [SerializeField] private GameObject collectedStar02;
@@ -33,20 +31,10 @@ public class HighScoreManager : MonoBehaviour
     }
 
     /// <summary>
-    /// When the player has completed a level, as in, either won or lost, Check the amount of Health they have 
-    /// </summary>
-    public void LevelCompleted()
-    {
-        Time.timeScale = 0f;
-        hasLevelCompleted = true;
-        CheckPlayerHealth();
-    }
-
-    /// <summary>
     /// Based on the amount of Health the player has, show Stars accordingly, give no stars if player loses.
     /// Also, show the GameOverScreen
     /// </summary>
-    private void CheckPlayerHealth()
+    public void StarsAwarded()
     {
         int currentHealth = playerHealth.CurrentHealth;
 
