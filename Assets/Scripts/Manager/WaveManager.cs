@@ -30,7 +30,7 @@ public class WaveManager : MonoBehaviour
     public List<WaveData> LevelWaveData;
 
     [SerializeField] private GameObject waveStarterButton;
-    [SerializeField] private HighScoreManager highScoreManager;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI currentWaveText;
     private bool hasWaveFinished = false;
@@ -45,11 +45,11 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        currentWaveText.text = "Current Wave: " + currentWaveCount + "/" + MaxWaveCount;
+        currentWaveText.text = "Wave Completed: " + currentWaveCount + "/" + MaxWaveCount;
 
-        if (hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
+        if(hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
-            highScoreManager.LevelCompleted();
+            gameManager.LevelCompleted();
             hasWaveFinished = false;
         }
     }

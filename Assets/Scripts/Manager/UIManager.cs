@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject ConfirmExitScreenInGame;
     public string BackToTitleScreen;
 
-    [SerializeField] private HighScoreManager highScoreManager;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI gameOverTextMessage;
     [SerializeField] private TextMeshProUGUI retryOrNextLevelText;
@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         PlayerCompletedLevel();
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !highScoreManager.hasLevelCompleted)
+        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !gameManager.hasLevelCompleted)
         {
             IsGamePaused = true;
             Time.timeScale = 0f;
@@ -123,7 +123,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     private void PlayerCompletedLevel()
     {
-        if (playerHealth.IsDead() || highScoreManager.hasLevelCompleted)
+        if (playerHealth.IsDead() || gameManager.hasLevelCompleted)
         {
             GameOverText();
             GameOverScreen.SetActive(true);

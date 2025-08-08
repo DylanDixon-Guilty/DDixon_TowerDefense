@@ -8187,6 +8187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab435c18409273145ab4215580096af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasLevelCompleted: 0
   playerHealth: {fileID: 1221462762}
 --- !u!114 &1221462765
 MonoBehaviour:
@@ -8204,19 +8205,19 @@ MonoBehaviour:
   LevelWaveData:
   - TimeBeforeWave: 0
     EnemyData:
-    - EnemyToSpawn: {fileID: 4287159975757113623, guid: 4e8a5d30c67f4864fa545edcc79f5a84, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 3
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
-    - EnemyToSpawn: {fileID: 4287159975757113623, guid: 4e8a5d30c67f4864fa545edcc79f5a84, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
-    - EnemyToSpawn: {fileID: 4287159975757113623, guid: 4e8a5d30c67f4864fa545edcc79f5a84, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
-    - EnemyToSpawn: {fileID: 4287159975757113623, guid: 4e8a5d30c67f4864fa545edcc79f5a84, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
@@ -8413,7 +8414,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
   waveStarterButton: {fileID: 2063963225}
-  highScoreManager: {fileID: 1221462769}
+  gameManager: {fileID: 1221462764}
   playerHealth: {fileID: 1221462762}
   currentWaveText: {fileID: 157014302}
 --- !u!114 &1221462766
@@ -8487,7 +8488,7 @@ MonoBehaviour:
   MainHUDScreen: {fileID: 1488254474}
   ConfirmExitScreenInGame: {fileID: 753516155}
   BackToTitleScreen: TitleScreen
-  highScoreManager: {fileID: 1221462769}
+  gameManager: {fileID: 1221462764}
   playerHealth: {fileID: 1221462762}
   gameOverTextMessage: {fileID: 162443917}
   retryOrNextLevelText: {fileID: 338426011}
@@ -8505,7 +8506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59ebf72f6cbf8e48b491eb6f52d1c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasLevelCompleted: 0
   playerHealth: {fileID: 1221462762}
   collectedStar01: {fileID: 2002575289}
   collectedStar02: {fileID: 616053704}

@@ -128,7 +128,7 @@ MonoBehaviour:
   IsWalkingTrue: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
-  damage: 20
+  damage: 6
   blueGoldCurrecy: {fileID: 1253193567005483939, guid: 2c7cd0d2b55caf44285d790db8577e7f, type: 3}
 --- !u!195 &4984228384252729257
 NavMeshAgent:
@@ -140,11 +140,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 10
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.1
+  m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

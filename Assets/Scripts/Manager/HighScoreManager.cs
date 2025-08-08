@@ -37,30 +37,21 @@ public class HighScoreManager : MonoBehaviour
     public void StarsAwarded()
     {
         int currentHealth = playerHealth.CurrentHealth;
+        uncollectedStar01.SetActive(true);
+        uncollectedStar02.SetActive(true);
+        uncollectedStar03.SetActive(true);
 
-        if (currentHealth >= threeStars)
+        if(currentHealth >= oneStar)
         {
             collectedStar01.SetActive(true);
-            collectedStar02.SetActive(true);
-            collectedStar03.SetActive(true);
-        }
-        else if (currentHealth >= twoStars && currentHealth < threeStars)
-        {
-            collectedStar01.SetActive(true);
-            collectedStar02.SetActive(true);
-            uncollectedStar03.SetActive(true);
-        }
-        else if (currentHealth >= oneStar && currentHealth < twoStars)
-        {
-            collectedStar01.SetActive(true);
-            uncollectedStar02.SetActive(true);
-            uncollectedStar03.SetActive(true);
-        }
-        else
-        {
-            uncollectedStar01.SetActive(true);
-            uncollectedStar02.SetActive(true);
-            uncollectedStar03.SetActive(true);
+            if(currentHealth >= twoStars)
+            {
+                collectedStar02.SetActive(true);
+                if(currentHealth >= threeStars)
+                {
+                    collectedStar03.SetActive(true);
+                }
+            }
         }
     }
 }
