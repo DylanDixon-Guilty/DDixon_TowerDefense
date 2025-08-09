@@ -14,7 +14,6 @@ public class TowerPlaceManager : MonoBehaviour
     [SerializeField] private GameObject NotEnoughCurrencyText;
     [SerializeField] private float towerPlacementHeightOffset = 0.2f;
     private float lifeTime = 1.5f;
-    private Tower tower;
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
     private Vector3 towerPlacementPosition;
@@ -60,7 +59,7 @@ public class TowerPlaceManager : MonoBehaviour
         {
             isPlacingTower = true;
             currentTowerPrefabToSpawn = towerPreview;
-            tower = towerPreview.GetComponent<Tower>();
+            Tower tower = towerPreview.GetComponent<Tower>();
             if (tower.TowerCost <= CurrencyManager.CurrentCurrency)
             {
                 TowerPurchased(tower.TowerCost);
@@ -68,14 +67,19 @@ public class TowerPlaceManager : MonoBehaviour
                 {
                     Destroy(this.towerPreview);
                 }
-                this.towerPreview = Instantiate(towerPreview);
+                else
+                {
+                    this.towerPreview = Instantiate(towerPreview);
+                }
+                
             }
-        }
-        else
-        {
-            isPlacingTower = false;
-            NotEnoughCurrencyText.SetActive(true);
-            StartCoroutine(HideNotEnoughCurrencyText());
+            else
+            {
+                isPlacingTower = false;
+                currentTowerPrefabToSpawn = null;
+                NotEnoughCurrencyText.SetActive(true);
+                StartCoroutine(HideNotEnoughCurrencyText());
+            }
         }
     }
 
