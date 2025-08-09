@@ -49,6 +49,11 @@ public class TowerUpgrade : MonoBehaviour
                     UpgradeButton.SetActive(false);
                 }
             }
+            else
+            {
+                isButtonActive = false;
+                UpgradeButton.SetActive(false);
+            }
         }
     }
 }

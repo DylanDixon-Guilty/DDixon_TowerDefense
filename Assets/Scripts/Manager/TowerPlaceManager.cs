@@ -61,16 +61,15 @@ public class TowerPlaceManager : MonoBehaviour
             isPlacingTower = true;
             currentTowerPrefabToSpawn = towerPreview;
             tower = towerPreview.GetComponent<Tower>();
-        }
-
-        if (tower.TowerCost <= CurrencyManager.CurrentCurrency)
-        {
-            TowerPurchased(tower.TowerCost);
-            if (this.towerPreview == null)
+            if (tower.TowerCost <= CurrencyManager.CurrentCurrency)
             {
-                Destroy(this.towerPreview);
+                TowerPurchased(tower.TowerCost);
+                if (this.towerPreview != null)
+                {
+                    Destroy(this.towerPreview);
+                }
+                this.towerPreview = Instantiate(towerPreview);
             }
-            this.towerPreview = Instantiate(towerPreview);
         }
         else
         {
