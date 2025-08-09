@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonMenuManager : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
     public string sceneToStartGame;
     public GameObject TitleScreen;
