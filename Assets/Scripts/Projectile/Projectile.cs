@@ -6,7 +6,8 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField] protected float speed;
     
     protected Transform target;
-    
+    protected int ProjectileDamage;
+
     protected virtual void Update()
     {
         if(target != null)

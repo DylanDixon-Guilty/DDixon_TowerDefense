@@ -6,13 +6,8 @@ public class CannonProjectile : Projectile
     public float BlastRadius = 2f;
     public GameObject ExplosionEffect;
 
-    private Rigidbody cannonRb;
-    [SerializeField] private int cannonBallDamage = 10;
+    [SerializeField] private int cannonBallDamage;
 
-    private void Awake()
-    {
-        cannonRb = GetComponent<Rigidbody>();
-    }
 
     protected override void Update()
     {

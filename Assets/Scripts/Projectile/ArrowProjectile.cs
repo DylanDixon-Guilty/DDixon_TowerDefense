@@ -3,7 +3,7 @@ using UnityEngine;
 public class ArrowProjectile : Projectile
 {
 
-    [SerializeField] private int arrowDamage = 5;
+    [SerializeField] private int arrowDamage;
 
     protected override void Update()
     {

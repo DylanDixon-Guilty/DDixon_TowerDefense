@@ -269,10 +269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTowerPlaced: 0
-  FireCooldown: 1.5
+  FireCooldown: 1.2
   TowerCost: 0
-  costToUpgrade: 0
   TowerBase: {fileID: 3687369767562245985}
   FiringPoint: {fileID: 3059256765428759263}
-  levelTwoTower: {fileID: 0}
-  projectilePrefab: {fileID: 2812957519697981869, guid: 62283e2ede6294448aaed40371b97cea, type: 3}
+  projectilePrefab: {fileID: 2812957519697981869, guid: 2cf193ad44edc7a45ac9bd089690ea27, type: 3}
