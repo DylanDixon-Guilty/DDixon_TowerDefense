@@ -87,7 +87,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GoToConfirmExitInGame()
     {
-        if(playerHealth.CurrentHealth <= 0 || gameManager.hasLevelConcluded)
+        if(gameManager.hasLevelConcluded)
         {
             isLevelConcludedButton = true;
             GameOverScreen.SetActive(false);
@@ -135,11 +135,11 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GoToTitleScreenOrExitGame()
     {
-        if(isLevelConcludedButton)
+        if(isLevelConcludedButton || !isExitingGame)
         {
             SceneManager.LoadScene(BackToTitleScreen);
         }
-        else if(isExitingGame)
+        else if(isExitingGame && !isLevelConcludedButton)
         {
             Application.Quit();
         }
@@ -149,7 +149,7 @@ public class UIManager : MonoBehaviour
     /// This checks to see if the player won the level, then go to the Next Level.
     /// If the player lost, Restart the current Level (On pressing the Retry/Next Level button)
     /// </summary>
-    public void LevelButtonFunction()
+    public void RetryOrNextLevel()
     {
         if (!playerHealth.IsDead())
         {
