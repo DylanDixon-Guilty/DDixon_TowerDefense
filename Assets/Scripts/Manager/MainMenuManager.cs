@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Awake()
     {
+        TitleScreen.SetActive(true);
         MainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         ConfirmExitScreen.SetActive(false);

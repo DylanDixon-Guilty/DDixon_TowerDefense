@@ -32,10 +32,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameObject waveStarterButton;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
-    [SerializeField] private TextMeshProUGUI currentWaveText;
+    [SerializeField] private TextMeshProUGUI wavesCompletedText;
     private bool hasWaveFinished = false;
     private bool hasAllWavesFinished = false;
-    private int currentWaveCount = 0;
+    private int wavesCompletedCount = 0;
 
     private void Awake()
     {
@@ -45,7 +45,7 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        currentWaveText.text = "Wave Completed: " + currentWaveCount + "/" + MaxWaveCount;
+        wavesCompletedText.text = "Wave Completed: " + wavesCompletedCount + "/" + MaxWaveCount;
 
         if(hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
@@ -88,7 +88,7 @@ public class WaveManager : MonoBehaviour
                     SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
                 }
                 hasWaveFinished = true;
-                currentWaveCount++;
+                wavesCompletedCount++;
             }
             hasAllWavesFinished = true;
         }

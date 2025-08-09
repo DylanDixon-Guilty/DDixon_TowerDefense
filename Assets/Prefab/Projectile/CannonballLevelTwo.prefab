@@ -69,9 +69,6 @@ PrefabInstance:
       addedObject: {fileID: 4859178660070072404}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df43de39ba9fb5e4f89cfda413660df0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5881262056308988298}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df43de39ba9fb5e4f89cfda413660df0, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6312403525328003252}
   m_SourcePrefab: {fileID: 100100000, guid: df43de39ba9fb5e4f89cfda413660df0, type: 3}
 --- !u!1 &5721344842857001821 stripped
@@ -91,37 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d21dc4a1ae27b4ea39bfdd84ba7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   BlastRadius: 4
   ExplosionEffect: {fileID: 3371569193385938658, guid: 745208c9d6e104225bd99e1ab894e3bb, type: 3}
-  cannonBallDamage: 20
---- !u!54 &-5881262056308988298
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5721344842857001821}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  cannonBallDamage: 15
 --- !u!135 &6312403525328003252
 SphereCollider:
   m_ObjectHideFlags: 0
