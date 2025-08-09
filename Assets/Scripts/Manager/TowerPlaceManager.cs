@@ -97,11 +97,17 @@ public class TowerPlaceManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Take away the amount it cost to make this Tower from the player's Currency
+    /// </summary>
     private void TowerPurchased(int cost)
     {
         CurrencyManager.CurrentCurrency -= cost;
     }
 
+    /// <summary>
+    /// To hide the NotEnoughCurrency Text after it appears 
+    /// </summary>
     IEnumerator HideNotEnoughCurrencyText()
     {
         yield return new WaitForSeconds(lifeTime);

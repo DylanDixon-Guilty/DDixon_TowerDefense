@@ -382,9 +382,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTowerPlaced: 0
   FireCooldown: 3
-  TowerCost: 100
+  TowerCost: 120
+  costToUpgrade: 0
   TowerBase: {fileID: 4415678505776199080}
   FiringPoint: {fileID: 4419743991360618787}
+  levelTwoTower: {fileID: 0}
   projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}
 --- !u!1 &6034294689849516747
 GameObject:
@@ -508,9 +510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costToUpgrade: 120
   UpgradeButton: {fileID: 881829297194402251}
   upgradeButtonText: {fileID: 5040496937272583136}
-  costToUpgrade: 120
 --- !u!1 &7674230248471327144
 GameObject:
   m_ObjectHideFlags: 0

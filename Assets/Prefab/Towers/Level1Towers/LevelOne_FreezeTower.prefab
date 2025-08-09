@@ -524,9 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costToUpgrade: 140
   UpgradeButton: {fileID: 3961311742373772216}
   upgradeButtonText: {fileID: 4764511934461526083}
-  costToUpgrade: 140
 --- !u!1 &7370626008147720549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
@@ -568,8 +568,10 @@ MonoBehaviour:
   IsTowerPlaced: 0
   FireCooldown: 2
   TowerCost: 120
+  costToUpgrade: 140
   TowerBase: {fileID: 7854957115198546911}
   FiringPoint: {fileID: 3640093086752632044}
+  levelTwoTower: {fileID: 0}
   BlastRadius: 5
   SetSpeed: 1
   freezeParticlePrefab: {fileID: 3448433993063772155, guid: c3d572e2d64be39479c380e7a62684ec, type: 3}

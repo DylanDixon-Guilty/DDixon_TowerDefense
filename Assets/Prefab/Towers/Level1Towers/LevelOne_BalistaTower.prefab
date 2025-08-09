@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8562058371421621493}
   - component: {fileID: 1531023607767922459}
   - component: {fileID: 7591859058016650029}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1531023607767922459}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4346956588427563410}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7995256467844923151
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +144,7 @@ GameObject:
   - component: {fileID: 2484194044974677339}
   - component: {fileID: 4268550113918127577}
   - component: {fileID: 1267552718143915767}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +282,7 @@ GameObject:
   - component: {fileID: 4322391261742725282}
   - component: {fileID: 5803279270342044447}
   - component: {fileID: 2301423031958656826}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,15 +425,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8324337
+      value: 2.4168093
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.101979256
+      value: 0.10197902
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.9212484
+      value: 6.169775
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -528,9 +540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costToUpgrade: 90
+  levelTwoTower: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
   UpgradeButton: {fileID: 808921044560776394}
   upgradeButtonText: {fileID: 1267552718143915767}
-  costToUpgrade: 90
 --- !u!4 &8532529173216809423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}

@@ -44,6 +44,9 @@ public abstract class Tower : MonoBehaviour
     /// </summary>
     protected abstract Enemy GetTargetEnemy();
 
+    /// <summary>
+    /// When an enemy is within range of the Tower, rotate towards said enemy
+    /// </summary>
     private void LookAtTarget()
     {
         if(IsTowerPlaced)
@@ -54,7 +57,31 @@ public abstract class Tower : MonoBehaviour
             TowerBase.rotation = Quaternion.Slerp(TowerBase.rotation, lookRotation, Time.deltaTime * 5f); // To Rotate the TowerBase smoothly.
         }
     }
-    
+
+    /// <summary>
+    /// On Pressing "Upgrade" button, and the player has enough Currency to Upgrade, Upgrade the Tower to 2
+    /// </summary>
+    public void UpgradeTower()
+    {
+        TowerUpgrade towerUpgrade = GetComponentInChildren<TowerUpgrade>();
+        if (towerUpgrade.costToUpgrade <= CurrencyManager.CurrentCurrency)
+        {
+            Destroy(gameObject);
+            TowerUpgraded(towerUpgrade.costToUpgrade);
+            GameObject towerInstance = Instantiate(towerUpgrade.levelTwoTower, transform.position, Quaternion.identity);
+            Tower tower = towerInstance.GetComponent<Tower>();
+            tower.IsTowerPlaced = true;
+        }
+    }
+
+    /// <summary>
+    /// Take away the amount it cost to upgrade this Tower from the player's Currency
+    /// </summary>
+    private void TowerUpgraded(int cost)
+    {
+        CurrencyManager.CurrentCurrency -= cost;
+    }
+
 
     /// <summary>
     /// When an Enemy is Destroyed, remove it from the list of Enemies currently in the TowerScript

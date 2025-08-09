@@ -4,10 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class TowerUpgrade : MonoBehaviour
 {
+    public int costToUpgrade; //The cost to Upgrade a Tower
+    public GameObject levelTwoTower;
 
     [SerializeField] private GameObject UpgradeButton;
     [SerializeField] private TextMeshProUGUI upgradeButtonText;
-    [SerializeField] private int costToUpgrade;
     private Tower tower;
     private bool isButtonActive = false;
     private int camRayLength = 100;
@@ -48,16 +49,6 @@ public class TowerUpgrade : MonoBehaviour
                     UpgradeButton.SetActive(false);
                 }
             }
-            else
-            {
-                isButtonActive = false;
-                UpgradeButton.SetActive(false);
-            }
         }
-    }
-
-    public void UpgradeTower()
-    {
-        
     }
 }
