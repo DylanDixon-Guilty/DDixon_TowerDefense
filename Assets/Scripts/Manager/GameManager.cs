@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set;}
-    public bool hasLevelCompleted = false;
+    public bool hasLevelConcluded = false;
     public Health playerHealth;
 
     private HighScoreManager highScoreManager;
@@ -26,11 +26,12 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// When the player has completed a level, as in, either won or lost, Check the amount of Health they have 
     /// </summary>
-    public void LevelCompleted()
+    public void LevelConcluded()
     {
         StopAllCoroutines();
+        HighScoreManager highScoreManager = GetComponentInChildren<HighScoreManager>();
         Time.timeScale = 0f;
-        hasLevelCompleted = true;
+        hasLevelConcluded = true;
         highScoreManager.StarsAwarded();
     }
 }
