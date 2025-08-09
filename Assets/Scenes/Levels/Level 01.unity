@@ -5184,6 +5184,7 @@ RectTransform:
   - {fileID: 213631175}
   - {fileID: 1596399503}
   - {fileID: 157014301}
+  - {fileID: 1646848194}
   m_Father: {fileID: 1488254475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5906,12 +5907,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2002575290}
-  - {fileID: 616053705}
-  - {fileID: 1474103371}
   - {fileID: 1846972036}
   - {fileID: 625921826}
   - {fileID: 325848903}
+  - {fileID: 2002575290}
+  - {fileID: 616053705}
+  - {fileID: 1474103371}
   m_Father: {fileID: 2029165881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6711,7 +6712,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221462768}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoToTitleScreen
+        m_MethodName: GoToTitleScreenOrExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7812,7 +7813,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221462768}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoBackToOptions
+        m_MethodName: GoBackToPreviousScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8188,7 +8189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab435c18409273145ab4215580096af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasLevelCompleted: 0
+  hasLevelConcluded: 0
   playerHealth: {fileID: 1221462762}
 --- !u!114 &1221462765
 MonoBehaviour:
@@ -8206,7 +8207,7 @@ MonoBehaviour:
   LevelWaveData:
   - TimeBeforeWave: 5
     EnemyData:
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+    - EnemyToSpawn: {fileID: 4287159975757113623, guid: 4e8a5d30c67f4864fa545edcc79f5a84, type: 3}
       TimeBeforeSpawn: 0
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
@@ -8592,7 +8593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back To Main Menu
+  m_text: Return To Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -9988,7 +9989,6 @@ RectTransform:
   - {fileID: 686393788}
   - {fileID: 1123507320}
   - {fileID: 2063963226}
-  - {fileID: 1646848194}
   m_Father: {fileID: 564129277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10762,7 +10762,7 @@ GameObject:
   - component: {fileID: 1646848196}
   - component: {fileID: 1646848195}
   m_Layer: 5
-  m_Name: NotEnoughCurrency
+  m_Name: NotEnoughCurrencyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10780,7 +10780,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1488254475}
+  m_Father: {fileID: 645006840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12495,7 +12495,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -12516,7 +12516,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1896045825}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221462768}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoToExitGameScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1896045825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13081,7 +13093,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6289307, g: 0.6289307, b: 0.6289307, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -13102,7 +13114,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2000688135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221462768}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoToConfirmExitInGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2000688135
 MonoBehaviour:
   m_ObjectHideFlags: 0

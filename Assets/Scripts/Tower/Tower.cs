@@ -59,7 +59,7 @@ public abstract class Tower : MonoBehaviour
     }
 
     /// <summary>
-    /// On Pressing "Upgrade" button, and the player has enough Currency to Upgrade, Upgrade the Tower to 2
+    /// On Pressing "Upgrade" button, and the player has enough Currency to Upgrade, Upgrade the Tower to Level 2
     /// </summary>
     public void UpgradeTower()
     {

@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI retryOrNextLevelText;
     [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private string goToNextLevel;
+    private bool isLevelConcludedButton = false;
+    private bool isExitingGame = false;
 
     private void Start()
     {
@@ -27,8 +29,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        PlayerCompletedLevel();
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !gameManager.hasLevelCompleted)
+        if (Input.GetKeyDown(KeyCode.Escape) && !IsGamePaused && !gameManager.hasLevelConcluded)
         {
             IsGamePaused = true;
             Time.timeScale = 0f;
@@ -41,6 +42,11 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             MainHUDScreen.SetActive(true);
             OptionsMenuScreenInGame.SetActive(false);
+        }
+
+        if(gameManager.hasLevelConcluded)
+        {
+            PlayerConcludedLevel();
         }
     }
 
@@ -67,7 +73,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void BackToGame()
     {
-        if (IsGamePaused)
+        if(IsGamePaused)
         {
             IsGamePaused = false;
             Time.timeScale = 1f;
@@ -77,29 +83,66 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// On Pressing "Back To Main Menu" button while in any level, go to ConfirmExitScreen
+    /// On Pressing "Return To Main Menu" button while in any level, go to ConfirmExitScreen
     /// </summary>
     public void GoToConfirmExitInGame()
     {
-        OptionsMenuScreenInGame.SetActive(false);
+        if(playerHealth.CurrentHealth <= 0 || gameManager.hasLevelConcluded)
+        {
+            isLevelConcludedButton = true;
+            GameOverScreen.SetActive(false);
+            ConfirmExitScreenInGame.SetActive(true);
+        }
+        else
+        {
+            isLevelConcludedButton = false;
+            OptionsMenuScreenInGame.SetActive(false);
+            ConfirmExitScreenInGame.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// On Pressing "Quit Game" button, go to ConfirmExitScreen
+    /// </summary>
+    public void GoToExitGameScreen()
+    {
+        isExitingGame = true;
+        GameOverScreen.SetActive(false);
         ConfirmExitScreenInGame.SetActive(true);
     }
 
     /// <summary>
-    /// On Pressing "No" button, go to Options Screen
+    /// On Pressing "No" button, go to either Options Screen or GameOverScreen
     /// </summary>
-    public void GoBackToOptions()
+    public void GoBackToPreviousScreen()
     {
-        OptionsMenuScreenInGame.SetActive(true);
-        ConfirmExitScreenInGame.SetActive(false);
+        if(isExitingGame || isLevelConcludedButton)
+        {
+            isExitingGame = false;
+            isLevelConcludedButton = false;
+            ConfirmExitScreenInGame.SetActive(false);
+            GameOverScreen.SetActive(true);
+        }
+        else
+        {
+            OptionsMenuScreenInGame.SetActive(true);
+            ConfirmExitScreenInGame.SetActive(false);
+        }
     }
 
     /// <summary>
-    /// On Pressing "Yes" button, go to TitleScreen Scene
+    /// On Pressing "Yes" button, either go to TitleScreen Scene or Exit the Game
     /// </summary>
-    public void GoToTitleScreen()
+    public void GoToTitleScreenOrExitGame()
     {
-        SceneManager.LoadScene(BackToTitleScreen);
+        if(isLevelConcludedButton)
+        {
+            SceneManager.LoadScene(BackToTitleScreen);
+        }
+        else if(isExitingGame)
+        {
+            Application.Quit();
+        }
     }
 
     /// <summary>
@@ -121,9 +164,9 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// When the player completes the level, as in, they won or lost, hide the MainHud and Options
     /// </summary>
-    private void PlayerCompletedLevel()
+    private void PlayerConcludedLevel()
     {
-        if (playerHealth.IsDead() || gameManager.hasLevelCompleted)
+        if(!isLevelConcludedButton && !isExitingGame)
         {
             GameOverText();
             GameOverScreen.SetActive(true);

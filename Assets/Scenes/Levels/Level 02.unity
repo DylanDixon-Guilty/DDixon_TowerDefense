@@ -1263,6 +1263,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111981641}
   m_CullTransparentMesh: 1
+--- !u!1 &116002558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116002559}
+  - component: {fileID: 116002561}
+  - component: {fileID: 116002560}
+  m_Layer: 5
+  m_Name: NotEnoughCurrencyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &116002559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116002558}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 696302248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 280}
+  m_SizeDelta: {x: 548.1063, y: 94.918}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &116002560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116002558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Not Enough Blue Gold!!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 60
+  m_fontSizeBase: 60
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &116002561
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116002558}
+  m_CullTransparentMesh: 1
 --- !u!1 &117800860
 GameObject:
   m_ObjectHideFlags: 0
@@ -5073,7 +5209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221529715}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoBackToOptions
+        m_MethodName: GoBackToPreviousScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6612,6 +6748,7 @@ RectTransform:
   - {fileID: 240131234}
   - {fileID: 963808713}
   - {fileID: 1799060270}
+  - {fileID: 116002559}
   m_Father: {fileID: 1705697012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -12496,7 +12633,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -12517,7 +12654,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1176546280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221529715}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoToExitGameScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1176546280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13045,7 +13194,7 @@ MonoBehaviour:
   LevelWaveData:
   - TimeBeforeWave: 5
     EnemyData:
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+    - EnemyToSpawn: {fileID: 4287159975757113623, guid: 4e8a5d30c67f4864fa545edcc79f5a84, type: 3}
       TimeBeforeSpawn: 0
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
@@ -13054,7 +13203,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13074,7 +13223,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13104,7 +13253,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -13112,7 +13261,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 0.5
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13124,13 +13273,55 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+  - TimeBeforeWave: 0
+    EnemyData:
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.8
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 0.6
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
   - TimeBeforeWave: 0
     EnemyData:
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 2
+      TimeBeforeSpawn: 3
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13149,19 +13340,19 @@ MonoBehaviour:
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 0.8
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 0.5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 0.5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
@@ -13222,7 +13413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab435c18409273145ab4215580096af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasLevelCompleted: 0
+  hasLevelConcluded: 0
   playerHealth: {fileID: 1221529711}
 --- !u!114 &1221529714
 MonoBehaviour:
@@ -13259,7 +13450,7 @@ MonoBehaviour:
     m_Flags: 0
   isTileSelected: 0
   isPlacingTower: 0
-  NotEnoughCurrencyText: {fileID: 0}
+  NotEnoughCurrencyText: {fileID: 116002558}
   towerPlacementHeightOffset: 0.1
 --- !u!114 &1221529715
 MonoBehaviour:
@@ -15454,7 +15645,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221529715}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoToTitleScreen
+        m_MethodName: GoToTitleScreenOrExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16042,7 +16233,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -16063,7 +16254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1505190653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221529715}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GoToConfirmExitInGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1505190653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19378,12 +19581,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 41091306}
-  - {fileID: 871951904}
-  - {fileID: 1392837651}
   - {fileID: 1639895535}
   - {fileID: 1366039244}
   - {fileID: 1590528158}
+  - {fileID: 41091306}
+  - {fileID: 871951904}
+  - {fileID: 1392837651}
   m_Father: {fileID: 1832042907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

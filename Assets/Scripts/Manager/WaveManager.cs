@@ -49,8 +49,8 @@ public class WaveManager : MonoBehaviour
 
         if(hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
-            gameManager.LevelCompleted();
-            hasWaveFinished = false;
+            gameManager.LevelConcluded();
+            hasWaveFinished = true;
         }
     }
 
