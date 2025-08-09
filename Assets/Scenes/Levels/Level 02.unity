@@ -3496,8 +3496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: 124}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 128}
+  m_SizeDelta: {x: -350.6569, y: -107.2152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366313706
 MonoBehaviour:
@@ -9914,7 +9914,6 @@ GameObject:
   - component: {fileID: 963808713}
   - component: {fileID: 963808716}
   - component: {fileID: 963808715}
-  - component: {fileID: 963808714}
   m_Layer: 5
   m_Name: CurrencyText
   m_TagString: Untagged
@@ -9941,22 +9940,6 @@ RectTransform:
   m_AnchoredPosition: {x: 669.86816, y: 383}
   m_SizeDelta: {x: 480.2635, y: 93.5875}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &963808714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963808712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Level01Scene: Level 01
-  Level02Scene: Level 02
-  Level03Scene: Level 03
-  Level04Scene: Level 04
 --- !u!114 &963808715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10162,7 +10145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.8, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.1715}
+  m_AnchoredPosition: {x: 0, y: -0.17150116}
   m_SizeDelta: {x: 0, y: -0.343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &973301099
@@ -13038,6 +13021,7 @@ GameObject:
   - component: {fileID: 1221529710}
   - component: {fileID: 1221529715}
   - component: {fileID: 1221529712}
+  - component: {fileID: 1221529718}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13057,8 +13041,134 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a929cecdd470154ea09012588791abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWaveCount: 5
-  LevelWaveData: []
+  MaxWaveCount: 7
+  LevelWaveData:
+  - TimeBeforeWave: 5
+    EnemyData:
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+  - TimeBeforeWave: 0
+    EnemyData:
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.8
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.6
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+  - TimeBeforeWave: 0
+    EnemyData:
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.8
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.6
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
   waveStarterButton: {fileID: 2127072744}
   gameManager: {fileID: 1221529713}
   playerHealth: {fileID: 1221529711}
@@ -13148,8 +13258,9 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isTileSelected: 0
-  towerPlacementHeightOffset: 0.1
   isPlacingTower: 0
+  NotEnoughCurrencyText: {fileID: 0}
+  towerPlacementHeightOffset: 0.1
 --- !u!114 &1221529715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13206,6 +13317,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221529718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221529709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level01Scene: Level 01
+  Level02Scene: Level 02
+  Level03Scene: Level 03
+  Level04Scene: Level 04
+  currencyScoreText: {fileID: 963808715}
 --- !u!1 &1224785397
 GameObject:
   m_ObjectHideFlags: 0
@@ -18054,8 +18182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: 124}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 128}
+  m_SizeDelta: {x: -355.0027, y: -114.8257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737716751
 MonoBehaviour:
@@ -18827,7 +18955,7 @@ GameObject:
   - component: {fileID: 1799060269}
   - component: {fileID: 1799060268}
   m_Layer: 5
-  m_Name: CurrentWaveCountText
+  m_Name: WavesCompletedCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18853,7 +18981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Wave: '
+  m_text: 'Waves Completed: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -19721,7 +19849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.1715}
+  m_AnchoredPosition: {x: 0, y: -0.17150116}
   m_SizeDelta: {x: 0, y: -0.343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854616534

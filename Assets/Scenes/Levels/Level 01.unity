@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 157014303}
   - component: {fileID: 157014302}
   m_Layer: 5
-  m_Name: CurrentWaveCountText
+  m_Name: WavesCompletedCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8138,6 +8138,7 @@ GameObject:
   - component: {fileID: 1221462765}
   - component: {fileID: 1221462768}
   - component: {fileID: 1221462769}
+  - component: {fileID: 1221462770}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8206,7 +8207,7 @@ MonoBehaviour:
   - TimeBeforeWave: 5
     EnemyData:
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 3
+      TimeBeforeSpawn: 0
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -8517,6 +8518,23 @@ MonoBehaviour:
   threeStars: 18
   twoStars: 10
   oneStar: 9
+--- !u!114 &1221462770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221462761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level01Scene: Level 01
+  Level02Scene: Level 02
+  Level03Scene: Level 03
+  Level04Scene: Level 04
+  currencyScoreText: {fileID: 1596399504}
 --- !u!1 &1241743517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10483,7 +10501,6 @@ GameObject:
   - component: {fileID: 1596399503}
   - component: {fileID: 1596399505}
   - component: {fileID: 1596399504}
-  - component: {fileID: 1596399506}
   m_Layer: 5
   m_Name: CurrencyText
   m_TagString: Untagged
@@ -10609,22 +10626,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596399502}
   m_CullTransparentMesh: 1
---- !u!114 &1596399506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1596399502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Level01Scene: Level 01
-  Level02Scene: Level 02
-  Level03Scene: Level 03
-  Level04Scene: Level 04
 --- !u!1001 &1600164528
 PrefabInstance:
   m_ObjectHideFlags: 0

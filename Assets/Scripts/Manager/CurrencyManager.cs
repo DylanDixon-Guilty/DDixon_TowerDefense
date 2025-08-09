@@ -10,11 +10,10 @@ public class CurrencyManager : MonoBehaviour
     public string Level03Scene;
     public string Level04Scene;
 
-    private TextMeshProUGUI currencyScoreText;
+    [SerializeField] private TextMeshProUGUI currencyScoreText;
 
     void Awake()
     {
-        currencyScoreText = GetComponent<TextMeshProUGUI>();
         Scene currentScene = SceneManager.GetActiveScene();
 
         if(currentScene.name == Level01Scene)
@@ -23,7 +22,7 @@ public class CurrencyManager : MonoBehaviour
         }
         else if(currentScene.name == Level02Scene)
         {
-            CurrentCurrency = 0;
+            CurrentCurrency = 250;
         }
         else if(currentScene.name == Level03Scene)
         {
