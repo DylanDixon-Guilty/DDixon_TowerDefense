@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  BlastRadius: 3
+  BlastRadius: 4
   ExplosionEffect: {fileID: 3371569193385938658, guid: 745208c9d6e104225bd99e1ab894e3bb, type: 3}
-  cannonBallDamage: 15
+  cannonBallDamage: 20
 --- !u!54 &-5881262056308988298
 Rigidbody:
   m_ObjectHideFlags: 0
