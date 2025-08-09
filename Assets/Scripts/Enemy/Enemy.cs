@@ -85,6 +85,7 @@ public class Enemy : MonoBehaviour
     {
         animator.SetBool(animatorParamIsWalking, false);
         GameManager.instance.playerHealth.TakeDamage(damage);
+        WaveManager.EnemiesAlive--;
         Destroy(gameObject);
     }
 }
