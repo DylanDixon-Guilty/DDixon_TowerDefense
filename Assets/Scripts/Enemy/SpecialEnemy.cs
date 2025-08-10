@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class SpecialEnemy : MonoBehaviour
 {
-    public Material Blue;
-
+    [SerializeField] private Material Blue;
     [SerializeField] private float effectLifeTime;
     [SerializeField] private int disableTowerBlastRadius;
     [SerializeField] private int enableTowerBlastRadius;
@@ -17,6 +16,10 @@ public class SpecialEnemy : MonoBehaviour
         DisableNearbyTowers();
     }
 
+    /// <summary>
+    /// When the TankEnemy gets hit, it will disable any Tower within a 1f Radius and turn them blue.
+    /// The Freeze Tower intentionally does not proc this effect
+    /// </summary>
     private void DisableNearbyTowers()
     {
         Enemy enemy = GetComponent<Enemy>();
@@ -42,6 +45,10 @@ public class SpecialEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The time that a Tower stays disable, after that time has elapsed, Renable the Tower.
+    /// Also, turn it back to its original material
+    /// </summary>
     IEnumerator DisableTowerTimer()
     {
         yield return new WaitForSeconds(effectLifeTime);

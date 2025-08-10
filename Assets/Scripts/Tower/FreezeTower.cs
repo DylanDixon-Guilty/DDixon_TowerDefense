@@ -4,12 +4,12 @@ using UnityEngine.AI;
 
 public class FreezeTower : Tower
 {
-    public float FreezeBlastRadius = 3f;
-    public float UnFreezeBlastRadius = 6f;
-    public float SetSpeed = 1f;
 
     [SerializeField] private GameObject freezeParticlePrefab;
     [SerializeField] private float effectLifeTime;
+    [SerializeField] private float FreezeBlastRadius;
+    [SerializeField] private float UnFreezeBlastRadius;
+    [SerializeField] private float ReduceSpeed;
 
     protected override void Update()
     {
@@ -17,7 +17,7 @@ public class FreezeTower : Tower
     }
 
     /// <summary>
-    /// Fires a freeze particle effect that then find any enemy colliders within the BlastRadius and reduces all enemies' speed
+    /// Fires a freeze particle effect that then finds any enemy colliders within the BlastRadius and reduces all enemies' speed
     /// </summary>
     protected override void FireAt(Enemy target)
     {
@@ -30,7 +30,7 @@ public class FreezeTower : Tower
                 Enemy enemy = nearbyEnemies.GetComponent<Enemy>();
                 if (enemy != null)
                 {
-                    enemy.GetComponent<NavMeshAgent>().speed = SetSpeed;
+                    enemy.GetComponent<NavMeshAgent>().speed -= ReduceSpeed;
                 }
             }
             StartCoroutine(ResetEnemySpeed(particleInstance));
@@ -59,7 +59,7 @@ public class FreezeTower : Tower
     }
 
     /// <summary>
-    /// After effectLifeTime, reset the enemy's speed and turn the particlePrefab off
+    /// After effectLifeTime ends, reset the enemy's speed and destroy the particlePrefab
     /// </summary>
     IEnumerator ResetEnemySpeed(GameObject particlePrefab)
     {

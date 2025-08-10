@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class CannonProjectile : Projectile
 {
-    public float BlastRadius = 2f;
     public GameObject ExplosionEffect;
 
     [SerializeField] private int cannonBallDamage;
-
+    [SerializeField] private float BlastRadius;
 
     protected override void Update()
     {
@@ -28,7 +27,7 @@ public class CannonProjectile : Projectile
     }
 
     /// <summary>
-    /// When the cannon ball hits an Enemy, it will find any colliders within a 2f(BlastRadius) radius.
+    /// When the cannon ball hits an Enemy, it will find any colliders within the (BlastRadius) radius.
     /// Then damage all Enemies in that radius
     /// </summary>
     protected void Explode()

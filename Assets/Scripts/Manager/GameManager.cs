@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
     public bool hasLevelConcluded = false;
     public Health playerHealth;
 
-    private HighScoreManager highScoreManager;
-
     void Start()
     {
         if (instance == null)
@@ -29,7 +27,7 @@ public class GameManager : MonoBehaviour
     public void LevelConcluded()
     {
         StopAllCoroutines();
-        HighScoreManager highScoreManager = GetComponentInChildren<HighScoreManager>();
+        HighScoreManager highScoreManager = GetComponent<HighScoreManager>();
         Time.timeScale = 0f;
         hasLevelConcluded = true;
         highScoreManager.StarsAwarded();

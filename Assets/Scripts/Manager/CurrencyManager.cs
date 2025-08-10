@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 public class CurrencyManager : MonoBehaviour
 {
     public static int CurrentCurrency;
-    public string Level01Scene;
-    public string Level02Scene;
-    public string Level03Scene;
-    public string Level04Scene;
 
     [SerializeField] private TextMeshProUGUI currencyScoreText;
+    [SerializeField] private string Level01Scene;
+    [SerializeField] private string Level02Scene;
+    [SerializeField] private string Level03Scene;
+    [SerializeField] private string Level04Scene;
 
     void Awake()
     {

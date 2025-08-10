@@ -9,9 +9,9 @@ public abstract class Tower : MonoBehaviour
     public bool IsTowerPlaced = false;
     public float FireCooldown = 1.0f;
     public int TowerCost; //The cost of Tower
-    public Transform TowerBase; // Where the base of the Tower rotate
-    public Transform FiringPoint; // Where the projectile will fire
 
+    [SerializeField] protected Transform TowerBase; // Where the base of the Tower rotate
+    [SerializeField] protected Transform FiringPoint; // Where the projectile will fire
     protected Enemy currentEnemy;
     protected float currentFireCooldown = 1.0f;
     protected List<Enemy> enemiesInRange = new List<Enemy>();
@@ -34,7 +34,8 @@ public abstract class Tower : MonoBehaviour
 
     /// <summary>
     /// Used to Instantiate an ProjectilePrefab and send it to the corresponding Enemy.
-    /// In both the Balista and Cannon Tower Scripts
+    /// In both the Balista and Cannon Tower Scripts.
+    /// For the Freeze Tower, it spawns a Particle Effect instead
     /// </summary>
     protected abstract void FireAt(Enemy target);
 

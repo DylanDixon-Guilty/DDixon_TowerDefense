@@ -3,19 +3,17 @@ using UnityEngine.Audio;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
-public class SoundSliderMenu : MonoBehaviour
+public class SoundSliderManager : MonoBehaviour
 {
-    public AudioSource audioPlayer;
-    public AudioClip soundEffectClip;
-
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider soundEffectSlider;
     [SerializeField] private Slider musicSlider;
-
-    private string masterVolume = "MasterVolume";
-    private string musicVolume = "MusicVolume";
-    private string soundEffectVolume = "SoundEffectVolume";
+    [SerializeField] private AudioSource audioPlayer;
+    [SerializeField] private AudioClip soundEffectClip; // This for the TitleScreen only, to the volume of the SoundEffect
+    private const string masterVolume = "MasterVolume";
+    private const string musicVolume = "MusicVolume";
+    private const string soundEffectVolume = "SoundEffectVolume";
     private const string masterVolumeKey = "MasterVolumeKey"; //Key-word to save to PlayerPrefs
     private const string musicVolumeKey = "MusicVolumeKey";
     private const string soundEffectVolumeKey = "SoundEffectVolumeKey";
@@ -77,7 +75,7 @@ public class SoundSliderMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// On Pressing "Check Sound" button, play SoundEffect
+    /// On Pressing "Check Sound" button, play SoundEffect (In TitleScreen only)
     /// </summary>
     public void CheckSoundEffect()
     {

@@ -11,7 +11,7 @@ public class TowerUpgrade : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgradeButtonText;
     private Tower tower;
     private BoxCollider buttonBoxCollider;
-    private BoxCollider TowerboxCollider;
+    private BoxCollider towerboxCollider;
     private bool isButtonActive = false;
     private int camRayLength = 100;
     private int layerMask11 = 11;
@@ -19,12 +19,11 @@ public class TowerUpgrade : MonoBehaviour
     private void Start()
     {
         tower = GetComponentInParent<Tower>();
-        TowerboxCollider = GetComponent<BoxCollider>();
+        towerboxCollider = GetComponent<BoxCollider>();
         buttonBoxCollider = GetComponentInChildren<BoxCollider>();
         UpgradeButton.SetActive(false);
     }
 
-    
     private void Update()
     {
         upgradeButtonText.text = "Upgrade: " + costToUpgrade;
@@ -33,7 +32,8 @@ public class TowerUpgrade : MonoBehaviour
 
     /// <summary>
     /// When the mouse button is pressed, look for the 11th layer mask.
-    /// Then if that is true, show the Upgrade button above the Tower selected
+    /// Then if the mouse is on an object with the 11th layer and hits the Tower's Box Collider, show the Upgrade button above the Tower selected.
+    /// If the mouse is on the 11th layer and hits the UpgradeButton's Box Collider, upgrade the Tower (if they have enough Currency)
     /// </summary>
     private void UpgradeButtonVisible()
     {
@@ -44,12 +44,12 @@ public class TowerUpgrade : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hitInfo, camRayLength, layerMask))
             {
-                if (hitInfo.collider == TowerboxCollider && !isButtonActive)
+                if (hitInfo.collider == towerboxCollider && !isButtonActive)
                 {
                     isButtonActive = true;
                     UpgradeButton.SetActive(true);
                 }
-                else if (hitInfo.collider == TowerboxCollider && isButtonActive)
+                else if (hitInfo.collider == towerboxCollider && isButtonActive)
                 {
                     isButtonActive = false;
                     UpgradeButton.SetActive(false);

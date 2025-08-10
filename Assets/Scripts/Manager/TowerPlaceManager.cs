@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 public class TowerPlaceManager : MonoBehaviour
 {
-    public Camera MainCamera;
-    public LayerMask TileLayer;
-    public InputAction PlaceTowerAction;
-
     [SerializeField] private bool isTileSelected;
     [SerializeField] private bool isPlacingTower = false;
     [SerializeField] private GameObject NotEnoughCurrencyText;
-    [SerializeField] private float towerPlacementHeightOffset = 0.2f;
+    [SerializeField] private float towerPlacementHeightOffset;
+    [SerializeField] private InputAction PlaceTowerAction;
+    [SerializeField] Camera MainCamera;
+    [SerializeField] LayerMask TileLayer;
     private float lifeTime = 1.5f;
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;

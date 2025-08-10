@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public string sceneToStartGame;
-    public GameObject TitleScreen;
-    public GameObject MainMenu;
-    public GameObject OptionsMenu;
-    public GameObject ConfirmExitScreen;
+    [SerializeField] private string sceneToStartGame;
+    [SerializeField] private GameObject TitleScreen;
+    [SerializeField] private GameObject MainMenu;
+    [SerializeField] private GameObject OptionsMenu;
+    [SerializeField] private GameObject ConfirmExitScreen;
 
     private void Awake()
     {

@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
     public GameObject OptionsMenuScreenInGame;
     public GameObject MainHUDScreen;
     public GameObject ConfirmExitScreenInGame;
-    public string BackToTitleScreen;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
@@ -16,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI retryOrNextLevelText;
     [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private string goToNextLevel;
+    [SerializeField] private string BackToTitleScreen;
     private bool isLevelConcludedButton = false;
     private bool isExitingGame = false;
 

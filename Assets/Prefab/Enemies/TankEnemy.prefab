@@ -127,7 +127,7 @@ MonoBehaviour:
   MaxHealth: 30
   CurrentHealth: 0
   CurrencyValue: 50
-  ResetSpeed: 2
+  ResetSpeed: 3
   IsWalkingTrue: 0
   HasTakenDamage: 0
   endPoint: {fileID: 0}
@@ -144,7 +144,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -242,5 +242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blue: {fileID: 2100000, guid: 0920840f3be35644aa14a825fdfd5dd2, type: 2}
   effectLifeTime: 1
+  timerToDisableTower: 3
   disableTowerBlastRadius: 1
-  enableTowerBlastRadius: 6
+  enableTowerBlastRadius: 10

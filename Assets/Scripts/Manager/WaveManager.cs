@@ -33,7 +33,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI wavesCompletedText;
-    private bool hasWaveFinished = false;
     private bool hasAllWavesFinished = false;
     private int wavesCompletedCount = 0;
 
@@ -50,7 +49,6 @@ public class WaveManager : MonoBehaviour
         if(hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
             gameManager.LevelConcluded();
-            hasWaveFinished = true;
         }
     }
 
@@ -65,7 +63,7 @@ public class WaveManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Time before the Wave starts
+    /// Called in BeginWave to start spawning in enemies
     /// </summary>
     public void StartLevel()
     {
@@ -77,21 +75,18 @@ public class WaveManager : MonoBehaviour
     /// </summary>
     IEnumerator WaveStarted()
     {
-        if(!hasWaveFinished)
+        foreach (WaveData currentWave in LevelWaveData)
         {
-            foreach (WaveData currentWave in LevelWaveData)
+            yield return new WaitForSeconds(currentWave.TimeBeforeWave);
+            foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
             {
-                yield return new WaitForSeconds(currentWave.TimeBeforeWave);
-                foreach (SpawnData currentEnemyToSpawn in currentWave.EnemyData)
-                {
-                    yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
-                    SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
-                }
-                hasWaveFinished = true;
-                wavesCompletedCount++;
+                yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
+                SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
             }
-            hasAllWavesFinished = true;
+            
+            wavesCompletedCount++;
         }
+        hasAllWavesFinished = true;
     }
 
     /// <summary>

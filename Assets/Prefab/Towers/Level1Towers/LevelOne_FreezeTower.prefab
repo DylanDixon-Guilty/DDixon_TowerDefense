@@ -571,10 +571,11 @@ MonoBehaviour:
   TowerCost: 120
   TowerBase: {fileID: 7854957115198546911}
   FiringPoint: {fileID: 3640093086752632044}
-  BlastRadius: 5
-  SetSpeed: 1
   freezeParticlePrefab: {fileID: 3448433993063772155, guid: c3d572e2d64be39479c380e7a62684ec, type: 3}
   effectLifeTime: 2
+  FreezeBlastRadius: 2
+  UnFreezeBlastRadius: 8
+  ReduceSpeed: 1
 --- !u!4 &7854957115198546911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}

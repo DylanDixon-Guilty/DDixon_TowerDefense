@@ -5,7 +5,6 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Health health;
     [SerializeField] private Image healthBar;
-
     
     void Start()
     {

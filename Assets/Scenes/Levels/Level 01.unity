@@ -7958,7 +7958,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -7966,7 +7966,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 6298967090232556422}
       EndPoint: {fileID: 5747985556865377973}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -8214,12 +8214,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22aeea223718f47438fc21674375d4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioPlayer: {fileID: 1050737138}
-  soundEffectClip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
   audioMixer: {fileID: 24100000, guid: 95b544d8f889d1a46b8a6d26a9151f71, type: 2}
   masterSlider: {fileID: 316021375}
   soundEffectSlider: {fileID: 1978979930}
   musicSlider: {fileID: 1001674864}
+  audioPlayer: {fileID: 1050737138}
+  soundEffectClip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
 --- !u!114 &1221462768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8236,13 +8236,13 @@ MonoBehaviour:
   OptionsMenuScreenInGame: {fileID: 1867000602}
   MainHUDScreen: {fileID: 1488254474}
   ConfirmExitScreenInGame: {fileID: 753516155}
-  BackToTitleScreen: TitleScreen
   gameManager: {fileID: 1221462764}
   playerHealth: {fileID: 1221462762}
   gameOverTextMessage: {fileID: 162443917}
   retryOrNextLevelText: {fileID: 338426011}
   GameOverScreen: {fileID: 2029165880}
   goToNextLevel: Level 02
+  BackToTitleScreen: TitleScreen
 --- !u!114 &1221462769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13646,7 +13646,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221462768}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: LevelButtonFunction
+        m_MethodName: RetryOrNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

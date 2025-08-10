@@ -62,7 +62,6 @@ public class Enemy : MonoBehaviour
         {
             CurrentHealth = Mathf.Max(CurrentHealth - damageAmount, 0);
             HasTakenDamage = true;
-            Debug.Log($"Current Enemy Health: {CurrentHealth}");
         }
     }
 

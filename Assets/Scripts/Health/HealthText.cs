@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class HealthText : MonoBehaviour
 {
-
     [SerializeField] private Health health;
     [SerializeField] private TextMeshProUGUI healthText;
 
