@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,7 +17,7 @@ public class TowerPlaceManager : MonoBehaviour
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
     private Vector3 towerPlacementPosition;
-    
+
     void Update()
     {
         if(isPlacingTower)
@@ -58,10 +59,11 @@ public class TowerPlaceManager : MonoBehaviour
         {
             isPlacingTower = true;
             currentTowerPrefabToSpawn = towerPreview;
+            CurrencyManager currencyManager = GetComponent<CurrencyManager>();
             Tower tower = towerPreview.GetComponent<Tower>();
             if (tower.TowerCost <= CurrencyManager.CurrentCurrency)
             {
-                TowerPurchased(tower.TowerCost);
+                currencyManager.CurrencySpent(tower.TowerCost);
                 if (this.towerPreview != null)
                 {
                     Destroy(this.towerPreview);
@@ -70,7 +72,6 @@ public class TowerPlaceManager : MonoBehaviour
                 {
                     this.towerPreview = Instantiate(towerPreview);
                 }
-                
             }
             else
             {
@@ -97,14 +98,6 @@ public class TowerPlaceManager : MonoBehaviour
             Tower tower = towerInstance.GetComponent<Tower>();
             tower.IsTowerPlaced = true;
         }
-    }
-
-    /// <summary>
-    /// Take away the amount it cost to make this Tower from the player's Currency
-    /// </summary>
-    private void TowerPurchased(int cost)
-    {
-        CurrencyManager.CurrentCurrency -= cost;
     }
 
     /// <summary>

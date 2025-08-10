@@ -44,7 +44,7 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        wavesCompletedText.text = "Wave Completed: " + wavesCompletedCount + "/" + MaxWaveCount;
+        wavesCompletedText.text = "Waves Completed: " + wavesCompletedCount + "/" + MaxWaveCount;
 
         if(hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
@@ -83,7 +83,6 @@ public class WaveManager : MonoBehaviour
                 yield return new WaitForSeconds(currentEnemyToSpawn.TimeBeforeSpawn);
                 SpawnEnemy(currentEnemyToSpawn.EnemyToSpawn, currentEnemyToSpawn.SpawnPoint, currentEnemyToSpawn.EndPoint);
             }
-            
             wavesCompletedCount++;
         }
         hasAllWavesFinished = true;

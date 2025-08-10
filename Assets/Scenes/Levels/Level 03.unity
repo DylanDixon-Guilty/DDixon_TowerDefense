@@ -607,8 +607,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxWaveCount: 8
   LevelWaveData:
-  - TimeBeforeWave: 0
-    EnemyData: []
+  - TimeBeforeWave: 5
+    EnemyData:
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0
+      SpawnPoint: {fileID: 1036440962}
+      EndPoint: {fileID: 683844325}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1036440962}
+      EndPoint: {fileID: 683844325}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1036440962}
+      EndPoint: {fileID: 683844325}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1036440962}
+      EndPoint: {fileID: 683844325}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1036440962}
+      EndPoint: {fileID: 683844325}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 3
+      SpawnPoint: {fileID: 525814291}
+      EndPoint: {fileID: 1097654823}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 525814291}
+      EndPoint: {fileID: 1097654823}
   - TimeBeforeWave: 0
     EnemyData: []
   - TimeBeforeWave: 0

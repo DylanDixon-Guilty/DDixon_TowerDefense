@@ -6,12 +6,7 @@ public class HealthText : MonoBehaviour
     [SerializeField] private Health health;
     [SerializeField] private TextMeshProUGUI healthText;
 
-    private void Awake()
-    {
-        healthText = GetComponent<TextMeshProUGUI>();
-    }
-
-    void Start()
+    private void Start()
     {
         if (healthText != null)
         {
@@ -22,7 +17,7 @@ public class HealthText : MonoBehaviour
     /// <summary>
     /// Reduce the number on the healthText by the damage the Enemy does
     /// </summary>
-    void UpdateHealthText(int currentHealth, int maxHealth)
+    private void UpdateHealthText(int currentHealth, int maxHealth)
     {
         healthText.text = "Health: " + currentHealth.ToString();
     }

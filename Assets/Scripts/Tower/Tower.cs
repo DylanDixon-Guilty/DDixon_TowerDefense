@@ -65,24 +65,16 @@ public abstract class Tower : MonoBehaviour
     public void UpgradeTower()
     {
         TowerUpgrade towerUpgrade = GetComponentInChildren<TowerUpgrade>();
+        CurrencyManager currencyManager = GetComponent<CurrencyManager>();
         if(towerUpgrade.costToUpgrade <= CurrencyManager.CurrentCurrency)
         {
-            TowerUpgraded(towerUpgrade.costToUpgrade);
+            currencyManager.CurrencySpent(towerUpgrade.costToUpgrade);
             GameObject towerInstance = Instantiate(towerUpgrade.levelTwoTower, transform.position, Quaternion.identity);
             Tower tower = towerInstance.GetComponent<Tower>();
             tower.IsTowerPlaced = true;
             Destroy(gameObject);
         }
     }
-
-    /// <summary>
-    /// Take away the amount it cost to upgrade this Tower from the player's Currency
-    /// </summary>
-    private void TowerUpgraded(int cost)
-    {
-        CurrencyManager.CurrentCurrency -= cost;
-    }
-
 
     /// <summary>
     /// When an Enemy is Destroyed, remove it from the list of Enemies currently in the TowerScript
