@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1633386437484241232}
+  - component: {fileID: 8229565348769715549}
+  - component: {fileID: 7250203032491195296}
   m_Layer: 0
   m_Name: LevelTwoTower_Cannon
   m_TagString: Untagged
@@ -33,6 +35,45 @@ Transform:
   - {fileID: 27392584051865347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8229565348769715549
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663199002350008952}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 960
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7250203032491195296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663199002350008952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7186dd94a1a872745972af5eb6dbf320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTowerPlaced: 0
+  FireCooldown: 2
+  TowerCost: 0
+  TowerBase: {fileID: 5693825746969371121}
+  FiringPoint: {fileID: 5698524483606582650}
+  projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}
 --- !u!1001 &570804956955234536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,10 +233,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7117543780299453970, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9092844199811923963}
-    - target: {fileID: 7117543780299453970, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -218,6 +255,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7762871869389843978, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
     - {fileID: 238303302667265026, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
+    - {fileID: -8326194795797435486, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
+    - {fileID: 2895668361929032664, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8498293026453355551, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
     m_AddedGameObjects: []
@@ -228,14 +267,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4415678505776199080, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
   m_PrefabInstance: {fileID: 8233473391198934105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9092844199811923963 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8326194795797435486, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
+--- !u!4 &5698524483606582650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4419743991360618787, guid: dfe91b33ad65ed54184abc57922e6f7e, type: 3}
   m_PrefabInstance: {fileID: 8233473391198934105}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7186dd94a1a872745972af5eb6dbf320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

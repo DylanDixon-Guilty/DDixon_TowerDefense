@@ -35,7 +35,7 @@ public class TowerUpgrade : MonoBehaviour
     /// When the mouse button is pressed, look for the 11th layer mask.
     /// Then if that is true, show the Upgrade button above the Tower selected
     /// </summary>
-    private void UpgradeButtonVisible() //TODO: fix bug of not being able to click Button
+    private void UpgradeButtonVisible()
     {
         if (Input.GetMouseButtonDown(0))
         {
