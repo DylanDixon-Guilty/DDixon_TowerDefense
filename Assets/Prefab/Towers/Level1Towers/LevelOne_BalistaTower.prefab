@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8562058371421621493}
   - component: {fileID: 1531023607767922459}
   - component: {fileID: 7591859058016650029}
+  - component: {fileID: 266853971337470956}
   m_Layer: 11
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -133,6 +134,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &266853971337470956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808921044560776394}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7995256467844923151
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4168093
+      value: 4.7945457
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -433,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.169775
+      value: 7.798097
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -497,17 +519,17 @@ PrefabInstance:
       addedObject: {fileID: 4346956588427563410}
     - targetCorrespondingSourceObject: {fileID: 6635428092505703782, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8532072394212229605}
+      addedObject: {fileID: 624573720343726258}
     - targetCorrespondingSourceObject: {fileID: 6635428092505703782, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6568633074698682609}
+      addedObject: {fileID: 7942650280181413892}
   m_SourcePrefab: {fileID: 100100000, guid: 8747081244be5594591729a6332c9fe2, type: 3}
 --- !u!1 &3312078528676164418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6635428092505703782, guid: 8747081244be5594591729a6332c9fe2, type: 3}
   m_PrefabInstance: {fileID: 8206433105721144868}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8532072394212229605
+--- !u!65 &624573720343726258
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -526,9 +548,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.902259, y: 0.62058413, z: 0.9674512}
-  m_Center: {x: 0.000073075294, y: 0.31029207, z: 0.04822983}
---- !u!114 &6568633074698682609
+  m_Size: {x: 0.9387642, y: 0.66807187, z: 0.89700377}
+  m_Center: {x: 0.0029094815, y: 0.33403593, z: 0.046134233}
+--- !u!114 &7942650280181413892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

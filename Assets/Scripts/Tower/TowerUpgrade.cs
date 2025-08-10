@@ -40,21 +40,21 @@ public class TowerUpgrade : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             int layerMask = 1 << layerMask11;
-            RaycastHit hitCollider;
+            RaycastHit hitInfo;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hitCollider, camRayLength, layerMask))
+            if (Physics.Raycast(ray, out hitInfo, camRayLength, layerMask))
             {
-                if (hitCollider.collider == TowerboxCollider && !isButtonActive)
+                if (hitInfo.collider == TowerboxCollider && !isButtonActive)
                 {
                     isButtonActive = true;
                     UpgradeButton.SetActive(true);
                 }
-                else if (hitCollider.collider == TowerboxCollider && isButtonActive)
+                else if (hitInfo.collider == TowerboxCollider && isButtonActive)
                 {
                     isButtonActive = false;
                     UpgradeButton.SetActive(false);
                 }
-                else if (hitCollider.collider == buttonBoxCollider && isButtonActive)
+                else if (hitInfo.collider == buttonBoxCollider && isButtonActive)
                 {
                     tower.UpgradeTower();
                 }

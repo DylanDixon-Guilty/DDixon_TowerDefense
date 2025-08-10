@@ -242,6 +242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blue: {fileID: 2100000, guid: 0920840f3be35644aa14a825fdfd5dd2, type: 2}
   effectLifeTime: 1.5
-  timerToDisableTower: 0.2
+  timetoDisableTowers: 2
   disableBlastRadius: 1
   enableBlastRadius: 3
