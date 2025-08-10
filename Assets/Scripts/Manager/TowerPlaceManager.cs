@@ -13,7 +13,6 @@ public class TowerPlaceManager : MonoBehaviour
     [SerializeField] private InputAction PlaceTowerAction;
     [SerializeField] private Camera MainCamera;
     [SerializeField] private LayerMask TileLayer;
-    [SerializeField] private LayerMask towerPreviewLayer = 1 << 12;
     [SerializeField] private LayerMask upgradeTowerLayer = 1 << 11;
     private float lifeTime = 1.5f;
     private GameObject currentTowerPrefabToSpawn;
@@ -78,7 +77,6 @@ public class TowerPlaceManager : MonoBehaviour
                 {
                     this.towerPreview = Instantiate(towerPrefab);
                     this.towerPreview.GetComponentInChildren<BoxCollider>().enabled = false;
-                    this.towerPreview.layer = towerPreviewLayer;
                 }
             }
             else
