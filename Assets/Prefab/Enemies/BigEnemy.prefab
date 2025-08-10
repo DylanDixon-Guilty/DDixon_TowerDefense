@@ -123,7 +123,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.125
-  m_Speed: 3
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -172,8 +172,9 @@ MonoBehaviour:
   MaxHealth: 25
   CurrentHealth: 0
   CurrencyValue: 25
-  ResetSpeed: 3
+  ResetSpeed: 2.5
   IsWalkingTrue: 0
+  HasTakenDamage: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsBigWalking
   damage: 3

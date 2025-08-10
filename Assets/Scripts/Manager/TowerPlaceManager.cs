@@ -11,8 +11,10 @@ public class TowerPlaceManager : MonoBehaviour
     [SerializeField] private GameObject NotEnoughCurrencyText;
     [SerializeField] private float towerPlacementHeightOffset;
     [SerializeField] private InputAction PlaceTowerAction;
-    [SerializeField] Camera MainCamera;
-    [SerializeField] LayerMask TileLayer;
+    [SerializeField] private Camera MainCamera;
+    [SerializeField] private LayerMask TileLayer;
+    [SerializeField] private LayerMask towerPreviewLayer = 1 << 12;
+    [SerializeField] private LayerMask upgradeTowerLayer = 1 << 11;
     private float lifeTime = 1.5f;
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
@@ -23,9 +25,14 @@ public class TowerPlaceManager : MonoBehaviour
         if(isPlacingTower)
         {
             Ray ray = MainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            if(Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, TileLayer))
+            if(Physics.Raycast(ray, Mathf.Infinity, upgradeTowerLayer))
             {
-                towerPlacementPosition = hitInfo.transform.position + Vector3.up * towerPlacementHeightOffset;
+                towerPreview.SetActive(false);
+                isTileSelected = false;
+            }
+            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, TileLayer))
+            {
+                towerPlacementPosition = hitInfoRay.transform.position + Vector3.up * towerPlacementHeightOffset;
                 towerPreview.transform.position = towerPlacementPosition;
                 towerPreview.SetActive(true);
                 isTileSelected = true;
@@ -53,24 +60,25 @@ public class TowerPlaceManager : MonoBehaviour
     /// <summary>
     /// When the player has clicked on a Tower button, have a Preview of the Tower appear when the player hovers the mouse over a grid
     /// </summary>
-    public void StartPlacingTower(GameObject towerPreview)
+    public void StartPlacingTower(GameObject towerPrefab)
     {
-        if(currentTowerPrefabToSpawn != towerPreview)
+        if(currentTowerPrefabToSpawn != towerPrefab)
         {
             isPlacingTower = true;
-            currentTowerPrefabToSpawn = towerPreview;
-            CurrencyManager currencyManager = GetComponent<CurrencyManager>();
-            Tower tower = towerPreview.GetComponent<Tower>();
+            currentTowerPrefabToSpawn = towerPrefab;
+            
+            Tower tower = towerPrefab.GetComponent<Tower>();
             if (tower.TowerCost <= CurrencyManager.CurrentCurrency)
             {
-                currencyManager.CurrencySpent(tower.TowerCost);
                 if (this.towerPreview != null)
                 {
                     Destroy(this.towerPreview);
                 }
                 else
                 {
-                    this.towerPreview = Instantiate(towerPreview);
+                    this.towerPreview = Instantiate(towerPrefab);
+                    this.towerPreview.GetComponentInChildren<BoxCollider>().enabled = false;
+                    this.towerPreview.layer = towerPreviewLayer;
                 }
             }
             else
@@ -96,6 +104,11 @@ public class TowerPlaceManager : MonoBehaviour
             currentTowerPrefabToSpawn = null;
             isPlacingTower = false;
             Tower tower = towerInstance.GetComponent<Tower>();
+            CurrencyManager currencyManager = GetComponent<CurrencyManager>();
+            if(tower.TowerCost <= CurrencyManager.CurrentCurrency)
+            {
+                currencyManager.CurrencySpent(tower.TowerCost);
+            }
             tower.IsTowerPlaced = true;
         }
     }

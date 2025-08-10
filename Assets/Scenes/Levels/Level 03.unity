@@ -637,6 +637,18 @@ MonoBehaviour:
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 525814291}
       EndPoint: {fileID: 1097654823}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 525814291}
+      EndPoint: {fileID: 1097654823}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1036440962}
+      EndPoint: {fileID: 683844325}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 525814291}
+      EndPoint: {fileID: 1097654823}
   - TimeBeforeWave: 0
     EnemyData: []
   - TimeBeforeWave: 0
@@ -742,7 +754,13 @@ MonoBehaviour:
   MainCamera: {fileID: 1041284540}
   TileLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4352
+  towerPreviewLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  upgradeTowerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &69319483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,11 +818,6 @@ MonoBehaviour:
   balistaTowerText: {fileID: 644809070}
   cannonTowerText: {fileID: 1785404928}
   freezeTowerText: {fileID: 0}
-  levelScene:
-  - Level 01
-  - Level 02
-  - Level 03
-  - Level 04
 --- !u!4 &69319486
 Transform:
   m_ObjectHideFlags: 0
@@ -9885,13 +9898,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041284537}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32725134, y: -0.21875492, z: 0.07815789, w: 0.915939}
-  m_LocalPosition: {x: 9.88, y: 7.3, z: -2.77}
+  m_LocalRotation: {x: 0.34752586, y: -0.12313567, z: 0.009858239, w: 0.92949784}
+  m_LocalPosition: {x: 8.65, y: 7.3, z: -3.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 39.322, y: -26.865, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.427, y: -16.96, z: -5.069}
 --- !u!1 &1072969291
 GameObject:
   m_ObjectHideFlags: 0
