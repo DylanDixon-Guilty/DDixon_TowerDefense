@@ -8,11 +8,11 @@ public class TowerPlaceManager : MonoBehaviour
 {
     [SerializeField] private bool isTileSelected;
     [SerializeField] private bool isPlacingTower = false;
-    [SerializeField] private GameObject NotEnoughCurrencyText;
+    [SerializeField] private GameObject notEnoughCurrencyText;
     [SerializeField] private float towerPlacementHeightOffset;
-    [SerializeField] private InputAction PlaceTowerAction;
-    [SerializeField] private Camera MainCamera;
-    [SerializeField] private LayerMask TileLayer;
+    [SerializeField] private InputAction placeTowerAction;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private LayerMask tileLayer;
     [SerializeField] private LayerMask upgradeTowerLayer = 1 << 11;
     private float lifeTime = 1.5f;
     private GameObject currentTowerPrefabToSpawn;
@@ -23,13 +23,13 @@ public class TowerPlaceManager : MonoBehaviour
     {
         if(isPlacingTower)
         {
-            Ray ray = MainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             if(Physics.Raycast(ray, Mathf.Infinity, upgradeTowerLayer))
             {
                 towerPreview.SetActive(false);
                 isTileSelected = false;
             }
-            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, TileLayer))
+            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, tileLayer))
             {
                 towerPlacementPosition = hitInfoRay.transform.position + Vector3.up * towerPlacementHeightOffset;
                 towerPreview.transform.position = towerPlacementPosition;
@@ -46,14 +46,14 @@ public class TowerPlaceManager : MonoBehaviour
 
     private void OnEnable()
     {
-        PlaceTowerAction.Enable();
-        PlaceTowerAction.performed += OnPlaceTower;
+        placeTowerAction.Enable();
+        placeTowerAction.performed += OnPlaceTower;
     }
 
     private void OnDisable()
     {
-        PlaceTowerAction.performed -= OnPlaceTower;
-        PlaceTowerAction.Disable();
+        placeTowerAction.performed -= OnPlaceTower;
+        placeTowerAction.Disable();
     }
 
     /// <summary>
@@ -83,7 +83,7 @@ public class TowerPlaceManager : MonoBehaviour
             {
                 isPlacingTower = false;
                 currentTowerPrefabToSpawn = null;
-                NotEnoughCurrencyText.SetActive(true);
+                notEnoughCurrencyText.SetActive(true);
                 StartCoroutine(HideNotEnoughCurrencyText());
             }
         }
@@ -117,6 +117,6 @@ public class TowerPlaceManager : MonoBehaviour
     IEnumerator HideNotEnoughCurrencyText()
     {
         yield return new WaitForSeconds(lifeTime);
-        NotEnoughCurrencyText.SetActive(false);
+        notEnoughCurrencyText.SetActive(false);
     }
 }
