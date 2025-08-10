@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,9 +8,9 @@ public class SpecialEnemy : MonoBehaviour
     public Material Blue;
 
     [SerializeField] private float effectLifeTime;
-    [SerializeField] private int disableBlastRadius;
-    [SerializeField] private int enableBlastRadius;
-    private Renderer originalRenderer;
+    [SerializeField] private int disableTowerBlastRadius;
+    [SerializeField] private int enableTowerBlastRadius;
+    private Dictionary<Tower, Material> originalMaterials = new Dictionary<Tower, Material>();
 
     private void Update()
     {
@@ -21,12 +22,17 @@ public class SpecialEnemy : MonoBehaviour
         Enemy enemy = GetComponent<Enemy>();
         if(enemy.HasTakenDamage)
         {
-            Collider[] towerColliders = Physics.OverlapSphere(transform.position, disableBlastRadius);
+            Collider[] towerColliders = Physics.OverlapSphere(transform.position, disableTowerBlastRadius);
             foreach(Collider nearbyTowers in towerColliders)
             {
                 Tower tower = nearbyTowers.GetComponent<Tower>();
                 if(tower != null)
                 {
+                    Renderer towerRenderer = tower.GetComponentInChildren<Renderer>();
+                    if(!originalMaterials.ContainsKey(tower))
+                    {
+                        originalMaterials[tower] = towerRenderer.material;
+                    }
                     tower.GetComponentInChildren<Renderer>().material = Blue;
                     tower.IsTowerPlaced = false;
                 }
@@ -39,15 +45,20 @@ public class SpecialEnemy : MonoBehaviour
     IEnumerator DisableTowerTimer()
     {
         yield return new WaitForSeconds(effectLifeTime);
-        Collider[] towerColliders = Physics.OverlapSphere(transform.position, enableBlastRadius);
+        Collider[] towerColliders = Physics.OverlapSphere(transform.position, enableTowerBlastRadius);
         foreach(Collider nearbyTowers in towerColliders)
         {
             Tower tower = nearbyTowers.GetComponent<Tower>();
             if (tower != null && !tower.IsTowerPlaced)
             {
                 tower.IsTowerPlaced = true;
-                //tower.GetComponentInChildren<Renderer>().material = originalRenderer.material;
+                if(originalMaterials.TryGetValue(tower, out Material originalMaterial))
+                {
+                    tower.GetComponentInChildren<Renderer>().material = originalMaterial;
+                }
+                
             }
         }
+        originalMaterials.Clear();
     }
 }
