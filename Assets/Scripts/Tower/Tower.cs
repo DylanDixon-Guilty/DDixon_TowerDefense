@@ -64,13 +64,13 @@ public abstract class Tower : MonoBehaviour
     public void UpgradeTower()
     {
         TowerUpgrade towerUpgrade = GetComponentInChildren<TowerUpgrade>();
-        if (towerUpgrade.costToUpgrade <= CurrencyManager.CurrentCurrency)
+        if(towerUpgrade.costToUpgrade <= CurrencyManager.CurrentCurrency)
         {
-            Destroy(gameObject);
             TowerUpgraded(towerUpgrade.costToUpgrade);
             GameObject towerInstance = Instantiate(towerUpgrade.levelTwoTower, transform.position, Quaternion.identity);
             Tower tower = towerInstance.GetComponent<Tower>();
             tower.IsTowerPlaced = true;
+            Destroy(gameObject);
         }
     }
 

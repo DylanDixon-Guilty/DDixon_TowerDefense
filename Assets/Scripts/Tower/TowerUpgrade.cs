@@ -10,12 +10,17 @@ public class TowerUpgrade : MonoBehaviour
     [SerializeField] private GameObject UpgradeButton;
     [SerializeField] private TextMeshProUGUI upgradeButtonText;
     private Tower tower;
+    private BoxCollider buttonBoxCollider;
+    private BoxCollider TowerboxCollider;
     private bool isButtonActive = false;
     private int camRayLength = 100;
+    private int layerMask11 = 11;
 
     private void Start()
     {
         tower = GetComponentInParent<Tower>();
+        TowerboxCollider = GetComponent<BoxCollider>();
+        buttonBoxCollider = GetComponentInChildren<BoxCollider>();
         UpgradeButton.SetActive(false);
     }
 
@@ -34,26 +39,27 @@ public class TowerUpgrade : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            int layerMask = 1 << 11;
+            int layerMask = 1 << layerMask11;
+            RaycastHit hitCollider;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit towerHit, camRayLength, layerMask))
+            if (Physics.Raycast(ray, out hitCollider, camRayLength, layerMask))
             {
-                if (!isButtonActive && tower.IsTowerPlaced)
+                if (hitCollider.collider == TowerboxCollider && !isButtonActive)
                 {
                     isButtonActive = true;
                     UpgradeButton.SetActive(true);
                 }
-                else if (isButtonActive && tower.IsTowerPlaced)
+                else if (hitCollider.collider == TowerboxCollider && isButtonActive)
                 {
                     isButtonActive = false;
                     UpgradeButton.SetActive(false);
                 }
-            }
-            else
-            {
-                isButtonActive = false;
-                UpgradeButton.SetActive(false);
+                else if (hitCollider.collider == buttonBoxCollider && isButtonActive)
+                {
+                    tower.UpgradeTower();
+                }
             }
         }
     }
+
 }
