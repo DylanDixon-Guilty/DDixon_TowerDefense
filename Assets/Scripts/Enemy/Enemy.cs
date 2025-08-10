@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int CurrencyValue; //The currency given to player when Enemy is defeated
     public float ResetSpeed; // Used to reset the speed of an enemy
     public bool IsWalkingTrue;
+    public bool HasTakenDamage; // When this becomes true, the Special Enemy does an action
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -60,6 +61,7 @@ public class Enemy : MonoBehaviour
         if (CurrentHealth > 0)
         {
             CurrentHealth = Mathf.Max(CurrentHealth - damageAmount, 0);
+            HasTakenDamage = true;
             Debug.Log($"Current Enemy Health: {CurrentHealth}");
         }
     }
