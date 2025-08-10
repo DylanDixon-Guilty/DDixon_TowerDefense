@@ -4,7 +4,8 @@ using UnityEngine.AI;
 
 public class FreezeTower : Tower
 {
-    public float BlastRadius = 5f;
+    public float FreezeBlastRadius = 3f;
+    public float UnFreezeBlastRadius = 6f;
     public float SetSpeed = 1f;
 
     [SerializeField] private GameObject freezeParticlePrefab;
@@ -20,10 +21,10 @@ public class FreezeTower : Tower
     /// </summary>
     protected override void FireAt(Enemy target)
     {
-        if (freezeParticlePrefab != null && IsTowerPlaced)
+        if(freezeParticlePrefab != null && IsTowerPlaced)
         {
             GameObject particleInstance = Instantiate(freezeParticlePrefab, FiringPoint.position, Quaternion.identity);
-            Collider[] enemyColliders = Physics.OverlapSphere(FiringPoint.position, BlastRadius);
+            Collider[] enemyColliders = Physics.OverlapSphere(FiringPoint.position, FreezeBlastRadius);
             foreach (Collider nearbyEnemies in enemyColliders)
             {
                 Enemy enemy = nearbyEnemies.GetComponent<Enemy>();
@@ -32,7 +33,7 @@ public class FreezeTower : Tower
                     enemy.GetComponent<NavMeshAgent>().speed = SetSpeed;
                 }
             }
-            StartCoroutine(DespawnProjectile(particleInstance));
+            StartCoroutine(ResetEnemySpeed(particleInstance));
         }
     }
 
@@ -60,14 +61,18 @@ public class FreezeTower : Tower
     /// <summary>
     /// After effectLifeTime, reset the enemy's speed and turn the particlePrefab off
     /// </summary>
-    IEnumerator DespawnProjectile(GameObject particlePrefab)
+    IEnumerator ResetEnemySpeed(GameObject particlePrefab)
     {
         yield return new WaitForSeconds(effectLifeTime);
-        Enemy enemy = GetComponent<Enemy>();
-        if(enemy != null)
+        Collider[] enemyColliders = Physics.OverlapSphere(FiringPoint.position, UnFreezeBlastRadius);
+        foreach (Collider nearbyEnemies in enemyColliders)
         {
-            enemy.GetComponent<NavMeshAgent>().speed = enemy.ResetSpeed;
+            Enemy enemy = nearbyEnemies.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.GetComponent<NavMeshAgent>().speed = enemy.ResetSpeed;
+            }
+            Destroy(particlePrefab);
         }
-        Destroy(particlePrefab);
     }
 }

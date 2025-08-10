@@ -413,7 +413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47580814
+      value: 2.1589584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.y
@@ -421,7 +421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.1043115
+      value: 4.956949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalRotation.w
@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costToUpgrade: 140
+  levelTwoTower: {fileID: 0}
   UpgradeButton: {fileID: 3961311742373772216}
   upgradeButtonText: {fileID: 4764511934461526083}
 --- !u!1 &7370626008147720549 stripped
@@ -542,7 +543,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 832
@@ -568,10 +569,8 @@ MonoBehaviour:
   IsTowerPlaced: 0
   FireCooldown: 2
   TowerCost: 120
-  costToUpgrade: 140
   TowerBase: {fileID: 7854957115198546911}
   FiringPoint: {fileID: 3640093086752632044}
-  levelTwoTower: {fileID: 0}
   BlastRadius: 5
   SetSpeed: 1
   freezeParticlePrefab: {fileID: 3448433993063772155, guid: c3d572e2d64be39479c380e7a62684ec, type: 3}

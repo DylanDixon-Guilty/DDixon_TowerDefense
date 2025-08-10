@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 4.312171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 5.6622076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
       propertyPath: m_LocalRotation.w
@@ -103,6 +103,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2368256894970684950}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3460849343637703786}
   m_SourcePrefab: {fileID: 100100000, guid: c3380d4f88b32814fa1c82bd24ae5348, type: 3}
 --- !u!1 &4287159975757113623 stripped
 GameObject:
@@ -121,11 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9f4e213c502d24c9923bf33e78418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 40
+  MaxHealth: 20
   CurrentHealth: 0
   CurrencyValue: 50
   ResetSpeed: 3
   IsWalkingTrue: 0
+  HasTakenDamage: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
   damage: 6
@@ -224,3 +228,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3460849343637703786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287159975757113623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9496eed7c42c8274286422921c116e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blue: {fileID: 2100000, guid: 0920840f3be35644aa14a825fdfd5dd2, type: 2}
+  effectLifeTime: 1.5
+  timerToDisableTower: 0.2
+  disableBlastRadius: 1
+  enableBlastRadius: 3
