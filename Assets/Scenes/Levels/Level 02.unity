@@ -6989,8 +6989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -271.89514, y: -71.98688}
-  m_SizeDelta: {x: 543.7936, y: 143.9734}
+  m_AnchoredPosition: {x: -280.04675, y: -71.98688}
+  m_SizeDelta: {x: 560.0969, y: 143.9734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725226556
 MonoBehaviour:
@@ -7039,8 +7039,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10201,7 +10201,7 @@ GameObject:
   - component: {fileID: 973775289}
   - component: {fileID: 973775288}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CannonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11030,7 +11030,7 @@ GameObject:
   - component: {fileID: 1042167931}
   - component: {fileID: 1042167930}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: BalistaText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13835,10 +13835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8833b160f45484f4f863ecce5d150e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 1113763038}
-  TileLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  isTileSelected: 0
+  isPlacingTower: 0
+  NotEnoughCurrencyText: {fileID: 544003997}
+  towerPlacementHeightOffset: 0.1
   PlaceTowerAction:
     m_Name: Place Tower
     m_Type: 0
@@ -13856,10 +13856,10 @@ MonoBehaviour:
       m_Action: Place Tower
       m_Flags: 0
     m_Flags: 0
-  isTileSelected: 0
-  isPlacingTower: 0
-  NotEnoughCurrencyText: {fileID: 544003997}
-  towerPlacementHeightOffset: 0.1
+  MainCamera: {fileID: 1113763038}
+  TileLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &1221529715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13928,11 +13928,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currencyScoreText: {fileID: 725226556}
+  balistaTowerText: {fileID: 1042167930}
+  cannonTowerText: {fileID: 973775288}
+  freezeTowerText: {fileID: 0}
   Level01Scene: Level 01
   Level02Scene: Level 02
   Level03Scene: Level 03
   Level04Scene: Level 04
-  currencyScoreText: {fileID: 725226556}
 --- !u!1001 &1244008854
 PrefabInstance:
   m_ObjectHideFlags: 0

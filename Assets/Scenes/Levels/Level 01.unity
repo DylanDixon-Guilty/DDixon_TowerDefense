@@ -673,8 +673,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.45178, y: -147.28784}
-  m_SizeDelta: {x: 433.3537, y: 66.3959}
+  m_AnchoredPosition: {x: 336.44995, y: -147.28784}
+  m_SizeDelta: {x: 537.35, y: 66.3959}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157014302
 MonoBehaviour:
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Wave: '
+  m_text: 'Waves Completed:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -723,8 +723,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3770,7 +3770,7 @@ GameObject:
   - component: {fileID: 526690756}
   - component: {fileID: 526690755}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: BalistaText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8177,10 +8177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8833b160f45484f4f863ecce5d150e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 330585545}
-  TileLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  isTileSelected: 0
+  isPlacingTower: 0
+  NotEnoughCurrencyText: {fileID: 1646848193}
+  towerPlacementHeightOffset: 0.1
   PlaceTowerAction:
     m_Name: Place Tower
     m_Type: 0
@@ -8198,10 +8198,10 @@ MonoBehaviour:
       m_Action: Place Tower
       m_Flags: 0
     m_Flags: 0
-  isTileSelected: 0
-  isPlacingTower: 0
-  NotEnoughCurrencyText: {fileID: 1646848193}
-  towerPlacementHeightOffset: 0.1
+  MainCamera: {fileID: 330585545}
+  TileLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &1221462767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8277,11 +8277,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cad7425bd525843923e42d72a56cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currencyScoreText: {fileID: 1596399504}
+  balistaTowerText: {fileID: 526690755}
+  cannonTowerText: {fileID: 0}
+  freezeTowerText: {fileID: 0}
   Level01Scene: Level 01
   Level02Scene: Level 02
   Level03Scene: Level 03
   Level04Scene: Level 04
-  currencyScoreText: {fileID: 1596399504}
 --- !u!1 &1241743517
 GameObject:
   m_ObjectHideFlags: 0
@@ -10273,8 +10276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240.12988, y: -46.793945}
-  m_SizeDelta: {x: 480.2635, y: 93.5875}
+  m_AnchoredPosition: {x: -278.44238, y: -46.793945}
+  m_SizeDelta: {x: 556.8885, y: 93.5875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596399504
 MonoBehaviour:
@@ -10323,8 +10326,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

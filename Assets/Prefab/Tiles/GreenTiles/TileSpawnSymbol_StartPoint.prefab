@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 277fde015007d4c4cb17e392dc1dd41f, type: 3}
       propertyPath: m_Name
-      value: tile-spawn-end-round
+      value: TileSpawnSymbol_StartPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 277fde015007d4c4cb17e392dc1dd41f, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
