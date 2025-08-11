@@ -5,22 +5,31 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public bool IsGamePaused = false;
-    public GameObject OptionsMenuScreenInGame;
-    public GameObject MainHUDScreen;
-    public GameObject ConfirmExitScreenInGame;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI gameOverTextMessage;
     [SerializeField] private TextMeshProUGUI retryOrNextLevelText;
     [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] GameObject OptionsMenuScreenInGame;
+    [SerializeField] GameObject MainHUDScreen;
+    [SerializeField] GameObject ConfirmExitScreenInGame;
     [SerializeField] private string goToNextLevel;
     [SerializeField] private string BackToTitleScreen;
+    [SerializeField] private string finalLevel;
+    private string level01 = "Level 01";
+    private string wonText = "You Won!!";
+    private string lostText = "You Lost!!";
+    private string wonFinalLevelText = "You Have Defeated The Blue Minions!!!";
+    private string nextLevelText = "Next Level";
+    private string retryLevelText = "Retry Level";
+    private string restartGameText = "Restart Game";
     private bool isLevelConcludedButton = false;
     private bool isExitingGame = false;
 
     private void Start()
     {
+        
         MainHUDScreen.SetActive(true);
         OptionsMenuScreenInGame.SetActive(false);
         ConfirmExitScreenInGame.SetActive(false);
@@ -56,15 +65,21 @@ public class UIManager : MonoBehaviour
     /// </summary>
     private void GameOverText()
     {
-        if (!playerHealth.IsDead())
+        Scene currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == finalLevel && !playerHealth.IsDead())
         {
-            gameOverTextMessage.text = "You Won!!";
-            retryOrNextLevelText.text = "Next Level";
+            gameOverTextMessage.text = wonFinalLevelText;
+            retryOrNextLevelText.text = restartGameText;
+        }
+        else if(!playerHealth.IsDead())
+        {
+            gameOverTextMessage.text = wonText;
+            retryOrNextLevelText.text = nextLevelText;
         }
         else
         {
-            gameOverTextMessage.text = "You Lost!!";
-            retryOrNextLevelText.text = "Retry Level";
+            gameOverTextMessage.text = lostText;
+            retryOrNextLevelText.text = retryLevelText;
         }
     }
 
@@ -147,15 +162,21 @@ public class UIManager : MonoBehaviour
 
     /// <summary>
     /// This checks to see if the player won the level, then go to the Next Level.
-    /// If the player lost, Restart the current Level (On pressing the Retry/Next Level button)
+    /// If the player lost, Restart the current Level (On pressing the Retry/Next Level button).
+    /// If the player won the Final Level, give the option to restart at Level 01
     /// </summary>
     public void RetryOrNextLevel()
     {
-        if (!playerHealth.IsDead())
+        Scene currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == finalLevel && !playerHealth.IsDead())
+        {
+            SceneManager.LoadScene(level01);
+        }
+        else if(!playerHealth.IsDead())
         {
             SceneManager.LoadScene(goToNextLevel);
         }
-        else if (playerHealth.IsDead())
+        else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -166,6 +187,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     private void PlayerConcludedLevel()
     {
+        
         if(!isLevelConcludedButton && !isExitingGame)
         {
             GameOverText();

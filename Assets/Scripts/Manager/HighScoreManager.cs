@@ -18,7 +18,7 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField] private GameObject uncollectedStar03;
     [SerializeField] private int threeStars = 18;
     [SerializeField] private int twoStars = 10;
-    [SerializeField] private int oneStar = 9; 
+    [SerializeField] private int oneStar = 5; 
 
     private void Start()
     {
