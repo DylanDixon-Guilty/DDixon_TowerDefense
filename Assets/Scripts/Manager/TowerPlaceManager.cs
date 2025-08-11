@@ -29,14 +29,14 @@ public class TowerPlaceManager : MonoBehaviour
                 towerPreview.SetActive(false);
                 isTileSelected = false;
             }
-            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, tileAndTowerPreviewLayer))
+            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, tileAndTowerPreviewLayer) && towerPreview != null)
             {
                 towerPlacementPosition = hitInfoRay.transform.position + Vector3.up * towerPlacementHeightOffset;
                 towerPreview.transform.position = towerPlacementPosition;
                 towerPreview.SetActive(true);
                 isTileSelected = true;
             }
-            else
+            else if(towerPreview != null)
             {
                 towerPreview.SetActive(false);
                 isTileSelected = false;
@@ -91,7 +91,7 @@ public class TowerPlaceManager : MonoBehaviour
 
     /// <summary>
     /// When the player presses the Left Mouse button and isPlacingTower is true, place a Tower on the current Grid the mouse is on.
-    /// Do not place Tower if the player's mouse is either off the platform or on the Path
+    /// Do not place Tower if the player's mouse is off the platform, on the Path, or on another Tower
     /// </summary>
     private void OnPlaceTower(InputAction.CallbackContext context)
     {

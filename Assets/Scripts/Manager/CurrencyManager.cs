@@ -16,8 +16,8 @@ public class CurrencyManager : MonoBehaviour
     private const string level03 = "Level 03";
     private const string level04 = "Level 04";
     private int costOfBalistaTower = 70;
-    private int costOfCannonTower = 100;
-    private int costOfFreezeTower = 120;
+    private int costOfCannonTower = 120;
+    private int costOfFreezeTower = 140;
 
     private void Awake()
     {
@@ -34,12 +34,12 @@ public class CurrencyManager : MonoBehaviour
 
                 break;
             case level03:
-                CurrentCurrency = 310;
+                CurrentCurrency = 430;
                 cannonTowerText.text = "Cost: " + costOfCannonTower;
 
                 break;
             case level04:
-                CurrentCurrency = 400;
+                CurrentCurrency = 530;
                 cannonTowerText.text = "Cost: " + costOfCannonTower;
                 freezeTowerText.text = "Cost: " + costOfFreezeTower;
                 break;

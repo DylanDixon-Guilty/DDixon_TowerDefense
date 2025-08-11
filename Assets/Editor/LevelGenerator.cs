@@ -47,7 +47,6 @@ public class LevelGenerator : EditorWindow
     {
         if(tilePrefab == null)
         {
-            Debug.Log("Tile Prefab is not assigned");
             return;
         }
 

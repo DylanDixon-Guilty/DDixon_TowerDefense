@@ -592,7 +592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTowerPlaced: 0
   FireCooldown: 2
-  TowerCost: 120
+  TowerCost: 140
   TowerBase: {fileID: 7854957115198546911}
   FiringPoint: {fileID: 3640093086752632044}
   freezeParticlePrefab: {fileID: 3448433993063772155, guid: c3d572e2d64be39479c380e7a62684ec, type: 3}

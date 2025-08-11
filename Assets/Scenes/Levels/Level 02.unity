@@ -13630,22 +13630,22 @@ MonoBehaviour:
       TimeBeforeSpawn: 0.5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
   - TimeBeforeWave: 0
     EnemyData:
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 2
+      TimeBeforeSpawn: 5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -13653,7 +13653,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 0.5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13661,11 +13661,11 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 2
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 0.8
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -13673,7 +13673,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
+      TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -13687,6 +13687,72 @@ MonoBehaviour:
   - TimeBeforeWave: 0
     EnemyData:
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 2
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+  - TimeBeforeWave: 0
+    EnemyData:
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 2
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
@@ -13694,36 +13760,12 @@ MonoBehaviour:
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 0.8
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 0.5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.6
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
   - TimeBeforeWave: 0
@@ -13732,7 +13774,7 @@ MonoBehaviour:
       TimeBeforeSpawn: 3
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
@@ -13771,7 +13813,7 @@ MonoBehaviour:
   - TimeBeforeWave: 0
     EnemyData:
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 3
+      TimeBeforeSpawn: 5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13786,12 +13828,16 @@ MonoBehaviour:
       TimeBeforeSpawn: 0.5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.8
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
@@ -13803,29 +13849,41 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.6
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
   - TimeBeforeWave: 0
     EnemyData:
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 3
+      TimeBeforeSpawn: 5
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
       TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
+      TimeBeforeSpawn: 0.5
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
+      SpawnPoint: {fileID: 1937417042}
+      EndPoint: {fileID: 556611419}
+    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
+      TimeBeforeSpawn: 1
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
@@ -13833,65 +13891,7 @@ MonoBehaviour:
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
     - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.8
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
       TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.6
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-  - TimeBeforeWave: 0
-    EnemyData:
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 3
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 8146160849534854152, guid: 260983ed2b9ff234e8ac36dd5cd6c0dd, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.8
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 1
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.5
-      SpawnPoint: {fileID: 1937417042}
-      EndPoint: {fileID: 556611419}
-    - EnemyToSpawn: {fileID: 1770026834115465325, guid: 25eba975b2a2f354e8e1659dc6d8bdc0, type: 3}
-      TimeBeforeSpawn: 0.6
       SpawnPoint: {fileID: 1937417042}
       EndPoint: {fileID: 556611419}
   waveStarterButton: {fileID: 979449915}
@@ -13964,7 +13964,7 @@ MonoBehaviour:
   isTileSelected: 0
   isPlacingTower: 0
   notEnoughCurrencyText: {fileID: 544003997}
-  towerPlacementHeightOffset: 0.1
+  towerPlacementHeightOffset: 0.2
   placeTowerAction:
     m_Name: Place Tower
     m_Type: 0
@@ -14002,16 +14002,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGamePaused: 0
-  OptionsMenuScreenInGame: {fileID: 1874634915}
-  MainHUDScreen: {fileID: 1974830614}
-  ConfirmExitScreenInGame: {fileID: 734348732}
   gameManager: {fileID: 1221529713}
   playerHealth: {fileID: 1221529711}
   gameOverTextMessage: {fileID: 1063164330}
   retryOrNextLevelText: {fileID: 589892663}
   GameOverScreen: {fileID: 219366168}
+  OptionsMenuScreenInGame: {fileID: 1874634915}
+  MainHUDScreen: {fileID: 1974830614}
+  ConfirmExitScreenInGame: {fileID: 734348732}
   goToNextLevel: Level 03
   BackToTitleScreen: TitleScreen
+  finalLevel: 
 --- !u!114 &1221529716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16605,7 +16606,7 @@ GameObject:
   - component: {fileID: 1531628676}
   - component: {fileID: 1531628675}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: YesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16679,8 +16680,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18230,7 +18231,7 @@ GameObject:
   - component: {fileID: 1714470446}
   - component: {fileID: 1714470445}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18304,8 +18305,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

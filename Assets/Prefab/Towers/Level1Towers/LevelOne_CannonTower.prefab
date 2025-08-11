@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTowerPlaced: 0
   FireCooldown: 2
-  TowerCost: 100
+  TowerCost: 120
   TowerBase: {fileID: 4415678505776199080}
   FiringPoint: {fileID: 4419743991360618787}
   projectilePrefab: {fileID: 5721344842857001821, guid: fc500652613e08b4eb60283a6777b2d6, type: 3}
@@ -426,14 +426,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6034294689849516747}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.37324938, y: -0.01282163, z: 0.04785058, w: 0.9264076}
-  m_LocalPosition: {x: -1.4438228e-15, y: 0.383, z: -0.00075}
+  m_LocalRotation: {x: -0.091538996, y: 0.0071912557, z: -0.0019438248, w: 0.9957737}
+  m_LocalPosition: {x: 0.011502295, y: 0.37654936, z: 0.05934668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4419743991360618787}
   m_Father: {fileID: 4415678505776199080}
-  m_LocalEulerAnglesHint: {x: -43.657, y: -4.715, z: 7.803}
+  m_LocalEulerAnglesHint: {x: -10.502, y: 0.855, z: -0.302}
 --- !u!33 &6999036922228978225
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -506,8 +506,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7633015, y: 0.6275895, z: 0.8799658}
-  m_Center: {x: 0.003887082, y: -0.08728674, z: -0.05926542}
+  m_Size: {x: 0.7633015, y: 0.6275895, z: 0.8079579}
+  m_Center: {x: 0.0038870727, y: -0.08728674, z: -0.09526936}
 --- !u!114 &7762871869389843978
 MonoBehaviour:
   m_ObjectHideFlags: 0

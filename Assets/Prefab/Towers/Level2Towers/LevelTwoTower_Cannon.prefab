@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTowerPlaced: 0
-  FireCooldown: 2
+  FireCooldown: 2.5
   TowerCost: 0
   TowerBase: {fileID: 5693825746969371121}
   FiringPoint: {fileID: 5698524483606582650}
