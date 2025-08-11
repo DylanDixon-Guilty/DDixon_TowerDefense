@@ -326,14 +326,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9f4e213c502d24c9923bf33e78418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 25
   CurrentHealth: 0
   CurrencyValue: 30
-  ResetSpeed: 6
+  ResetSpeed: 7
   IsWalkingTrue: 0
+  HasTakenDamage: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
-  damage: 5
+  damage: 4
   blueGoldCurrecy: {fileID: 1253193567005483939, guid: 2c7cd0d2b55caf44285d790db8577e7f, type: 3}
 --- !u!195 &5494985486123242777
 NavMeshAgent:
@@ -345,8 +346,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 6
-  m_Acceleration: 8
+  m_Speed: 7
+  m_Acceleration: 6
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.2
@@ -382,7 +383,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &8766620160061364503
 CapsuleCollider:
