@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 4268550113918127577}
   - component: {fileID: 1267552718143915767}
   m_Layer: 11
-  m_Name: Text (TMP)
+  m_Name: BalistaText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,7 +447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.804117
+      value: 5.345349
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -455,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.6534808
+      value: 5.38982
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8747081244be5594591729a6332c9fe2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costToUpgrade: 90
+  CostToUpgrade: 90
   levelTwoTower: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
   UpgradeButton: {fileID: 808921044560776394}
   upgradeButtonText: {fileID: 1267552718143915767}

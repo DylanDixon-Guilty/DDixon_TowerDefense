@@ -98,17 +98,24 @@ public class TowerPlaceManager : MonoBehaviour
         if(isPlacingTower && isTileSelected)
         {
             GameObject towerInstance = Instantiate(currentTowerPrefabToSpawn, towerPlacementPosition, Quaternion.identity);
-            Destroy(towerPreview);
-            currentTowerPrefabToSpawn = null;
-            isPlacingTower = false;
             Tower tower = towerInstance.GetComponent<Tower>();
-            CurrencyManager currencyManager = GetComponent<CurrencyManager>();
             if(tower.TowerCost <= CurrencyManager.CurrentCurrency)
             {
-                currencyManager.CurrencySpent(tower.TowerCost);
+                TowerPurchased(tower.TowerCost);
             }
+            Destroy(towerPreview);
             tower.IsTowerPlaced = true;
+            currentTowerPrefabToSpawn = null;
+            isPlacingTower = false;
         }
+    }
+
+    /// <summary>
+    /// Take away the amount it cost purchase this Tower from the player's Currency
+    /// </summary>
+    private void TowerPurchased(int cost)
+    {
+        CurrencyManager.CurrentCurrency -= cost;
     }
 
     /// <summary>

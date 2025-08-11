@@ -235,7 +235,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2432333652639259223}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7048668778875325500}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6908703137874358592
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +291,7 @@ GameObject:
   - component: {fileID: 2674821139958385286}
   - component: {fileID: 4764511934461526083}
   m_Layer: 10
-  m_Name: Text (TMP)
+  m_Name: FreezeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,7 +344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Upgrade: 90'
+  m_text: 'Upgrade: 140'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -413,7 +425,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.243744
+      value: 5.1611476
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.y
@@ -421,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.2956743
+      value: 3.8502643
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31ae6492428c88b42b7cc79957978698, type: 3}
       propertyPath: m_LocalRotation.w
@@ -524,8 +536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costToUpgrade: 140
-  levelTwoTower: {fileID: 0}
+  CostToUpgrade: 140
+  levelTwoTower: {fileID: 4773450711296729758, guid: cb99c278af89c34419b8ff03a9262213, type: 3}
   UpgradeButton: {fileID: 3961311742373772216}
   upgradeButtonText: {fileID: 4764511934461526083}
 --- !u!1 &7370626008147720549 stripped

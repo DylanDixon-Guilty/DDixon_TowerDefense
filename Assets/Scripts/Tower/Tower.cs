@@ -65,15 +65,22 @@ public abstract class Tower : MonoBehaviour
     public void UpgradeTower()
     {
         TowerUpgrade towerUpgrade = GetComponentInChildren<TowerUpgrade>();
-        CurrencyManager currencyManager = GetComponent<CurrencyManager>();
-        if(towerUpgrade.costToUpgrade <= CurrencyManager.CurrentCurrency)
+        if(towerUpgrade.CostToUpgrade <= CurrencyManager.CurrentCurrency)
         {
-            currencyManager.CurrencySpent(towerUpgrade.costToUpgrade);
             GameObject towerInstance = Instantiate(towerUpgrade.levelTwoTower, transform.position, Quaternion.identity);
+            TowerUpgraded(towerUpgrade.CostToUpgrade);
             Tower tower = towerInstance.GetComponent<Tower>();
             tower.IsTowerPlaced = true;
             Destroy(gameObject);
         }
+    }
+
+    /// <summary>
+    /// Take away the amount it cost upgrade this Tower from the player's Currency
+    /// </summary>
+    private void TowerUpgraded(int cost)
+    {
+        CurrencyManager.CurrentCurrency -= cost;
     }
 
     /// <summary>

@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8304161523097160087}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8326194795797435486}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2000269714373046443
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +145,7 @@ GameObject:
   - component: {fileID: 94908265284415033}
   - component: {fileID: 5040496937272583136}
   m_Layer: 10
-  m_Name: Text (TMP)
+  m_Name: CannonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,8 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costToUpgrade: 120
-  levelTwoTower: {fileID: 0}
+  CostToUpgrade: 120
+  levelTwoTower: {fileID: 7663199002350008952, guid: cd404e3e446b2a34a8fbc6e1bfd9bc0b, type: 3}
   UpgradeButton: {fileID: 881829297194402251}
   upgradeButtonText: {fileID: 5040496937272583136}
 --- !u!1 &7674230248471327144

@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CurrencyManager : MonoBehaviour
 {
-    public Action<int> OnCurrencyChange;
     public static int CurrentCurrency;
 
     [SerializeField] private TextMeshProUGUI currencyScoreText;
-    [SerializeField] TextMeshProUGUI balistaTowerText;
-    [SerializeField] TextMeshProUGUI cannonTowerText;
-    [SerializeField] TextMeshProUGUI freezeTowerText;
+    [SerializeField] private TextMeshProUGUI balistaTowerText;
+    [SerializeField] private TextMeshProUGUI cannonTowerText;
+    [SerializeField] private TextMeshProUGUI freezeTowerText;
     private const string level01 = "Level 01";
     private const string level02 = "Level 02";
     private const string level03 = "Level 03";
@@ -32,10 +31,12 @@ public class CurrencyManager : MonoBehaviour
             case level02:
                 CurrentCurrency = 250;
                 cannonTowerText.text = "Cost: " + costOfCannonTower;
+
                 break;
             case level03:
                 CurrentCurrency = 310;
                 cannonTowerText.text = "Cost: " + costOfCannonTower;
+
                 break;
             case level04:
                 CurrentCurrency = 400;
@@ -49,16 +50,11 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
-        currencyScoreText.text = "Blue Gold: " + CurrentCurrency;
         balistaTowerText.text = "Cost: " + costOfBalistaTower;
     }
-
-    /// <summary>
-    /// When the player spends currency, call this function.
-    /// </summary>
-    public void CurrencySpent(int costAmount)
+    
+    private void Update()
     {
-        CurrentCurrency = Mathf.Max(CurrentCurrency - costAmount, 0);
-        OnCurrencyChange?.Invoke(CurrentCurrency);
+        currencyScoreText.text = "Blue Gold: " + CurrentCurrency;
     }
 }

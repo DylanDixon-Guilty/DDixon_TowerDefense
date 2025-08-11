@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class TowerUpgrade : MonoBehaviour
 {
-    public int costToUpgrade; //The cost to Upgrade a Tower
+    public int CostToUpgrade; //The cost to Upgrade a Tower
     public GameObject levelTwoTower;
 
     [SerializeField] private GameObject UpgradeButton;
@@ -26,7 +26,7 @@ public class TowerUpgrade : MonoBehaviour
 
     private void Update()
     {
-        upgradeButtonText.text = "Upgrade: " + costToUpgrade;
+        upgradeButtonText.text = "Upgrade: " + CostToUpgrade;
         UpgradeButtonVisible();
     }
 
