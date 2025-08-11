@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 085b03475f1ba9249a55281e4802eee0, type: 3}
       propertyPath: m_Name
-      value: BigEnemy
+      value: ToughEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 085b03475f1ba9249a55281e4802eee0, type: 3}
       propertyPath: m_Layer
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9f4e213c502d24c9923bf33e78418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 25
+  MaxHealth: 30
   CurrentHealth: 0
   CurrencyValue: 15
   ResetSpeed: 2.5

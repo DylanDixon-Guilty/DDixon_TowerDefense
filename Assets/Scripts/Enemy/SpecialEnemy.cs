@@ -9,6 +9,7 @@ public class SpecialEnemy : MonoBehaviour
     [SerializeField] private float effectLifeTime;
     [SerializeField] private int disableTowerBlastRadius;
     [SerializeField] private int enableTowerBlastRadius;
+    private int healthLimitForAbility = 10;
     private Dictionary<Tower, Material> originalMaterials = new Dictionary<Tower, Material>();
 
     private void Update()
@@ -23,7 +24,7 @@ public class SpecialEnemy : MonoBehaviour
     private void DisableNearbyTowers()
     {
         Enemy enemy = GetComponent<Enemy>();
-        if(enemy.HasTakenDamage)
+        if(enemy.HasTakenDamage && enemy.CurrentHealth > healthLimitForAbility)
         {
             Collider[] towerColliders = Physics.OverlapSphere(transform.position, disableTowerBlastRadius);
             foreach(Collider nearbyTowers in towerColliders)
