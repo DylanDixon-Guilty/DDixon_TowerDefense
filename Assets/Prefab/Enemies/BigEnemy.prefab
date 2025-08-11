@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 25
   CurrentHealth: 0
-  CurrencyValue: 25
+  CurrencyValue: 15
   ResetSpeed: 2.5
   IsWalkingTrue: 0
   HasTakenDamage: 0

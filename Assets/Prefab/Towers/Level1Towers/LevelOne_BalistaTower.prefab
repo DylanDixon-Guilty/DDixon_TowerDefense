@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CostToUpgrade: 90
+  CostToUpgrade: 100
   levelTwoTower: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
   UpgradeButton: {fileID: 808921044560776394}
   upgradeButtonText: {fileID: 1267552718143915767}

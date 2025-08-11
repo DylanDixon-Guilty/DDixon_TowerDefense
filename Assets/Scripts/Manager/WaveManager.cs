@@ -53,9 +53,9 @@ public class WaveManager : MonoBehaviour
     }
 
     /// <summary>
-    /// On Pressing "Press Here To Start Wave" button, Begin Wave
+    /// On Pressing "Press Here To Start Wave" button, Begin Waves
     /// </summary>
-    public void BeginWave()
+    public void BeginWaves()
     {
         StartLevel();
         Time.timeScale = 1f;

@@ -12,7 +12,7 @@ public class TowerPlaceManager : MonoBehaviour
     [SerializeField] private float towerPlacementHeightOffset;
     [SerializeField] private InputAction placeTowerAction;
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private LayerMask tileLayer;
+    [SerializeField] private LayerMask tileAndTowerPreviewLayer;
     [SerializeField] private LayerMask upgradeTowerLayer = 1 << 11;
     private float lifeTime = 1.5f;
     private GameObject currentTowerPrefabToSpawn;
@@ -29,7 +29,7 @@ public class TowerPlaceManager : MonoBehaviour
                 towerPreview.SetActive(false);
                 isTileSelected = false;
             }
-            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, tileLayer))
+            else if(Physics.Raycast(ray, out RaycastHit hitInfoRay, Mathf.Infinity, tileAndTowerPreviewLayer))
             {
                 towerPlacementPosition = hitInfoRay.transform.position + Vector3.up * towerPlacementHeightOffset;
                 towerPreview.transform.position = towerPlacementPosition;
@@ -97,13 +97,13 @@ public class TowerPlaceManager : MonoBehaviour
     {
         if(isPlacingTower && isTileSelected)
         {
+            Destroy(towerPreview);
             GameObject towerInstance = Instantiate(currentTowerPrefabToSpawn, towerPlacementPosition, Quaternion.identity);
             Tower tower = towerInstance.GetComponent<Tower>();
             if(tower.TowerCost <= CurrencyManager.CurrentCurrency)
             {
                 TowerPurchased(tower.TowerCost);
             }
-            Destroy(towerPreview);
             tower.IsTowerPlaced = true;
             currentTowerPrefabToSpawn = null;
             isPlacingTower = false;
