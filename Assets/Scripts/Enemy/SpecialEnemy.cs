@@ -17,7 +17,7 @@ public class SpecialEnemy : MonoBehaviour
     }
 
     /// <summary>
-    /// When the TankEnemy gets hit, it will disable any Tower within a 1f Radius and turn them blue.
+    /// When the JammerEnemy gets hit, it will disable a Tower within a 1f Radius and turn them blue.
     /// The Freeze Tower intentionally does not proc this effect
     /// </summary>
     private void DisableNearbyTowers()
