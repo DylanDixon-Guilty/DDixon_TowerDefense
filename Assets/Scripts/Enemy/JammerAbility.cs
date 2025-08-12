@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpecialEnemy : MonoBehaviour
+public class JammerAbility : MonoBehaviour
 {
     [SerializeField] private Material Blue;
     [SerializeField] private float effectLifeTime;
