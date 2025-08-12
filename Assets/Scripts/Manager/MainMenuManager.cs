@@ -8,6 +8,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject OptionsMenu;
     [SerializeField] private GameObject ConfirmExitScreen;
+    [SerializeField] private AudioSource audioPlayer;
+    [SerializeField] private AudioClip soundEffectClip; // This for the TitleScreen only, to check the volume of the SoundEffect
 
     private void Awake()
     {
@@ -15,6 +17,14 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         OptionsMenu.SetActive(false);
         ConfirmExitScreen.SetActive(false);
+    }
+
+    /// <summary>
+    /// On Pressing "Check Sound" button, play SoundEffect (In TitleScreen only)
+    /// </summary>
+    public void CheckSoundEffect()
+    {
+        audioPlayer.PlayOneShot(soundEffectClip);
     }
 
     /// <summary>

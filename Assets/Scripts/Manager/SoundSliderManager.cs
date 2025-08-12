@@ -9,15 +9,13 @@ public class SoundSliderManager : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider soundEffectSlider;
     [SerializeField] private Slider musicSlider;
-    [SerializeField] private AudioSource audioPlayer;
-    [SerializeField] private AudioClip soundEffectClip; // This for the TitleScreen only, to the volume of the SoundEffect
     private const string masterVolume = "MasterVolume";
     private const string musicVolume = "MusicVolume";
     private const string soundEffectVolume = "SoundEffectVolume";
     private const string masterVolumeKey = "MasterVolumeKey"; //Key-word to save to PlayerPrefs
-    private const string musicVolumeKey = "MusicVolumeKey";
-    private const string soundEffectVolumeKey = "SoundEffectVolumeKey";
-    private float volumeMultiplier = 20f; // This goes in the ChangeMaster/Music/Sound Functions
+    private const string musicVolumeKey = "MusicVolumeKey"; //Key-word to save to PlayerPrefs
+    private const string soundEffectVolumeKey = "SoundEffectVolumeKey"; //Key-word to save to PlayerPrefs
+    private float volumeMultiplier = 20f;
     private int defaultVolume = 1; //The default of the volume if the player has not set it yet
 
     private void Start()
@@ -72,13 +70,5 @@ public class SoundSliderManager : MonoBehaviour
     public void ChangeSoundEffect()
     {
         ChangeVolume(soundEffectVolumeKey, soundEffectVolume, soundEffectSlider.value);
-    }
-
-    /// <summary>
-    /// On Pressing "Check Sound" button, play SoundEffect (In TitleScreen only)
-    /// </summary>
-    public void CheckSoundEffect()
-    {
-        audioPlayer.PlayOneShot(soundEffectClip);
     }
 }
