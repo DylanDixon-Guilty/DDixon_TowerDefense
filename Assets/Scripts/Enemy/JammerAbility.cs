@@ -8,13 +8,13 @@ public class JammerAbility : MonoBehaviour
     [SerializeField] private Material Blue;
     [SerializeField] private float effectLifeTime;
     [SerializeField] private int disableTowerBlastRadius;
-    [SerializeField] private int enableTowerBlastRadius;
-    private Dictionary<Tower, Material> originalMaterials = new Dictionary<Tower, Material>();
+    private Dictionary<Tower, Material> originalMaterials = new Dictionary<Tower, Material>(); // To store the values(Component) of the Material of a Tower
 
     private void Start()
     {
         Enemy enemy = GetComponent<Enemy>();
         enemy.OnJammerBeingHit += DisableNearbyTowers;
+        enemy.OnJammerBeingDestoryed += EnableTowers;
     }
 
     /// <summary>
@@ -40,7 +40,6 @@ public class JammerAbility : MonoBehaviour
             }
         }
         StartCoroutine(DisableTowerTimer());
-        
     }
 
     /// <summary>
@@ -50,14 +49,14 @@ public class JammerAbility : MonoBehaviour
     private IEnumerator DisableTowerTimer()
     {
         yield return new WaitForSeconds(effectLifeTime);
-        EnableNearbyTowers();
+        EnableTowers();
     }
 
     /// <summary>
     /// Reenable the Towers the Jammer Enemy disabled and give its original Material back.
     /// Also used in the HasDied function in the Enemy script
     /// </summary>
-    public void EnableNearbyTowers()
+    public void EnableTowers()
     {
         foreach(KeyValuePair<Tower, Material> originalTowerMaterial in originalMaterials)
         {

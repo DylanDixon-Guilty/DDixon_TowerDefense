@@ -4,21 +4,20 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public int MaxHealth;
     public int CurrentHealth;
-    public int CurrencyValue; //The currency given to player when Enemy is defeated
     public float ResetSpeed; // Used to reset the speed of an enemy
-    public bool IsWalkingTrue;
-    public bool HasTakenDamage; // When this becomes true, the Special Enemy does an action
+    public Action OnJammerBeingHit;
+    public Action OnJammerBeingDestoryed; // Called in HasDied and ReachEnd
 
-    private NavMeshAgent agent;
-    private Animator animator;
     [SerializeField] private Transform endPoint;
     [SerializeField] private string animatorParamIsWalking;
     [SerializeField] private int damage;
+    [SerializeField] int MaxHealth;
+    [SerializeField] int CurrencyValue; //The currency given to player when Enemy is defeated
     [SerializeField] private GameObject blueGoldCurrecy;
+    private NavMeshAgent agent;
+    private Animator animator;
     
-
     private void Awake()
     {
         CurrentHealth = MaxHealth;
@@ -26,8 +25,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
-    void Start()
+    private void Start()
     {
         animator.SetBool(animatorParamIsWalking, true);
     }
@@ -50,7 +48,6 @@ public class Enemy : MonoBehaviour
                 ReachEnd();
             }
         }
-        HasDied();
     }
 
     /// <summary>
@@ -61,7 +58,11 @@ public class Enemy : MonoBehaviour
         if (CurrentHealth > 0)
         {
             CurrentHealth = Mathf.Max(CurrentHealth - damageAmount, 0);
-            HasTakenDamage = true;
+            OnJammerBeingHit?.Invoke();
+        }
+        else if(CurrentHealth <= 0)
+        {
+            HasDied();
         }
     }
 
@@ -70,13 +71,11 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void HasDied()
     {
-        if(CurrentHealth <= 0)
-        {
-            Instantiate(blueGoldCurrecy, transform.position, transform.rotation);
-            CurrencyManager.CurrentCurrency += CurrencyValue;
-            WaveManager.EnemiesAlive--; //When an enemy dies, subtract this int by 1
-            Destroy(gameObject);
-        }
+        OnJammerBeingDestoryed?.Invoke();
+        Instantiate(blueGoldCurrecy, transform.position, transform.rotation);
+        CurrencyManager.CurrentCurrency += CurrencyValue;
+        WaveManager.EnemiesAlive--; //When an enemy dies, subtract this int by 1
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -84,6 +83,7 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void ReachEnd()
     {
+        OnJammerBeingDestoryed?.Invoke();
         animator.SetBool(animatorParamIsWalking, false);
         GameManager.instance.playerHealth.TakeDamage(damage);
         WaveManager.EnemiesAlive--;
