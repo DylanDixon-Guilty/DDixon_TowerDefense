@@ -548,9 +548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107c009d25c1dcb42b50c11f132f15b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CostToUpgrade: 150
-  levelTwoTower: {fileID: 4773450711296729758, guid: cb99c278af89c34419b8ff03a9262213, type: 3}
-  UpgradeButton: {fileID: 3961311742373772216}
+  CostToUpgrade: 160
+  LevelTwoTower: {fileID: 4773450711296729758, guid: cb99c278af89c34419b8ff03a9262213, type: 3}
+  upgradeButton: {fileID: 3961311742373772216}
   upgradeButtonText: {fileID: 4764511934461526083}
 --- !u!1 &7370626008147720549 stripped
 GameObject:

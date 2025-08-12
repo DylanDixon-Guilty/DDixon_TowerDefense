@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public bool IsGamePaused = false;
-
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI gameOverTextMessage;
@@ -26,6 +24,7 @@ public class UIManager : MonoBehaviour
     private string restartGameText = "Restart Game";
     private bool isLevelConcludedButton = false;
     private bool isExitingGame = false;
+    private bool IsGamePaused = false;
 
     private void Start()
     {

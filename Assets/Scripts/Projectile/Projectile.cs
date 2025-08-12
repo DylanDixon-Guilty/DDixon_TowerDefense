@@ -2,11 +2,8 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    
     [SerializeField] protected float speed;
-    
     protected Transform target;
-    protected int ProjectileDamage;
 
     protected virtual void Update()
     {
@@ -20,11 +17,10 @@ public abstract class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
     /// <summary>
-    /// Set to find the Enemy Transform in Cannon, Arrow, and Boulder Projectile Scripts
+    /// Set to find the Enemy Transform in Cannon and ArrowProjectile Scripts
     /// </summary>
     public abstract void SetTarget(Transform inputTarget);
 

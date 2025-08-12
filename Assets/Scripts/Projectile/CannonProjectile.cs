@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class CannonProjectile : Projectile
 {
-    public GameObject ExplosionEffect;
-
+    [SerializeField] private GameObject ExplosionEffect;
     [SerializeField] private int cannonBallDamage;
     [SerializeField] private float BlastRadius;
 

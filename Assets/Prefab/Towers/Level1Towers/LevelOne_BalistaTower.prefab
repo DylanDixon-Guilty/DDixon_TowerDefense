@@ -563,8 +563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CostToUpgrade: 100
-  levelTwoTower: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
-  UpgradeButton: {fileID: 808921044560776394}
+  LevelTwoTower: {fileID: 4216962836166032902, guid: 2f093b97a0cf49c4d893f24efe143cfd, type: 3}
+  upgradeButton: {fileID: 808921044560776394}
   upgradeButtonText: {fileID: 1267552718143915767}
 --- !u!4 &8532529173216809423 stripped
 Transform:

@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public class FreezeTower : Tower
 {
-
     [SerializeField] private GameObject freezeParticlePrefab;
     [SerializeField] private float effectLifeTime;
     [SerializeField] private float FreezeBlastRadius;

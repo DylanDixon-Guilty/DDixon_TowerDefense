@@ -14,7 +14,7 @@ public class TowerPlaceManager : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask tileAndTowerPreviewLayer;
     [SerializeField] private LayerMask upgradeTowerLayer = 1 << 11;
-    private float lifeTime = 1.5f;
+    private float setActiveDuration = 1.5f;
     private GameObject currentTowerPrefabToSpawn;
     private GameObject towerPreview;
     private Vector3 towerPlacementPosition;
@@ -123,7 +123,7 @@ public class TowerPlaceManager : MonoBehaviour
     /// </summary>
     IEnumerator HideNotEnoughCurrencyText()
     {
-        yield return new WaitForSeconds(lifeTime);
+        yield return new WaitForSeconds(setActiveDuration);
         notEnoughCurrencyText.SetActive(false);
     }
 }

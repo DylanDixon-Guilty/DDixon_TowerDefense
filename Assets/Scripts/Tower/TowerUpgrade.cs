@@ -5,9 +5,9 @@ using UnityEngine;
 public class TowerUpgrade : MonoBehaviour
 {
     public int CostToUpgrade; //The cost to Upgrade a Tower
-    public GameObject levelTwoTower;
+    public GameObject LevelTwoTower;
 
-    [SerializeField] private GameObject UpgradeButton;
+    [SerializeField] private GameObject upgradeButton;
     [SerializeField] private TextMeshProUGUI upgradeButtonText;
     private Tower tower;
     private BoxCollider buttonBoxCollider;
@@ -21,12 +21,12 @@ public class TowerUpgrade : MonoBehaviour
         tower = GetComponentInParent<Tower>();
         towerboxCollider = GetComponent<BoxCollider>();
         buttonBoxCollider = GetComponentInChildren<BoxCollider>();
-        UpgradeButton.SetActive(false);
+        upgradeButton.SetActive(false);
+        upgradeButtonText.text = "Upgrade: " + CostToUpgrade;
     }
 
     private void Update()
     {
-        upgradeButtonText.text = "Upgrade: " + CostToUpgrade;
         UpgradeButtonVisible();
     }
 
@@ -47,12 +47,12 @@ public class TowerUpgrade : MonoBehaviour
                 if (hitInfo.collider == towerboxCollider && !isButtonActive)
                 {
                     isButtonActive = true;
-                    UpgradeButton.SetActive(true);
+                    upgradeButton.SetActive(true);
                 }
                 else if (hitInfo.collider == towerboxCollider && isButtonActive)
                 {
                     isButtonActive = false;
-                    UpgradeButton.SetActive(false);
+                    upgradeButton.SetActive(false);
                 }
                 else if (hitInfo.collider == buttonBoxCollider && isButtonActive)
                 {
@@ -61,5 +61,4 @@ public class TowerUpgrade : MonoBehaviour
             }
         }
     }
-
 }

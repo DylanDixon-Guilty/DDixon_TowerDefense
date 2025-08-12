@@ -124,12 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9f4e213c502d24c9923bf33e78418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 40
   CurrentHealth: 0
   CurrencyValue: 30
   ResetSpeed: 3
   IsWalkingTrue: 0
-  HasTakenDamage: 0
   endPoint: {fileID: 0}
   animatorParamIsWalking: IsWalking
   damage: 6
@@ -241,6 +240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Blue: {fileID: 2100000, guid: 0920840f3be35644aa14a825fdfd5dd2, type: 2}
-  effectLifeTime: 1
+  effectLifeTime: 1.5
   disableTowerBlastRadius: 1
-  enableTowerBlastRadius: 15
+  enableTowerBlastRadius: 10

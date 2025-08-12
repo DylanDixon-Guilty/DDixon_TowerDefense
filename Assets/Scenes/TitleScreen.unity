@@ -644,6 +644,8 @@ MonoBehaviour:
   MainMenu: {fileID: 1897484811}
   OptionsMenu: {fileID: 1555699097}
   ConfirmExitScreen: {fileID: 849687809}
+  audioPlayer: {fileID: 182221450}
+  soundEffectClip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
 --- !u!4 &231943996
 Transform:
   m_ObjectHideFlags: 0
@@ -675,8 +677,6 @@ MonoBehaviour:
   masterSlider: {fileID: 435093541}
   soundEffectSlider: {fileID: 1691777009}
   musicSlider: {fileID: 1595862953}
-  audioPlayer: {fileID: 182221450}
-  soundEffectClip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
 --- !u!1 &310649084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,8 +1070,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 231943997}
-        m_TargetAssemblyTypeName: SoundSliderMenu, Assembly-CSharp
+      - m_Target: {fileID: 231943995}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
         m_MethodName: CheckSoundEffect
         m_Mode: 1
         m_Arguments:

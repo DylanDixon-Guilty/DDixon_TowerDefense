@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8442965037879946653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -521,8 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CostToUpgrade: 140
-  levelTwoTower: {fileID: 7663199002350008952, guid: cd404e3e446b2a34a8fbc6e1bfd9bc0b, type: 3}
-  UpgradeButton: {fileID: 881829297194402251}
+  LevelTwoTower: {fileID: 7663199002350008952, guid: cd404e3e446b2a34a8fbc6e1bfd9bc0b, type: 3}
+  upgradeButton: {fileID: 881829297194402251}
   upgradeButtonText: {fileID: 5040496937272583136}
 --- !u!1 &7674230248471327144
 GameObject:

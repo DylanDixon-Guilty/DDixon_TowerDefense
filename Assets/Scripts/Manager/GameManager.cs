@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     {
         StopAllCoroutines();
         HighScoreManager highScoreManager = GetComponent<HighScoreManager>();
+        highScoreManager.StarsAwarded();
         Time.timeScale = 0f;
         hasLevelConcluded = true;
-        highScoreManager.StarsAwarded();
     }
 }

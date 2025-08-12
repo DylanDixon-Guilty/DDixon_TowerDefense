@@ -11,13 +11,13 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI balistaTowerText;
     [SerializeField] private TextMeshProUGUI cannonTowerText;
     [SerializeField] private TextMeshProUGUI freezeTowerText;
+    [SerializeField] private int costOfBalistaTower = 70;
+    [SerializeField] private int costOfCannonTower = 120;
+    [SerializeField] private int costOfFreezeTower = 140;
     private const string level01 = "Level 01";
     private const string level02 = "Level 02";
     private const string level03 = "Level 03";
     private const string level04 = "Level 04";
-    private int costOfBalistaTower = 70;
-    private int costOfCannonTower = 120;
-    private int costOfFreezeTower = 140;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class CurrencyManager : MonoBehaviour
 
                 break;
             case level04:
-                CurrentCurrency = 530;
+                CurrentCurrency = 480;
                 cannonTowerText.text = "Cost: " + costOfCannonTower;
                 freezeTowerText.text = "Cost: " + costOfFreezeTower;
                 break;

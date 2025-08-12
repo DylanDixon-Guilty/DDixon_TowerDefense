@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CurrencyPrefab : MonoBehaviour
 {
-    public float Force = 100f;
-    public float LifeTime = 1f;
-
+    [SerializeField] private float Force = 100f;
+    [SerializeField] private float LifeTime = 1f;
     private Rigidbody CurrencyRb;
 
     private void Awake()

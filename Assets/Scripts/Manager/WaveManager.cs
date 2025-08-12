@@ -22,17 +22,16 @@ public struct WaveData
     public List<SpawnData> EnemyData;
 }
 
-
 public class WaveManager : MonoBehaviour
 {
-    public static int EnemiesAlive = 0;
-    public int MaxWaveCount; // Set in Unity for each Level
+    public static int EnemiesAlive;
     public List<WaveData> LevelWaveData;
 
     [SerializeField] private GameObject waveStarterButton;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Health playerHealth;
     [SerializeField] private TextMeshProUGUI wavesCompletedText;
+    [SerializeField] private int MaxWaveCount; // Set in Unity for each Level
     private bool hasAllWavesFinished = false;
     private int wavesCompletedCount = 0;
 
@@ -45,7 +44,6 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         wavesCompletedText.text = "Waves Completed: " + wavesCompletedCount + "/" + MaxWaveCount;
-
         if(hasAllWavesFinished && EnemiesAlive <= 0 || playerHealth.CurrentHealth <= 0)
         {
             gameManager.LevelConcluded();

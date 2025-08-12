@@ -7,8 +7,6 @@ public class Health : MonoBehaviour
     public int MaxHealth = 20;
     public int CurrentHealth;
 
-    [SerializeField] private HighScoreManager highScoreManager;
-
     private void Awake()
     {
         CurrentHealth = MaxHealth;

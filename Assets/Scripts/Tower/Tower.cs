@@ -67,7 +67,7 @@ public abstract class Tower : MonoBehaviour
         TowerUpgrade towerUpgrade = GetComponentInChildren<TowerUpgrade>();
         if(towerUpgrade.CostToUpgrade <= CurrencyManager.CurrentCurrency)
         {
-            GameObject towerInstance = Instantiate(towerUpgrade.levelTwoTower, transform.position, Quaternion.identity);
+            GameObject towerInstance = Instantiate(towerUpgrade.LevelTwoTower, transform.position, Quaternion.identity);
             TowerUpgraded(towerUpgrade.CostToUpgrade);
             Tower tower = towerInstance.GetComponent<Tower>();
             tower.IsTowerPlaced = true;
